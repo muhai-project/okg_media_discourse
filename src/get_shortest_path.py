@@ -5,6 +5,7 @@ Documentation for query: https://graphdb.ontotext.com/documentation/10.1/graph-p
 """
 import os
 import io
+import time
 import argparse
 from datetime import datetime
 from tqdm import tqdm
@@ -126,6 +127,7 @@ if __name__ == '__main__':
     for i in tqdm(range(len(lines))):
         [src_uri_, dst_uri_, co_occur_] = lines[i]
         paths, curr_data = get_shortest_path(src_uri=src_uri_, dst_uri=dst_uri_, co_occur=co_occur_)
+        time.sleep(5)
         df_res = pd.concat([df_res, pd.Series(curr_data).to_frame().T], ignore_index=True)
         df_res.to_csv(args_main["output"])
 

@@ -6,13 +6,13 @@ import os
 import re
 import json
 import pickle
+import argparse
 from tqdm import tqdm
 
 import spacy
 from spacy.tokens import DocBin
 import pandas as pd
 
-PATH = "/Users/ines/Projects/narratives_from_tweets/inequality/data_1212161584904253441.json"
 NLP = spacy.load("en_core_web_sm")
 NLP.add_pipe("dbpedia_spotlight", config={'confidence': 0.5})
 
@@ -26,9 +26,9 @@ def pre_process_row(row: pd.core.series.Series):
 
     return row
 
-def pre_process_main(folder: str, nlp: spacy.lang.en.English):
+def pre_process_main(folder: str, nlp: spacy.lang.en.English, save_file= str):
     """ Whole pre-processing of one data file (one .json file) """
-    files_names = [x for x in os.listdir(folder) if x.startswith("data")][:5]
+    files_names = [x for x in os.listdir(folder) if x.startswith("data")]
     data = []
 
     # Loading .json, converting to pd df with pre-procesed text
@@ -53,7 +53,18 @@ def pre_process_main(folder: str, nlp: spacy.lang.en.English):
         doc_bin.add(doc)
     bytes_data = doc_bin.to_bytes()
 
-    with open("docs_spacy.pkl", "wb") as openfile:
+    with open(save_file, "wb") as openfile:
         pickle.dump(bytes_data, openfile)
 
-pre_process_main(folder="inequality", nlp=NLP)
+
+if __name__ == '__main__':
+    # python src/preprocess_json.py -f inequality -s docs_spacy_inequality.pkl
+    ap = argparse.ArgumentParser()
+    ap.add_argument('-f', "--folder", required=True,
+                    help="folder with .json data files")
+    ap.add_argument('-s', "--save", required=True,
+                    help=".pkl save file")
+    args_main = vars(ap.parse_args())
+
+    pre_process_main(folder=args_main["folder"], nlp=NLP,
+                     save_file=args_main["save"])

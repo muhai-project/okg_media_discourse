@@ -7,7 +7,6 @@ from tqdm import tqdm
 
 import spacy
 import numpy as np
-from pyvis.network import Network
 import networkx.algorithms.community as nx_comm
 
 def ent_to_uri(ent: spacy.tokens.Span) -> str:
@@ -49,15 +48,19 @@ def build_adjacency_matrix(docs: list[spacy.tokens.doc], vocab: dict) -> np.arra
 
 
 if __name__ == '__main__':
-    # python src/graph.py -p ./sample_data/docs_spacy_ukraine_russia.pkl -v ./sample_data/vocab_ukraine_russia.json
+    # python src/graph.py -p ./sample-data/docs_spacy_ukraine_russia.pkl -v ./sample-data/vocab_ukraine_russia.json -o edges_ukraine_russia.txt
     ap = argparse.ArgumentParser()
     ap.add_argument('-p', "--pkl", required=True,
                     help=".pkl file containing the spacy pipeline data in bytes format")
     ap.add_argument('-v', "--vocab", required=True,
                     help=".csv output file with main results")
-    ap.add_argument('-o', '--o', required=True,
+    ap.add_argument('-o', '--output', required=True,
                     help="output .txt file to save the results")
+    ap.add_argument('-t', '--threshold', default=0,
+                    help="threshold for filtering. Must be a string integer (if equal to 5, will only keep entities that co-occurr strictly more than 5 times")
     args_main = vars(ap.parse_args())
+
+    threshold = int(args_main["threshold"])
 
     import json
     import pickle
@@ -79,12 +82,15 @@ if __name__ == '__main__':
     graph = nx.from_numpy_array(MATRIX)
     graph = nx.relabel_nodes(graph, {int(k): v for k, v in VOCAB.items()})
     ordered_edges = sorted(graph.edges(data=True),key= lambda x: x[2]['weight'],reverse=True)
-    print([x for x in ordered_edges if x[2]["weight"] > 10])
-    print(len([x for x in ordered_edges if x[2]["weight"] > 10]))
 
-    f_log = open(args_main["output"], "w+")
-    for edge in [x for x in ordered_edges]:
-        f_log.write(f"{edge[0]}\t{edge[1]}\t{edge[2]['weight']}\n")
+    filtered_edges = [x for x in ordered_edges if x[2]["weight"] > threshold]
+    print(f"Edges with entities that co-occurr more than {threshold} times: {filtered_edges}")
+    print(f"# of edges with entities that co-occurr more than {threshold} times: {len(filtered_edges)}")
+
+    f_log = open(args_main["output"], "w+", encoding="utf-8")
+    for edge in [x for x in filtered_edges]:
+        [start, end] = sorted([edge[0], edge[1]])
+        f_log.write(f"{start}\t{end}\t{edge[2]['weight']}\n")
     f_log.close()
 
 

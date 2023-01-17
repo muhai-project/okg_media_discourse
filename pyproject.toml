@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "narratives-from-tweets"
+version = "0.1.0"
+description = "Extracting structured narratives from text"
+authors = ["Ines Blin <ines.blin@sony.com.fr>"]
+license = "GNU General Public License"
+readme = "README.md"
+packages = [{include = "narratives_from_tweets"}]
+
+[tool.poetry.dependencies]
+python = "3.10.6"
+requests = "^2.28.1"
+pylint = "^2.15.5"
+psutil = "^5.9.3"
+tqdm = "^4.64.1"
+pandas = "^1.5.1"
+rdflib = "^6.2.0"
+ampligraph = "^1.4.0"
+spacy = "^3.4.2"
+networkx = "2.8.8"
+pyvis = "^0.3.1"
+spacy-dbpedia-spotlight = "^0.2.5"
+poetry = "^1.3.2"
+protobuf = "3.16.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

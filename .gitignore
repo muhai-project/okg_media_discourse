@@ -1,0 +1,9 @@
+sample-data/
+path_ukraine_russia/
+.vscode/
+inequality/
+lib/
+.DS_Store
+docs_spacy.pkl
+*.csv
+*.txt

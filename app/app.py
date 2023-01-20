@@ -10,18 +10,23 @@ import streamlit.components.v1 as components
 
 import spacy
 from spacy.tokens import DocBin
+from spacy import displacy
 import pandas as pd
 
 from utils.graph_vis import build_complete_network
 from utils.read_data import get_source_code
 from utils.streamlit_helpers import init_var, on_change_refresh_first_ent, \
     on_change_refresh_second_ent, on_click_refresh_ent
+from utils.path_info import extract_path_pattern
+from settings import FOLDER_PATH
 
 st.set_page_config(layout="wide")
 init_var(var_list=[("ent_1_boolean", False), ("ent_2_boolean", False)])
 
 
-def get_data(path="../sample-data/docs_spacy_ukraine_russia.pkl"):
+
+
+def get_data(path=os.path.join(FOLDER_PATH, "sample-data/docs_spacy_inequality.pkl")):
     """ Loading spacy data from pickled file """
     with open(path, "rb") as openfile:
         bytes_data = pickle.load(openfile)
@@ -36,7 +41,7 @@ def get_entities(doc):
 
 def get_ent_to_co_occurr(edges):
     """ For each entity, get related entities (co-occurring in tweets) """
-    res = defaultdict(lambda: list())
+    res = defaultdict(list)
     for [curr_ent_1, curr_ent_2] in edges:
         res[curr_ent_1].append(curr_ent_2)
         res[curr_ent_2].append(curr_ent_1)
@@ -44,10 +49,9 @@ def get_ent_to_co_occurr(edges):
 
 DOCS = get_data()
 ENTITIES_IN_DOC = [get_entities(doc) for doc in DOCS]
-FOLDER_PATH = "../paths_ukraine_russia"
 
 lines = [x.replace("\n", "").split("\t")[:2] \
-        for x in open("../edges_ukraine_russia.txt", encoding="utf-8").readlines()]
+        for x in open(os.path.join(FOLDER_PATH, "sample-data/edges_inequality.txt"), encoding="utf-8").readlines()]
 ENTITIES_TO_CO_OCCUR = get_ent_to_co_occurr(edges=lines)
 ENTITIES = list(ENTITIES_TO_CO_OCCUR.keys())
 
@@ -81,9 +85,12 @@ with st.container():
                 [start, end] = sorted([ent_1, ent_2])
                 start = start.replace("http://dbpedia.org/resource/", "")
                 end = end.replace("http://dbpedia.org/resource/", "")
-                paths_csv = f"{FOLDER_PATH}/{start}_{end}.csv"
+                paths_csv = f"{FOLDER_PATH}/paths_inequality/{start}_{end}.csv"
                 paths = pd.read_csv(paths_csv)
                 st.write(paths)
+                res_path, res_pred = extract_path_pattern(paths=paths)
+                st.write(res_path)
+                st.write(res_pred)
                 if os.path.exists(paths_csv):
                     folder_save = f"./data/{start}_{end}"
                     if not os.path.exists(folder_save):

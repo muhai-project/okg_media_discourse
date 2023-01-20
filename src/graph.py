@@ -9,10 +9,7 @@ import spacy
 import numpy as np
 import networkx.algorithms.community as nx_comm
 
-def ent_to_uri(ent: spacy.tokens.Span) -> str:
-    """ From entity return DBpedia URI """
-    return ent._.dbpedia_raw_result["@URI"]
-
+from src.helpers import ent_to_uri, get_spacy_docs_from_bytes
 
 
 def build_adjacency_matrix(docs: list[spacy.tokens.doc], vocab: dict) -> np.array:
@@ -65,13 +62,9 @@ if __name__ == '__main__':
     import json
     import pickle
     import networkx as nx
-    from spacy.tokens import DocBin, Span
+    from spacy.tokens import DocBin
 
-    nlp = spacy.blank("en")
-    with open(args_main["pkl"], "rb") as openfile:
-        bytes_data = pickle.load(openfile)
-    doc_bin = DocBin().from_bytes(bytes_data)
-    DOCS = list(doc_bin.get_docs(nlp.vocab))
+    DOCS = get_spacy_docs_from_bytes(pkl_file=args_main["pkl"])
     # Span.set_extension("dbpedia_raw_result", default=None)
 
     with open(args_main["vocab"], 'r', encoding='utf-8') as openfile:

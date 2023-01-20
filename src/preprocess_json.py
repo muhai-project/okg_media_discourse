@@ -14,7 +14,10 @@ from spacy.tokens import DocBin
 import pandas as pd
 
 NLP = spacy.load("en_core_web_sm")
-NLP.add_pipe("dbpedia_spotlight", config={'confidence': 0.5})
+NLP.add_pipe("dbpedia_spotlight",
+             config={
+                'confidence': 0.5,
+                'dbpedia_rest_endpoint': 'http://localhost:2222/rest'})
 
 def pre_process_row(row: pd.core.series.Series):
     """ Pre-processing row of df, and esp. the text """
@@ -26,9 +29,13 @@ def pre_process_row(row: pd.core.series.Series):
 
     return row
 
-def pre_process_main(folder: str, nlp: spacy.lang.en.English, save_file= str):
+def pre_process_main(folder: str, nlp: spacy.lang.en.English,
+                     save_file: str, nb_param: int):
     """ Whole pre-processing of one data file (one .json file) """
+
     files_names = [x for x in os.listdir(folder) if x.startswith("data")]
+    nb_to_keep = nb_param if isinstance(nb_param, int) else len(files_names)
+    files_names = files_names[:nb_to_keep]
     data = []
 
     # Loading .json, converting to pd df with pre-procesed text
@@ -44,7 +51,7 @@ def pre_process_main(folder: str, nlp: spacy.lang.en.English, save_file= str):
     df_data = df_data.drop_duplicates("text")
 
     # Spacy + DBpedia Spotlight
-    docs = nlp.pipe(df_data.text.values)
+    docs = nlp.pipe(df_data.text.values, n_process=4)
     docs = list(docs)
 
     # Converting to bytes to store as .pkl file
@@ -64,7 +71,16 @@ if __name__ == '__main__':
                     help="folder with .json data files")
     ap.add_argument('-s', "--save", required=True,
                     help=".pkl save file")
+    ap.add_argument('-n', "--nb", required=True,
+                    help="nb of files to preprocess (n first)")
     args_main = vars(ap.parse_args())
 
+    if args_main["nb"] == 'all':
+        NB_PARAM = 'all'
+    elif args_main["nb"].isdigit():
+        NB_PARAM = int(args_main["nb"])
+    else:
+        raise ValueError("`nb_param` should be either an integer or `all`")
+
     pre_process_main(folder=args_main["folder"], nlp=NLP,
-                     save_file=args_main["save"])
+                     save_file=args_main["save"], nb_param=NB_PARAM)

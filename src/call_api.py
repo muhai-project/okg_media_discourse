@@ -14,7 +14,7 @@ def call_propbank_grammar_api(utterance: str) -> dict:
         "timeout": 100
     }""".replace("<utterance>", f'"{utterance}"')
     response = requests.post('http://127.0.0.1:1170/extract-frames',
-                             headers=headers, data=data)
+                             headers=headers, data=data, timeout=3600)
     return response
 
 # utterance = "He told him a story"

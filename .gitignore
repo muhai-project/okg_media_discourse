@@ -11,3 +11,5 @@ app/data/
 *egg-info/
 dist/
 build/
+settings/private.py
+resources/*.json

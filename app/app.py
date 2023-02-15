@@ -47,24 +47,36 @@ def get_ent_to_co_occurr(edges):
         res[curr_ent_2].append(curr_ent_1)
     return res
 
-DOCS = get_data()
-ENTITIES_IN_DOC = [get_entities(doc) for doc in DOCS]
+# DOCS = get_data()
+# ENTITIES_IN_DOC = [get_entities(doc) for doc in DOCS]
 
-lines = [x.replace("\n", "").split("\t")[:2] \
-        for x in open(os.path.join(FOLDER_PATH, "sample-data/edges_inequality.txt"), encoding="utf-8").readlines()]
-ENTITIES_TO_CO_OCCUR = get_ent_to_co_occurr(edges=lines)
-ENTITIES = list(ENTITIES_TO_CO_OCCUR.keys())
+# lines = [x.replace("\n", "").split("\t")[:2] \
+#         for x in open(os.path.join(FOLDER_PATH, "sample-data/edges_inequality.txt"), encoding="utf-8").readlines()]
+# ENTITIES_TO_CO_OCCUR = get_ent_to_co_occurr(edges=lines)
+# ENTITIES = list(ENTITIES_TO_CO_OCCUR.keys())
 
 st.title("Narratives from tweets + KG")
 
 # Container for text + entities selection
 with st.container():
-    st.markdown("Choosing text and entities")
+    st.markdown("Choosing dataset")
     option_order = st.selectbox(
-        'Which data do you want to select first',
-        ('DBpedia entities', "Text"))
+        'Select your data',
+        ("", 'Conflict Ukraine/Russia', "Inequality"))
     
-    if option_order == 'DBpedia entities':
+    data_name = "docs_spacy_inequality.pkl" if option_order == 'Inequality' else "docs_spacy_ukraine_russia.pkl"
+    data_path = os.path.join(FOLDER_PATH, "sample-data", data_name)
+    DOCS = get_data(path=data_path)
+    ENTITIES_IN_DOC = [get_entities(doc) for doc in DOCS]
+
+    edge_path = "edges_inequality.txt" if option_order == "Inequality" else "edges_ukraine_russia.txt"
+    lines = [x.replace("\n", "").split("\t")[:2] \
+        for x in open(os.path.join(FOLDER_PATH, "sample-data", edge_path), encoding="utf-8").readlines()]
+    ENTITIES_TO_CO_OCCUR = get_ent_to_co_occurr(edges=lines)
+    ENTITIES = list(ENTITIES_TO_CO_OCCUR.keys())
+
+
+    if option_order:
         ent_1 = st.selectbox("Choose a first entity", options=[""] + ENTITIES, on_change=on_change_refresh_first_ent)
 
         if ent_1 and st.session_state.ent_1_boolean:
@@ -85,7 +97,8 @@ with st.container():
                 [start, end] = sorted([ent_1, ent_2])
                 start = start.replace("http://dbpedia.org/resource/", "")
                 end = end.replace("http://dbpedia.org/resource/", "")
-                paths_csv = f"{FOLDER_PATH}/paths_inequality/{start}_{end}.csv"
+                path_folder = "paths_inequality" if option_order == 'Inequality' else "paths_ukraine_russia"
+                paths_csv = f"{FOLDER_PATH}/{path_folder    }/{start}_{end}.csv"
                 paths = pd.read_csv(paths_csv)
                 st.write(paths)
                 res_path, res_pred = extract_path_pattern(paths=paths)

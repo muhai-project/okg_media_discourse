@@ -8,7 +8,8 @@ import argparse
 import pandas as pd
 
 ENDPOINT = "http://localhost:7200/repositories/dbpedia-subset"
-HEADERS = {"Accept": "text/csv"}
+HEADERS_SELECT = {"Accept": "text/csv"}
+HEADERS_ASK = {"Accept": "application/json"}
 
 
 QUERY_PRED_COUNT = """
@@ -41,13 +42,22 @@ WHERE {
 }
 """
 
-def main_graphdb(query):
+ASK_TRIPLE_IN_KG = """
+ASK  { <sub_uri> <pred_uri> <obj_uri> }
+"""
+
+def main_graphdb(query, headers, type_o="csv"):
     """ Curl requests to retrieve info from
     graphdb endpoint + sparql query"""
-    response = requests.get(ENDPOINT, headers=HEADERS,
+    response = requests.get(ENDPOINT, headers=headers,
                             params={"query": query}, timeout=3600)
-    return pd.read_csv(
-        io.StringIO(response.content.decode('utf-8')))
+
+    if type_o == "csv":
+        return pd.read_csv(
+            io.StringIO(response.content.decode('utf-8')))
+    if type_o == "json":
+        return response.json()
+    raise ValueError(f"`type_o` {type_o} not implemented")
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
@@ -64,5 +74,5 @@ if __name__ == '__main__':
     }
 
     QUERY = TYPE_TO_QUERY[args_main["query_type"]].replace("pred_uri", args_main["uri"])
-    res = main_graphdb(query=QUERY)
+    res = main_graphdb(query=QUERY, headers=HEADERS_SELECT)
     print(res)

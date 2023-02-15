@@ -690,6 +690,20 @@ pycodestyle = ">=2.9.0,<2.10.0"
 pyflakes = ">=2.5.0,<2.6.0"
 
 [[package]]
+name = "hdt"
+version = "2.3"
+description = "Read and query HDT document with ease in Python"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "hdt-2.3.tar.gz", hash = "sha256:103eac995122a9109408bfcfa5d7508d09a25ab7cf954c541b48a27ebb01c2f9"},
+]
+
+[package.dependencies]
+pybind11 = "2.2.4"
+
+[[package]]
 name = "html5lib"
 version = "1.1"
 description = "HTML parser based on the WHATWG HTML specification"
@@ -1738,6 +1752,18 @@ files = [
 
 [package.extras]
 tests = ["pytest"]
+
+[[package]]
+name = "pybind11"
+version = "2.2.4"
+description = "Seamless operability between C++11 and Python"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pybind11-2.2.4-py2.py3-none-any.whl", hash = "sha256:bd68159013d20c79bf79893b174a6ee7f74af740bf60ae731565f5d8d4094403"},
+    {file = "pybind11-2.2.4.tar.gz", hash = "sha256:642abbbd2948ed5af28e69adfae1535347c7aa9eb0cdab130e20e1f198f8e1cf"},
+]
 
 [[package]]
 name = "pybtex"
@@ -3293,4 +3319,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.10.6"
-content-hash = "cfeb5d57d4a368e80973c6a0909dc70ade431d52c4f3b09b471fdedfdd5428f0"
+content-hash = "01280988c5658522f73009045ccf189c79cca3bda3dc0589700039921c4692bb"

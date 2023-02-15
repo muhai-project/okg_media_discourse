@@ -16,7 +16,7 @@ from tqdm import tqdm
 import pandas as pd
 from pyvis.network import Network
 
-from src.graphdb import QUERY_PRED_COUNT, main_graphdb
+from src.graphdb import QUERY_PRED_COUNT, HEADERS_SELECT, main_graphdb
 from settings import FOLDER_PATH
 
 def pre_process(node):
@@ -64,7 +64,9 @@ def update_pred_count(pred_count_path, df_pd):
     print("Updating cached predicate count values")
     for i in tqdm(range(len(to_update))):
         curr_pred = to_update[i]
-        df_out = main_graphdb(query=QUERY_PRED_COUNT.replace("pred_uri", curr_pred))
+        df_out = main_graphdb(
+            query=QUERY_PRED_COUNT.replace("pred_uri", curr_pred),
+            headers=HEADERS_SELECT)
         pred_count[curr_pred] = str(df_out["count"].values[0])
     print("Finished updating cached predicate count values")
 
@@ -127,6 +129,10 @@ def main(df_paths, output_folder):
 
 
 if __name__ == '__main__':
+    # From root git folder
+    # python src/paths/collapse.py \
+    # -p paths_inequality/Gender_inequality_Poverty.csv \
+    # -o test_rank_paths
     ap = argparse.ArgumentParser()
     ap.add_argument('-p', "--paths", required=True,
                     help=".csv file with paths between two entities")

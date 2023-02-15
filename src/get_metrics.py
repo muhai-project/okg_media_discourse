@@ -3,10 +3,11 @@
 Calculating metrics from GraphDB results
 """
 import argparse
+from tqdm import tqdm
+from datetime import datetime
+from collections import defaultdict
 import numpy as np
 import pandas as pd
-from tqdm import tqdm
-from collections import defaultdict
 from settings import FOLDER_PATH
 
 def extract_path_pattern(paths):
@@ -33,6 +34,19 @@ def get_path_info(row, folder):
     row["path_pred"] = len(res_pred)
     return row
 
+def convert_to_seconds(date_time):
+    """ Convert datetime object to seconds """
+    return date_time.hour * 3600 + date_time.minute * 60 + \
+        date_time.second + float(f"0.{date_time.microsecond}")
+
+def convert_to_datetime(string_date):
+    """ Convert seconds to datetime """
+    microsecond = float(string_date) - int(string_date)
+    hour = int(string_date) // 3600
+    minute = (int(string_date) % 3600) // 60
+    seconds = (int(string_date) % 3600) % 60
+    print(f"{hour}h {minute}min {seconds + microsecond}sec")
+
 def print_metrics(data, folder_paths):
     """ Getting mains metrics from data """
 
@@ -53,8 +67,13 @@ def print_metrics(data, folder_paths):
         for metric in ["min", "mean", "median", "max"]:
             print(f"{metric.capitalize()} {label}: {label_to_metric[metric](spl[col].values)}")
 
+    times = [datetime.strptime(x,'%H:%M:%S.%f') for x in spl.time.values]
+    times = [convert_to_seconds(date_time) for date_time in times]
+    avg_time = np.mean(times)
+    convert_to_datetime(string_date=avg_time)
+
 if __name__ == '__main__':
-    # python src/get_metrics graphdb_inequality.csv
+    # python src/get_metrics -f graphdb_inequality.csv
     ap = argparse.ArgumentParser()
     ap.add_argument('-f', "--file", required=True,
                     help=".csv file with info")

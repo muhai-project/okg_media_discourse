@@ -2,11 +2,15 @@
 # -*- coding: utf-8 -*-
 import os
 import json
+import argparse
 from math import log
 from collections import defaultdict
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
+from sentence_transformers import SentenceTransformer
+from scipy.spatial.distance import cosine
+
 from settings import FOLDER_PATH, NB_STATEMENT_DBPEDIA_GRAPHDB
 from src.graphdb import ASK_TRIPLE_IN_KG, HEADERS_ASK, main_graphdb, \
     QUERY_PRED_COUNT, HEADERS_SELECT
@@ -47,14 +51,15 @@ def get_weight(row, cached_data, metric):
 
     if metric in ["in", "ou", "deg", "ns", "td", "so", "si", "sa"]:
         node = row.start if row.order == "normal" else row.end
-        # node = row.start 
+        # node = row.start
         return cached_data[node][metric]
 
     if metric == "informativeness":
         sub = row.start if row.order == "normal" else row.end
         obj = row.end if row.order == "normal" else row.start
         print(cached_data[sub])
-        return (cached_data[sub]["pfo"][row.pred] + cached_data[obj]["pfi"][row.pred]) * cached_data[row.pred]["itf"] / 2
+        return (cached_data[sub]["pfo"][row.pred] + \
+            cached_data[obj]["pfi"][row.pred]) * cached_data[row.pred]["itf"] / 2
 
     raise ValueError(f"metric {metric} not implemented")
 
@@ -69,14 +74,27 @@ def extract_path_pattern(paths: pd.DataFrame):
 
 
 def extract_diversity(paths: pd.DataFrame):
-    labels = {index: set(paths[paths.new_path_index == index].pred.unique()) for index in paths.new_path_index.unique()}
+    """ Comparing paths wrt to diversity of labels"""
+    labels = {index: set(paths[paths.new_path_index == index].pred.unique()) \
+        for index in paths.new_path_index.unique()}
     diversity = np.zeros((len(labels), len(labels)))
 
     nb_paths = np.max(paths.new_path_index.unique())
     for i in range(nb_paths):
         for j in range(i+1, nb_paths):
-            diversity[i][j] = len(labels[i].intersection(labels[j])) / len(labels[i].union(labels[j]))
+            diversity[i][j] = len(
+                labels[i].intersection(labels[j])) / \
+                    len(labels[i].union(labels[j]))
     return diversity
+
+def get_adjusted_similarity(row, model, path_length):
+    """ get cosine similarity between start and end node of the subpath
+    power = minimum distance to the source or target node """
+    power = min(row.index_path + 1, path_length - row.index_path)
+    return cosine(
+        model.encode(row.start.split("/")[-1].replace("_", " ")),
+        model.encode(row.end.split("/")[-1].replace("_", " "))
+    )**power
 
 
 def get_scores(paths, metric):
@@ -111,23 +129,45 @@ def get_scores(paths, metric):
     if metric == "pattern":
         patterns = extract_path_pattern(paths=paths)
         tot_pattern = sum(patterns.values())
-        # print(paths.groupby('new_path_index')["pred"].transform(lambda x: log(tot_pattern / patterns["---".join(x)])))
-        print(paths.groupby('new_path_index').agg({"pred": lambda x: log(tot_pattern / patterns["---".join(x)])}))
+        # print(paths.groupby('new_path_index')["pred"] \
+        #     .transform(lambda x: log(tot_pattern / patterns["---".join(x)])))
+        print(paths.groupby('new_path_index') \
+            .agg({"pred": lambda x: log(tot_pattern / patterns["---".join(x)])}))
+
+    if metric == "embedding":
+        path_l = np.max(paths.index_path.values)
+        model_hf = SentenceTransformer('all-MiniLM-L6-v2')
+        paths["adj_emb"] = paths.apply(
+            lambda row: get_adjusted_similarity(
+                row=row, model=model_hf, path_length=path_l), axis=1)
+        print(paths.groupby('new_path_index').agg({"adj_emb": "sum"}))
+
     else:
-        paths["weight"] = paths.apply(lambda row: get_weight(row=row, cached_data=cached_data, metric=metric), axis=1)
+        paths["weight"] = paths.apply(
+            lambda row: get_weight(
+                row=row, cached_data=cached_data, metric=metric), axis=1)
 
         print(paths.groupby("new_path_index").agg({"weight": ["sum", "mean", "min", "max"]}))
 
     with open(cached_data_path, "w", encoding="utf-8") as openfile:
         json.dump(cached_data, openfile, indent=4)
-    
+
     return paths
 
+if __name__ == '__main__':
+    # python src/paths/get_scores.py -d ./test_rank_paths/filtered_paths.csv -m deg
+    ap = argparse.ArgumentParser()
+    ap.add_argument('-d', "--data", required=True,
+                    help=".csv file containing the (filtered) paths between two entities")
+    ap.add_argument('-m', '--metric', required=True,
+                    help="metric to use to rank the paths")
+    ap.add_argument('-d', '--diversity', default=None,
+                    help="output diversity between paths or not")
+    args_main = vars(ap.parse_args())
 
-PATHS = pd.read_csv("./test_rank_paths/filtered_paths.csv")
-PATHS = get_scores(PATHS, "pattern")
-DIVERSITY = extract_diversity(paths=PATHS)
-print(DIVERSITY)
+    PATHS = pd.read_csv(args_main["data"])
+    PATHS = get_scores(paths=PATHS, metric=args_main["metric"])
 
-# if not res_pred[pred]["itf"]:
-            
+    if args_main["diversity"] == '1':
+        DIVERSITY = extract_diversity(paths=PATHS)
+        print(DIVERSITY)

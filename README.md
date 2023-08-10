@@ -9,6 +9,7 @@ pykeen==1.9.0
 pyrdf2vec
 nest_asyncio
 gensim
+transformers==4.31.0
 
 problem dependency with streamlit
 pip install dependency
@@ -27,6 +28,15 @@ conda install -c conda-forge tensorflow==2.9.1
 
 hdt==2.3
 urllib==1.26.11
+nltk==3.8.1
+torch==1.13.1
+textblob==0.17.1
+MODEL = f"cardiffnlp/twitter-roberta-base-sentiment-latest"
+
+```python
+import nltk
+nltk.download("punkt")
+```
 
 fasttext
 sentence-transformers

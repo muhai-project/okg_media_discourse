@@ -13,3 +13,4 @@ dist/
 build/
 settings/private.py
 resources/*.json
+ontology/observatory/*

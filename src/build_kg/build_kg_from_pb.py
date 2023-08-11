@@ -4,16 +4,19 @@ Input = tweets with their text + features (pb rolesets, sentiment)
 Output = KG
 """
 import os
+import io
+import requests
 import argparse
 import multiprocessing as mp
 from tqdm import tqdm
 import pandas as pd
 import dask.dataframe as dd
-from rdflib import Namespace, Graph, Literal, XSD
+from rdflib import Namespace, Graph, Literal, XSD, URIRef
 from rdflib.namespace import RDF
 
 from src.helpers import format_string_col
 from src.logger import Logger
+from settings import SPARQL_ENDPOINT
 
 class RDFLIBConverterFromPB:
     """ Converting csv-stored info to rdflib triples
@@ -25,13 +28,29 @@ class RDFLIBConverterFromPB:
         self.observatory = Namespace("http://example.org/muhai/observatory#")
         self.example = Namespace("http://example.com/")
         self.wsj = Namespace("https://w3id.org/framester/wsj/")
-        self.pbdata = Namespace("https://w3id.org/framester/pb/pbdata/")
+        self.pbdata = Namespace("https://w3id.org/framester/pb/data/")
         self.pbschema = Namespace("https://w3id.org/framester/pb/pbschema/")
         self.earmark = Namespace("http://www.essepuntato.it/2008/12/earmark#")
         self.nif = Namespace("http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#")
         self.schema = Namespace("http://schema.org/")
         self.xsd = XSD
         self.sioc = Namespace("http://rdfs.org/sioc/ns#")
+
+        # Unique role sets, to add roles from Framester KG
+        self.distinct_pb_role_sets = []
+        self.headers = {"Accept": "text/csv"}
+        self.sparql_endpoint = SPARQL_ENDPOINT
+        self.init_query()
+    
+    def init_query(self):
+        self.role_query = \
+        """
+        PREFIX pbschema: <https://w3id.org/framester/pb/pbschema/>
+        SELECT DISTINCT ?role
+        WHERE {
+            <to-change> pbschema:hasRole ?role .
+        }   
+        """
 
     def _bind_namespaces(self, graph):
         graph.bind("observatory", self.observatory)
@@ -89,6 +108,8 @@ class RDFLIBConverterFromPB:
         # Mapping to RS in Framester
         if data["frame_exist"]:
             rs_framester_node = self.pbdata[frame_name]
+            if rs_framester_node not in self.distinct_pb_role_sets:
+                self.distinct_pb_role_sets.append(rs_framester_node)
         else:
             rs_framester_node = self.observatory[f"roleset/{frame_name}"]
         graph.add((rs_node, self.wsj["onRoleSet"], rs_framester_node))
@@ -133,13 +154,40 @@ class RDFLIBConverterFromPB:
                     graph = self.add_one_roleset(
                         data={"id": row.subject, "info": info, "frame_exist": row.frame_exist[i], "i_frame": i, "sentence": row.sentence_utf8, "i_sent": row.sentence_id}, graph=graph)
         return graph
+    
+    def run_query(self, query):
+        """ Using curl requests to run query """
+        response = requests.get(
+            self.sparql_endpoint, headers=self.headers,
+            params={"query": query}, timeout=3600)
+        # print(response.url)
+        return pd.read_csv(io.StringIO(response.content.decode('utf-8')))
+
+    def get_roles_framester(self, rs_pb):
+        """ SPARQL query to retrieve roles """
+        query = self.role_query.replace("to-change", str(rs_pb))
+        res = self.run_query(query)
+        return res.role.values
+
 
     def __call__(self, input_df):
         graph = Graph()
         graph = self._bind_namespaces(graph=graph)
+
+        # Processing each row (= one sentence)
+        print(f"Processing {input_df.shape[0]} rows")
         for _, row in tqdm(input_df.iterrows(),
                            total=input_df.shape[0]):
             graph = self.process_one_row(row=row, graph=graph)
+        
+        # Adding role from Propbank frames
+        print(f"Processing {len(self.distinct_pb_role_sets)} frame templates")
+        for i in tqdm(range(len(self.distinct_pb_role_sets))):
+            rs_pb = self.distinct_pb_role_sets[i]
+            roles = self.get_roles_framester(rs_pb=rs_pb)
+            for role in roles:
+                graph.add((rs_pb, self.pbschema["hasRole"], URIRef(role)))
+        
         return graph
 
 

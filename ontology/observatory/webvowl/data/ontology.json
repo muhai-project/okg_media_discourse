@@ -1,0 +1,780 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "baseIris" : [ "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core", "http://www.w3.org/2000/10/XMLSchema", "http://www.w3.org/2000/01/rdf-schema", "http://example.org/muhai/observatory", "http://rdfs.org/sioc/ns" ],
+    "iri" : "http://example.org/muhai/observatory"
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "47",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "43",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2000/10/XMLSchema#positiveInteger",
+    "baseIri" : "http://www.w3.org/2000/10/XMLSchema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "positiveInteger"
+    },
+    "attributes" : [ "external" ],
+    "id" : "5"
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#RePost",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RePost"
+    },
+    "attributes" : [ "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#Reply",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Reply"
+    },
+    "attributes" : [ "external" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word",
+    "baseIri" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Word"
+    },
+    "attributes" : [ "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#RePost",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RePost"
+    },
+    "id" : "36",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#User",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "User"
+    },
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://www.w3.org/2000/10/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2000/10/XMLSchema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "boolean"
+    },
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "9",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://example.org/muhai/observatory#Entity",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Entity"
+    },
+    "id" : "47"
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#Post",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Post"
+    },
+    "subClasses" : [ "43", "36" ],
+    "attributes" : [ "external" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://www.w3.org/2000/10/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2000/10/XMLSchema",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "string"
+    },
+    "attributes" : [ "external" ],
+    "id" : "12"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#Reply",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Reply"
+    },
+    "id" : "43",
+    "superClasses" : [ "4" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "14",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "16",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "20",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "38",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "39",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "40",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "41",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "45",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "46",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "48",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "49",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "51",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "52",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "53",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "54",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "6",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "55",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "56",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "57",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://example.org/muhai/observatory#isVerified",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "isVerified"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#post_metrics",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "post_metrics"
+    },
+    "domain" : "4",
+    "subproperty" : [ "6", "7" ],
+    "attributes" : [ "object" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#advmod",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "advmod"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#description",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "description"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_conj",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_conj"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_poss",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_poss"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "14"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_prep",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_prep"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_relcl",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_relcl"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#repost_of",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "repost_of"
+    },
+    "domain" : "15",
+    "attributes" : [ "object" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_nsubj",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_nsubj"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_aux",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_aux"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_pobj",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_pobj"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#follower",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "follower"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_amod",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_amod"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "24"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#reply_of",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "reply_of"
+    },
+    "domain" : "19",
+    "attributes" : [ "object" ],
+    "id" : "26"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_nsubpass",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_nsubpass"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter",
+    "baseIri" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "inter"
+    },
+    "domain" : "9",
+    "subproperty" : [ "10" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_prt",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_prt"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_dobj",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_dobj"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_appos",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_appos"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "31"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_pcomp",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_pcomp"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "32"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_intj",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_intj"
+    },
+    "superproperty" : [ "34" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "33"
+  }, {
+    "range" : "4",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "35"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_dep",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_dep"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "37"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_nummod",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_nummod"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "38"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#following",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "following"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "39"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_det",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_det"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "40"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_expl",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_expl"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "41"
+  }, {
+    "range" : "4",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "42"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_acomp",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_acomp"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "44"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_npadvmod",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_npadvmod"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "45"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_attr",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_attr"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "46"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#location",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "location"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "48"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_csubj",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_csubj"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "49"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_ccomp",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_ccomp"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "50"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_auxpass",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_auxpass"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "51"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_compound",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_compound"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "52"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_ROOT",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_ROOT"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "53"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_mark",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_mark"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "54"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#nb_like",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "nb_like"
+    },
+    "superproperty" : [ "3" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#nb_retweet",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "nb_retweet"
+    },
+    "superproperty" : [ "3" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#ependency_relation",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "ependency_relation"
+    },
+    "domain" : "9",
+    "subproperty" : [ "33" ],
+    "attributes" : [ "object" ],
+    "id" : "34"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_agent",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_agent"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "55"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dependency_relation",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "dependency_relation"
+    },
+    "superproperty" : [ "28" ],
+    "domain" : "25",
+    "subproperty" : [ "8", "13", "14", "37", "38", "40", "41", "44", "45", "46", "16", "49", "17", "50", "20", "51", "21", "22", "24", "27", "52", "53", "54", "55", "29", "30", "31", "56", "32", "57" ],
+    "attributes" : [ "object" ],
+    "id" : "10"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_punct",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_punct"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "56"
+  }, {
+    "iri" : "http://example.org/muhai/observatory#dep_rel_cc",
+    "baseIri" : "http://example.org/muhai/observatory",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dep_rel_cc"
+    },
+    "superproperty" : [ "10" ],
+    "domain" : "9",
+    "attributes" : [ "object" ],
+    "id" : "57"
+  } ]
+}

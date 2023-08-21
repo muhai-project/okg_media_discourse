@@ -1,0 +1,1054 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/muhai/observatory#"
+     xml:base="http://example.org/muhai/observatory"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://example.org/muhai/observatory"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2000/10/XMLSchema#boolean -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2000/10/XMLSchema#boolean"/>
+    
+
+
+    <!-- http://www.w3.org/2000/10/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2000/10/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2000/10/XMLSchema#integer -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2000/10/XMLSchema#integer"/>
+    
+
+
+    <!-- http://www.w3.org/2000/10/XMLSchema#positiveInteger -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2000/10/XMLSchema#positiveInteger"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.org/muhai/observatory#advmod -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#advmod">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: advmod.</rdfs:comment>
+        <rdfs:label>advmod</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_npadvmod -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_npadvmod">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: npadvmod.</rdfs:comment>
+        <rdfs:label>npadvmod</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_acomp -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_acomp">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: acomp.</rdfs:comment>
+        <rdfs:label>acomp</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_agent -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_agent">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: agent.</rdfs:comment>
+        <rdfs:label>agent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_amod -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_amod">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: amod.</rdfs:comment>
+        <rdfs:label>amod</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_appos -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_appos">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: appos.</rdfs:comment>
+        <rdfs:label>appos</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_attr -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_attr">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: attr.</rdfs:comment>
+        <rdfs:label>attr</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_aux -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_aux">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: aux.</rdfs:comment>
+        <rdfs:label>aux</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_auxpass -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_auxpass">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: auxpass.</rdfs:comment>
+        <rdfs:label>auxpass</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_cc -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_cc">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: cc.</rdfs:comment>
+        <rdfs:label>cc</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_ccomp -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_ccomp">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: ccomp.</rdfs:comment>
+        <rdfs:label>ccomp</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_compound -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_compound">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: compound.</rdfs:comment>
+        <rdfs:label>compound</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_conj -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_conj">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: conj.</rdfs:comment>
+        <rdfs:label>conj</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_csubj -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_csubj">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: csubj.</rdfs:comment>
+        <rdfs:label>csubj</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_dep -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_dep">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: dep.</rdfs:comment>
+        <rdfs:label>dep</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_det -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_det">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: det.</rdfs:comment>
+        <rdfs:label>det</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_dobj -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_dobj">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: dobj.</rdfs:comment>
+        <rdfs:label>dobj</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_expl -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_expl">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: expl.</rdfs:comment>
+        <rdfs:label>expl</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_intj -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_intj">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: intj.</rdfs:comment>
+        <rdfs:label>intj</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_mark -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_mark">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: mark.</rdfs:comment>
+        <rdfs:label>mark</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_nsubj -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_nsubj">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: nsubj.</rdfs:comment>
+        <rdfs:label>nsubj</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_nsubpass -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_nsubpass">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: nsubjpass.</rdfs:comment>
+        <rdfs:label>nsubjpass</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_nummod -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_nummod">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: nummod.</rdfs:comment>
+        <rdfs:label>nummod</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_pcomp -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_pcomp">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: pcomp.</rdfs:comment>
+        <rdfs:label>pcomp</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_pobj -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_pobj">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: pobj.</rdfs:comment>
+        <rdfs:label>pobj</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_poss -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_poss">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: poss.</rdfs:comment>
+        <rdfs:label>poss</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_prep -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_prep">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: prep.</rdfs:comment>
+        <rdfs:label>prep</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_prt -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_prt">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: prt.</rdfs:comment>
+        <rdfs:label>prt</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_punct -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_punct">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: punct.</rdfs:comment>
+        <rdfs:label>punct</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_relcl -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_relcl">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: relcl.</rdfs:comment>
+        <rdfs:label>relcl</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dep_rel_root -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dep_rel_root">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#dependency_relation"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Dependency relation: root.</rdfs:comment>
+        <rdfs:label>root</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#dependency_relation -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#dependency_relation">
+        <rdfs:subPropertyOf rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter"/>
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>Generic property that links a child to his parent (tbc) with a dependency.</rdfs:comment>
+        <rdfs:label>dependency_relation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#lemma -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#lemma">
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#nb_like -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#nb_like">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#post_metrics"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#nb_repost -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#nb_repost">
+        <rdfs:subPropertyOf rdf:resource="http://example.org/muhai/observatory#post_metrics"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#post_metrics -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#post_metrics">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#reply_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#reply_of">
+        <rdfs:domain rdf:resource="http://example.org/muhai/observatory#Reply"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:comment>Links a reply to the post it replies to.</rdfs:comment>
+        <rdfs:label>reply of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#repost_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/muhai/observatory#repost_of">
+        <rdfs:domain rdf:resource="http://example.org/muhai/observatory#RePost"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:comment>Links a repost to its original post.</rdfs:comment>
+        <rdfs:label>repost of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf">
+        <rdfs:domain rdf:resource="http://example.org/muhai/observatory#Entity"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase"/>
+        <rdfs:comment>IRI Entity attached to a string entity</rdfs:comment>
+        <rdfs:label>anchorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter -->
+
+
+    <owl:ObjectProperty rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter">
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"/>
+        <rdfs:comment>This object property models a relation between two nif:Strings. The name &quot;inter&quot; is kept generic and can be used to express any kind of relation in between (inter) two nif:Strings. Extensions can create rdfs:subPropertyOf for &quot;head&quot;, &quot;dependent&quot;, nif:substring and nif:nextWord.</rdfs:comment>
+        <rdfs:label>inter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag -->
+
+
+    <owl:ObjectProperty rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence -->
+
+
+    <owl:ObjectProperty rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence"/>
+        <rdfs:comment>Links a post to a sentence in its content (adapted from nif)</rdfs:comment>
+        <rdfs:label>sentence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString -->
+
+
+    <owl:ObjectProperty rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString">
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"/>
+        <rdfs:comment>One string is contained in another (inverse of substring in nif)</rdfs:comment>
+        <rdfs:label>superString</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word -->
+
+
+    <owl:ObjectProperty rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word">
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"/>
+        <rdfs:comment>This property links sentences to their words (from nif)</rdfs:comment>
+        <rdfs:label>word</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_container -->
+
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_container">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#Forum"/>
+        <rdfs:comment>The Forum to which this Post belongs.  (adapted from sioc)</rdfs:comment>
+        <rdfs:label>has_container</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#id -->
+
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#id">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/mentions -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.org/mentions">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:range rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase"/>
+        <rdfs:comment>String entities that are mentioned in the post.</rdfs:comment>
+        <rdfs:label>mentions</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.essepuntato.it/2008/12/earmark#begins -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.essepuntato.it/2008/12/earmark#begins">
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.essepuntato.it/2008/12/earmark#ends -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.essepuntato.it/2008/12/earmark#ends">
+        <rdfs:domain rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ics.forth.gr/isl/oae/core#hasMatchedURL -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.ics.forth.gr/isl/oae/core#hasMatchedURL">
+        <rdfs:domain rdf:resource="http://example.org/muhai/observatory#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment>Linking IRI entities from posts to other KG resources like DBpedia.</rdfs:comment>
+        <rdfs:label>hasMatchedURL</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.org/muhai/observatory#description -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/muhai/observatory#description">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Text description of the online user account.</rdfs:comment>
+        <rdfs:label>description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#follower -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/muhai/observatory#follower">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/10/XMLSchema#positiveInteger"/>
+        <rdfs:comment>Number of followers of the online user account.</rdfs:comment>
+        <rdfs:label>follower</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#following -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/muhai/observatory#following">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/10/XMLSchema#positiveInteger"/>
+        <rdfs:comment>Number of accounts that the online user account is following.</rdfs:comment>
+        <rdfs:label>following</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#is_verified -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/muhai/observatory#is_verified">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/10/XMLSchema#boolean"/>
+        <rdfs:comment>Whether an online user account is verified or not.</rdfs:comment>
+        <rdfs:label>is_verified</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#lemma -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/muhai/observatory#lemma">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#location -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/muhai/observatory#location">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Location of the online user account.</rdfs:comment>
+        <rdfs:label>location</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#nb_like -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/muhai/observatory#nb_like">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/10/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#nb_repost -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/muhai/observatory#nb_repost">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/10/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/muhai/observatory#post_metrics -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/muhai/observatory#post_metrics">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/10/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag -->
+
+
+    <owl:DatatypeProperty rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/created">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/10/XMLSchema#date"/>
+        <rdfs:comment>Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty. (from dc)</rdfs:comment>
+        <rdfs:label>created</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#id -->
+
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/sioc/ns#id">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.essepuntato.it/2008/12/earmark#begins -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.essepuntato.it/2008/12/earmark#begins">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/10/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.essepuntato.it/2008/12/earmark#ends -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.essepuntato.it/2008/12/earmark#ends">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/10/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.org/muhai/observatory#Entity -->
+
+
+    <owl:Class rdf:about="http://example.org/muhai/observatory#Entity">
+        <owl:disjointWith rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase"/>
+        <rdfs:comment>&lt;to-add&gt;</rdfs:comment>
+        <rdfs:label>Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/muhai/observatory#RePost -->
+
+
+    <owl:Class rdf:about="http://example.org/muhai/observatory#RePost">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:comment>A RePost if a Post that is republished by another user, without modifications.</rdfs:comment>
+        <rdfs:label>RePost</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/muhai/observatory#Reply -->
+
+
+    <owl:Class rdf:about="http://example.org/muhai/observatory#Reply">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:comment>A Reply is a Post that directly answers a previous Post, by adding additional content.</rdfs:comment>
+        <rdfs:label>Reply</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase -->
+
+
+    <owl:Class rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase">
+        <rdfs:subClassOf rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"/>
+        <rdfs:comment>A nif:Phrase can be a nif:String, that is a chunk of several words or a word itself (e.g. a NounPhrase as a Named Entity). The term is underspecified and can be compatible with many defintitions of phrase. Please subClass it to specify the meaning (e.g. for Chunking or Phrase Structure Grammar). Example: ((My dog)(also)(likes)(eating (sausage))) (from nif)</rdfs:comment>
+        <rdfs:label>Phrase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence -->
+
+
+    <owl:Class rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence">
+        <rdfs:comment>A sentence (from nif).</rdfs:comment>
+        <rdfs:label>Sentence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String -->
+
+
+    <owl:Class rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">
+        <rdfs:comment>
+         Individuals of this class are a string, i.e. Unicode characters, who have been given a URI and are used in the subject of an RDF statement.
+
+         This class is abstract and should not be serialized.     (from nif)
+         </rdfs:comment>
+        <rdfs:label>String</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word -->
+
+
+    <owl:Class rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">
+        <rdfs:subClassOf rdf:resource="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"/>
+        <rdfs:comment>
+         The Word class represents strings that are tokens or words. A string is a Word, if it is a word. We don&apos;t nitpic about whether it is a a pronoun, a name, a punctuation mark or an apostrophe or whether it is separated by white space from another Word or something else. The string &apos;He enters the room.&apos; for example has 5 words. Words are assigned by a tokenizer NIF Implementation. Single word phrases might be tagged as nif:Word and nif:Phrase. (from nif)
+        </rdfs:comment>
+        <rdfs:label>Word</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Concept -->
+
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Concept"/>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Container -->
+
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Container">
+        <rdfs:comment>Container is a high-level concept used to group content Items together. The relationships between a Container and the Items that belong to it are described using sioc:container_of and sioc:has_container properties. A hierarchy of Containers can be defined in terms of parents and children using sioc:has_parent and sioc:parent_of. (from nif)</rdfs:comment>
+        <rdfs:label>Container</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Forum -->
+
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Forum">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+        <rdfs:comment>
+           Forums can be thought of as channels or discussion area on which Posts are made. A Forum can be linked to the Site that hosts it. Forums will usually discuss a certain topic or set of related topics, or they may contain discussions entirely devoted to a certain community group or organisation. A Forum will have a moderator who can veto or edit posts before or after they appear in the Forum.
+
+           Forums may have a set of subscribed Users who are notified when new Posts are made. The hierarchy of Forums can be defined in terms of parents and children, allowing the creation of structures conforming to topic categories as defined by the Site administrator. Examples of Forums include mailing lists, message boards, Usenet newsgroups and weblogs.
+
+           (from sioc)
+           </rdfs:comment>
+        <rdfs:label>Forum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Post -->
+
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Post">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Concept"/>
+        <rdfs:comment>A Post is an article or message posted by a User to a Forum. A series of Posts may be threaded if they share a common subject and are connected by reply or by date relationships. Posts will have content and may also have attached files, which can be edited or deleted by the Moderator of the Forum that contains the Post. (from sioc)</rdfs:comment>
+        <rdfs:comment>Any SIOC concept instance</rdfs:comment>
+        <rdfs:label>Concept</rdfs:label>
+        <rdfs:label>Post</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#User -->
+
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#User">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Concept"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+        <rdfs:comment>
+          A User is an online account of a member of an online community. It is connected to Items and Posts that a User creates or edits, to Containers and Forums that it is subscribed to or moderates and to Sites that it administers. Users can be grouped for purposes of allowing access to certain Forums or enhanced community site features (weblogs, webmail, etc.).
+
+          A foaf:Person will normally hold a registered User account on a Site (through the property foaf:holdsAccount), and will use this account to create content and interact with the community.
+
+          sioc:User describes properties of an online account, and is used in combination with a foaf:Person (using the property sioc:account_of) which describes information about the individual itself.
+          (from sioc)
+          </rdfs:comment>
+        <rdfs:label>User</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/OnlineAccount -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/OnlineAccount">
+        <rdfs:comment> foaf:OnlineAccount represents the provision of some form of online service, by some party (indicated indirectly via a foaf:accountServiceHomepage) to some foaf:Agent. The foaf:holdsAccount property of the agent is used to indicate accounts that are associated with the agent. (from foaf)</rdfs:comment>
+        <rdfs:label>Online Account</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://example.org/muhai/observatory#lemma">
+        <rdfs:comment>The lemma(s) of the nif:String.</rdfs:comment>
+        <rdfs:label>lemma</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/muhai/observatory#nb_like">
+        <rdfs:comment>Number of likes of a post.</rdfs:comment>
+        <rdfs:label>nb_like</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/muhai/observatory#nb_repost">
+        <rdfs:comment>Number of reposts of a post.</rdfs:comment>
+        <rdfs:label>nb_repost</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/muhai/observatory#post_metrics">
+        <rdfs:comment>Generic property to link a Post to some metrics, like the number of likes or reposts.</rdfs:comment>
+        <rdfs:label>post_metrics</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">
+        <rdfs:comment>To include the pos tag as it comes out of the NLP tool as RDF Literal.</rdfs:comment>
+        <rdfs:label>pos tag</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://rdfs.org/sioc/ns#id">
+        <rdfs:comment>An identifier of a SIOC concept instance. For example, a user ID. Must be unique for instances of each type of SIOC concept within the same site. (from sioc)</rdfs:comment>
+        <rdfs:label>id</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.essepuntato.it/2008/12/earmark#begins">
+        <rdfs:comment>Sentence index start</rdfs:comment>
+        <rdfs:label>begins</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.essepuntato.it/2008/12/earmark#ends">
+        <rdfs:comment>Sentence index end</rdfs:comment>
+        <rdfs:label>ends</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

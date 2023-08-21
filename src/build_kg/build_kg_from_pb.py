@@ -5,16 +5,16 @@ Output = KG
 """
 import os
 import io
-import requests
 import argparse
+from urllib.parse import quote
 import multiprocessing as mp
+import requests
 from tqdm import tqdm
 import pandas as pd
-import dask.dataframe as dd
 from rdflib import Namespace, Graph, Literal, XSD, URIRef
 from rdflib.namespace import RDF
 
-from src.helpers import format_string_col
+from src.helpers import read_csv, get_dask_df, check_args
 from src.logger import Logger
 from settings import SPARQL_ENDPOINT
 
@@ -41,8 +41,11 @@ class RDFLIBConverterFromPB:
         self.headers = {"Accept": "text/csv"}
         self.sparql_endpoint = SPARQL_ENDPOINT
         self.init_query()
-    
+
+        self.superstring_cand = []
+
     def init_query(self):
+        """ Query to get roles from roleset """
         self.role_query = \
         """
         PREFIX pbschema: <https://w3id.org/framester/pb/pbschema/>
@@ -52,7 +55,8 @@ class RDFLIBConverterFromPB:
         }   
         """
 
-    def _bind_namespaces(self, graph):
+    def _bind_namespaces(self, graph: Graph) -> Graph:
+        """ Binding namespace to graph """
         graph.bind("observatory", self.observatory)
         graph.bind("ex", self.example)
         graph.bind("wsj", self.wsj)
@@ -65,38 +69,42 @@ class RDFLIBConverterFromPB:
         graph.bind("sioc", self.sioc)
         return graph
 
-    def add_metrics(self, row, post_node, graph):
-        """ Adding post metrics """
+    def add_metrics(self, row: pd.core.series.Series, post_node: URIRef, graph: Graph) -> Graph:
+        """ Adding post metrics: sentiment, polarity, subjectivity """
         sentiment = row.sentiment[0]
         graph.add((post_node, self.observatory["sentiment_label"], Literal(sentiment["label"])))
-        graph.add((post_node, self.observatory["sentiment_score"], Literal(sentiment["score"], datatype=self.xsd["float"])))
+        graph.add((post_node, self.observatory["sentiment_score"],
+                   Literal(sentiment["score"], datatype=self.xsd["float"])))
 
         pol_subj = row.polarity_subjectivity
-        graph.add((post_node, self.observatory["polarity_score"], Literal(pol_subj["polarity"], datatype=self.xsd["float"])))
-        graph.add((post_node, self.observatory["subjectivity_score"], Literal(pol_subj["subjectivity"], datatype=self.xsd["float"])))
+        graph.add((post_node, self.observatory["polarity_score"],
+                   Literal(pol_subj["polarity"], datatype=self.xsd["float"])))
+        graph.add((post_node, self.observatory["subjectivity_score"],
+                   Literal(pol_subj["subjectivity"], datatype=self.xsd["float"])))
 
         return graph
 
-    def process_one_row(self, row, graph):
+    def process_one_row(self, row: pd.core.series.Series, graph: Graph) -> Graph:
         """ Add all info for one row """
 
         # Tweets and sentence
         tweet_id = row.subject.split("_")[1]
-        sent_node = self.example[f"{tweet_id}_{row.sentence_id}"]
+        sent_node = self.example[f"{tweet_id}_{row.sent_id}"]
         post_node = self.example[row.subject]
 
         graph.add((post_node, self.nif["sentence"], sent_node))
-        graph.add((sent_node, self.rdf["value"], Literal(row.sentence_utf8)))
+        # graph.add((sent_node, self.rdf["value"], Literal(row.sent)))
         graph.add((post_node, self.rdf["type"], self.sioc["Post"]))
         graph.add((sent_node, self.rdf["type"], self.nif["Sentence"]))
 
         # Metrics
         graph = self.add_metrics(row=row, post_node=post_node, graph=graph)
 
+        # Rolesets
         graph = self.add_rolesets(row=row, graph=graph)
         return graph
 
-    def add_one_roleset(self, data, graph):
+    def add_one_roleset(self, data: dict, graph: Graph) -> Graph:
         """ Add Corpus Entry for one roleset"""
         tweet_id = data["id"].split("_")[1]
         frame_name = data["info"]["frameName"]
@@ -117,7 +125,7 @@ class RDFLIBConverterFromPB:
         # Adding roles
         for i, role_info in enumerate(data["info"]["roles"]):
             role_node = self.example[f"RS_role_{tweet_id}_{data['i_sent']}_{data['i_frame']}_{i}"]
-            if role_info["role"] == "V":  # Lexical Unit  
+            if role_info["role"] == "V":  # Lexical Unit
                 pred_rs = self.observatory["onToken"]
             else:  # Frame Element
                 pred_rs = self.wsj["withmappedrole"]
@@ -125,12 +133,32 @@ class RDFLIBConverterFromPB:
             if len(role_info["indices"]) == 1:  # nif:Word
                 string_type = self.nif["Word"]
                 pred_t = self.nif["word"]
-                graph.add((role_node, self.observatory["hasTokenIndex"], Literal(int(role_info["indices"][0]), datatype=self.xsd["integer"])))
+                try:
+                    token_index = data["mapping"][int(role_info["indices"][0])]
+                    role_node_id = f"token_{tweet_id}#{token_index}"
+                    role_node = self.example[quote(role_node_id)]
+                    self.superstring_cand.append(role_node_id)
+                    graph.add((role_node, self.observatory["hasTokenIndex"],
+                               Literal(token_index, datatype=self.xsd["integer"])))
+                except Exception as exception:  # mapping not found
+                    print(exception)
             else:  # nif:Phrase
                 string_type = self.nif["Phrase"]
                 pred_t = self.schema["mentions"]
-                graph.add((role_node, self.earmark["begins"], Literal(int(role_info["indices"][0]), datatype=self.xsd["integer"])))
-                graph.add((role_node, self.earmark["ends"], Literal(int(role_info["indices"][-1]), datatype=self.xsd["integer"])))
+                try:
+                    token_index_s = int(data["mapping"][int(role_info["indices"][0])])
+                    token_index_e = int(data["mapping"][int(role_info["indices"][-1])])
+                    role_node_id = f"ent_{tweet_id}#{token_index_s},{token_index_e}"
+                    role_node = self.example[quote(role_node_id)]
+                    self.superstring_cand.append(role_node_id)
+                    graph.add((
+                        role_node, self.earmark["begins"],
+                        Literal(token_index_s, datatype=self.xsd["integer"])))
+                    graph.add((
+                        role_node, self.earmark["ends"],
+                        Literal(token_index_e, datatype=self.xsd["integer"])))
+                except Exception as exception:
+                    print(exception)
 
             graph.add((role_node, self.rdf["type"], string_type))
             graph.add((role_node, self.rdf["type"], self.wsj["MappedRole"]))
@@ -138,24 +166,29 @@ class RDFLIBConverterFromPB:
             graph.add((rs_node, pred_rs, role_node))
 
             if role_info["role"] != "V":  # Frame Element
-                graph.add((role_node, self.wsj["withpbarg"], self.pbschema[role_info["role"].upper()]))
-            
+                graph.add((role_node, self.wsj["withpbarg"],
+                           self.pbschema[role_info["role"].upper()]))
+
             # Sent to nif:Word and nif:Phrase
             graph.add((sent_node, pred_t, role_node))
 
         return graph
 
-    def add_rolesets(self, row, graph):
+    def add_rolesets(self, row: pd.core.series.Series, graph: Graph) -> Graph:
         """ Adding rolesets from PB """
-        if isinstance(row.propbank_output, dict):
+        if isinstance(row.propbank_output, dict) and \
+            "frameSet" in row.propbank_output:
             frame_set = row.propbank_output['frameSet']
-            if isinstance(frame_set, list):
+            # Checking that (1) there are frames (2) there is a token mapping
+            if isinstance(frame_set, list) and row.sent_mapping:
                 for i, info in enumerate(frame_set):
                     graph = self.add_one_roleset(
-                        data={"id": row.subject, "info": info, "frame_exist": row.frame_exist[i], "i_frame": i, "sentence": row.sentence_utf8, "i_sent": row.sentence_id}, graph=graph)
+                        data={"id": row.subject, "info": info, "frame_exist": row.frame_exist[i],
+                              "i_frame": i, "i_sent": row.sent_id, "mapping": row.sent_mapping},
+                        graph=graph)
         return graph
-    
-    def run_query(self, query):
+
+    def run_query(self, query: str) -> pd.DataFrame:
         """ Using curl requests to run query """
         response = requests.get(
             self.sparql_endpoint, headers=self.headers,
@@ -163,14 +196,16 @@ class RDFLIBConverterFromPB:
         # print(response.url)
         return pd.read_csv(io.StringIO(response.content.decode('utf-8')))
 
-    def get_roles_framester(self, rs_pb):
+    def get_roles_framester(self, rs_pb: URIRef) -> list[str]:
         """ SPARQL query to retrieve roles """
         query = self.role_query.replace("to-change", str(rs_pb))
         res = self.run_query(query)
-        return res.role.values
+        if res.shape[0] > 0:
+            return res.role.values
+        return []
 
 
-    def __call__(self, input_df):
+    def __call__(self, input_df: pd.DataFrame) -> (Graph, list[str]):
         graph = Graph()
         graph = self._bind_namespaces(graph=graph)
 
@@ -179,7 +214,7 @@ class RDFLIBConverterFromPB:
         for _, row in tqdm(input_df.iterrows(),
                            total=input_df.shape[0]):
             graph = self.process_one_row(row=row, graph=graph)
-        
+
         # Adding role from Propbank frames
         print(f"Processing {len(self.distinct_pb_role_sets)} frame templates")
         for i in tqdm(range(len(self.distinct_pb_role_sets))):
@@ -187,24 +222,18 @@ class RDFLIBConverterFromPB:
             roles = self.get_roles_framester(rs_pb=rs_pb)
             for role in roles:
                 graph.add((rs_pb, self.pbschema["hasRole"], URIRef(role)))
-        
-        return graph
+
+        return graph, self.superstring_cand
 
 
-def format_csv(input_df: pd.DataFrame) -> pd.DataFrame:
-    """ Transform some string columns into right format (dict, col) """
-    for col in ["propbank_output", "sentiment", "polarity_subjectivity", "frame_exist"]:
-        input_df[col] = input_df[col].apply(format_string_col)
-    return input_df
-
-def convert_df(triples_df):
+def convert_df(triples_df: pd.DataFrame) -> ((Graph, list[str]), str):
     """ Function that is parallelized """
     converter = RDFLIBConverterFromPB()
-    input_df = format_csv(triples_df.compute())
-    return converter(input_df)
+    input_df = read_csv(triples_df[0].compute())
+    return converter(input_df), triples_df[1]
 
 
-def main(values):
+def main(values: list[str]) -> list:
     """ Main function with multiprocessing """
     with mp.Pool(processes=4) as pool:
         results = []
@@ -227,28 +256,41 @@ if __name__ == '__main__':
                     help="folder_output")
     args_main = vars(ap.parse_args())
 
-    if not (args_main["path"] or args_main["folder"]):
-        raise ValueError("Cannot process further, either `path` arg" + \
-            " or `folder` arg must be non empty")
+    check_args(args=args_main)
 
     LOGGER = Logger()
     LOGGER.log_start(name="Building KG from linguistic information")
 
-    if args_main["folder"]:
-        DFS = os.listdir(args_main["folder"])
-        DFS = [dd.read_csv(os.path.join(args_main["folder"], x )) for x in DFS]
-    else:  # args_main["path"]
-        DFS = [dd.read_csv(args_main["path"])]
+    DFS = get_dask_df(args=args_main)
+    if args_main["output"]:
+        DFS = [x for x in DFS if not os.path.exists(
+            os.path.join(
+                args_main["output"],
+                f"{x[1].replace('.csv', '').split('_')[1]}.ttl"))]
 
-    COUNTER = 0
-    for index, DF_TRIPLE in enumerate(DFS):
-        print(f"Processing df {index}/{len(DFS)}")
-        ARGS = [DF_TRIPLE.get_partition(i) for i in range(DF_TRIPLE.npartitions)]
+    CANDS = []
+    # Running by batches of 100
+    nb_batch = len(DFS)//100 + 1
+    for I in range(nb_batch):
+        print(f"Running batch {I+1}/{nb_batch} ({round(100*(I+1)/nb_batch, 2)}%)".upper())
+        if I == nb_batch:
+            CURR_DFS = DFS[(I+1)*100:]
+        else:
+            CURR_DFS = DFS[I*100:(I+1)*100]
 
-        RES = main(ARGS)
-        for graph_main in RES:
-            graph_main.serialize(destination=f"{args_main['output']}/{COUNTER}.ttl",
-                                 format='turtle')
-            COUNTER += 1
+        RESULTS = main(values=CURR_DFS)
+
+        if args_main["output"]:
+            for output, index in RESULTS:
+                index = index.replace(".csv", "").split("_")[1]
+                output[0].serialize(
+                    destination=os.path.join(args_main["output"], f"{index}.ttl"),
+                    format='turtle')
+                CANDS += output[1]
+
+    f = open(os.path.join(args_main['output'], "superstring_cands.txt"), "w+", encoding='utf8')
+    for cand in CANDS:
+        f.write(f"{cand}\n")
+    f.close()
 
     LOGGER.log_end()

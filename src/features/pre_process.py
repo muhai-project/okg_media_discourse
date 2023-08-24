@@ -107,7 +107,7 @@ class PreProcessor:
         return token_mapping
 
     def __call__(self, input_df: pd.DataFrame, col_text: str = "object") -> pd.DataFrame:
-        output_df = {'subject': [], 'object': [], 'sent': [], 'sent_id': []}
+        output_df = {'subject': [], 'object': [], 'sent': [], 'sent_id': [], 'sent_len': []}
 
         for _, row in tqdm(input_df.iterrows(), total=input_df.shape[0]):
             doc = self.nlp(row.object)
@@ -117,6 +117,7 @@ class PreProcessor:
             for i, sent in enumerate(sentences):
                 output_df['sent'].append(sent.text.replace("\n", ""))
                 output_df['sent_id'].append(i)
+                output_df['sent_len'].append(len(sent))
 
             for col in ["subject", "object"]:
                 output_df[col] += [row[col]] * nb_sentences
@@ -167,8 +168,11 @@ if __name__ == '__main__':
     LOGGER.log_start(name="Preprocessing tweets and chunking into sentences")
     RES = main(dfs=DFS)
 
-    if args_main["output"]:
-        for df_o, index in RES:
-            index = index.replace(".csv", "").split("_")[1]
-            df_o.to_csv(os.path.join(args_main["output"], f"pp_{index}.csv"), encoding="utf8")
-    LOGGER.log_end()
+    for elt in RES:
+        print(elt)
+
+    # if args_main["output"]:
+    #     for df_o, index in RES:
+    #         index = index.replace(".csv", "").split("_")[1]
+    #         df_o.to_csv(os.path.join(args_main["output"], f"pp_{index}.csv"), encoding="utf8")
+    # LOGGER.log_end()

@@ -9,3 +9,5 @@ sample-data/
 settings/private.py
 analyse_kg.ipynb
 **/__pycache__/**
+**/.DS_Store/**
+.DS_Store

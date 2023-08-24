@@ -5,6 +5,7 @@ Output = KG
 """
 import os
 import io
+import re
 import argparse
 from urllib.parse import quote
 import multiprocessing as mp
@@ -84,12 +85,17 @@ class RDFLIBConverterFromPB:
 
         return graph
 
-    def process_one_row(self, row: pd.core.series.Series, graph: Graph) -> Graph:
+    def process_one_row(self, row: pd.core.series.Series, graph: Graph,
+                        offset: int) -> Graph:
         """ Add all info for one row """
+
+        # Updating offset -> if new tweet, reset to 0
+        if row.sent_id == 0:
+            offset = 0
 
         # Tweets and sentence
         tweet_id = row.subject.split("_")[1]
-        sent_node = self.example[f"{tweet_id}_{row.sent_id}"]
+        sent_node = self.example[f"sentence_{tweet_id}#{row.sent_id}"]
         post_node = self.example[row.subject]
 
         graph.add((post_node, self.nif["sentence"], sent_node))
@@ -101,15 +107,19 @@ class RDFLIBConverterFromPB:
         graph = self.add_metrics(row=row, post_node=post_node, graph=graph)
 
         # Rolesets
-        graph = self.add_rolesets(row=row, graph=graph)
-        return graph
+        graph = self.add_rolesets(row=row, graph=graph, offset=offset)
 
-    def add_one_roleset(self, data: dict, graph: Graph) -> Graph:
+        # Updating offset
+        offset += row.sent_len
+
+        return graph, offset
+
+    def add_one_roleset(self, data: dict, graph: Graph, offset: int) -> Graph:
         """ Add Corpus Entry for one roleset"""
         tweet_id = data["id"].split("_")[1]
         frame_name = data["info"]["frameName"]
         rs_node = self.example[f"RS_{tweet_id}_{data['i_sent']}_{data['i_frame']}"]
-        sent_node = self.example[f"{tweet_id}_{data['i_sent']}"]
+        sent_node = self.example[f"sentence_{tweet_id}#{data['i_sent']}"]
 
         # RS entry
         graph.add((rs_node, self.rdf["type"], self.wsj["CorpusEntry"]))
@@ -125,6 +135,7 @@ class RDFLIBConverterFromPB:
         # Adding roles
         for i, role_info in enumerate(data["info"]["roles"]):
             role_node = self.example[f"RS_role_{tweet_id}_{data['i_sent']}_{data['i_frame']}_{i}"]
+
             if role_info["role"] == "V":  # Lexical Unit
                 pred_rs = self.observatory["onToken"]
             else:  # Frame Element
@@ -134,7 +145,7 @@ class RDFLIBConverterFromPB:
                 string_type = self.nif["Word"]
                 pred_t = self.nif["word"]
                 try:
-                    token_index = data["mapping"][int(role_info["indices"][0])]
+                    token_index = offset + data["mapping"][int(role_info["indices"][0])]
                     role_node_id = f"token_{tweet_id}#{token_index}"
                     role_node = self.example[quote(role_node_id)]
                     self.superstring_cand.append(role_node_id)
@@ -144,10 +155,12 @@ class RDFLIBConverterFromPB:
                     print(exception)
             else:  # nif:Phrase
                 string_type = self.nif["Phrase"]
-                pred_t = self.schema["mentions"]
+                pred_t = self.nif["subString"]
+
+
                 try:
-                    token_index_s = int(data["mapping"][int(role_info["indices"][0])])
-                    token_index_e = int(data["mapping"][int(role_info["indices"][-1])])
+                    token_index_s = offset + int(data["mapping"][int(role_info["indices"][0])])
+                    token_index_e = offset + int(data["mapping"][int(role_info["indices"][-1])])
                     role_node_id = f"ent_{tweet_id}#{token_index_s},{token_index_e}"
                     role_node = self.example[quote(role_node_id)]
                     self.superstring_cand.append(role_node_id)
@@ -159,6 +172,11 @@ class RDFLIBConverterFromPB:
                         Literal(token_index_e, datatype=self.xsd["integer"])))
                 except Exception as exception:
                     print(exception)
+            
+            # adding link between entity and tweet
+            graph.add((
+                self.example[f"tweet_{tweet_id}"], self.schema["mentions"], role_node
+            ))
 
             graph.add((role_node, self.rdf["type"], string_type))
             graph.add((role_node, self.rdf["type"], self.wsj["MappedRole"]))
@@ -166,15 +184,21 @@ class RDFLIBConverterFromPB:
             graph.add((rs_node, pred_rs, role_node))
 
             if role_info["role"] != "V":  # Frame Element
-                graph.add((role_node, self.wsj["withpbarg"],
-                           self.pbschema[role_info["role"].upper()]))
+                # if matches pattern 'ARG\\d{1}' -> in framester
+                role = role_info["role"].upper()
+                if re.match("ARG\\d{1}", role):
+                    graph.add((role_node, self.wsj["withpbarg"],
+                            self.pbschema[role]))
+                else:  # other annotations
+                    graph.add((role_node, self.wsj["withpbarg"],
+                               self.observatory[f"pbarg/{role}"]))
 
             # Sent to nif:Word and nif:Phrase
             graph.add((sent_node, pred_t, role_node))
 
         return graph
 
-    def add_rolesets(self, row: pd.core.series.Series, graph: Graph) -> Graph:
+    def add_rolesets(self, row: pd.core.series.Series, graph: Graph, offset: int) -> Graph:
         """ Adding rolesets from PB """
         if isinstance(row.propbank_output, dict) and \
             "frameSet" in row.propbank_output:
@@ -185,7 +209,7 @@ class RDFLIBConverterFromPB:
                     graph = self.add_one_roleset(
                         data={"id": row.subject, "info": info, "frame_exist": row.frame_exist[i],
                               "i_frame": i, "i_sent": row.sent_id, "mapping": row.sent_mapping},
-                        graph=graph)
+                        graph=graph, offset=offset)
         return graph
 
     def run_query(self, query: str) -> pd.DataFrame:
@@ -211,9 +235,10 @@ class RDFLIBConverterFromPB:
 
         # Processing each row (= one sentence)
         print(f"Processing {input_df.shape[0]} rows")
+        offset = 0
         for _, row in tqdm(input_df.iterrows(),
                            total=input_df.shape[0]):
-            graph = self.process_one_row(row=row, graph=graph)
+            graph, offset = self.process_one_row(row=row, graph=graph, offset=offset)
 
         # Adding role from Propbank frames
         print(f"Processing {len(self.distinct_pb_role_sets)} frame templates")

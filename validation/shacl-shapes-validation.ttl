@@ -1,0 +1,108 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix earmark: <http://www.essepuntato.it/2008/12/earmark#> .
+@prefix example: <http://example.com/> .
+@prefix nee: <http://www.ics.forth.gr/isl/oae/core#> .
+@prefix nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
+@prefix observatory: <http://example.org/muhai/observatory#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://www.example.org/> .
+@prefix wsj: <https://w3id.org/framester/wsj/>.
+
+#schema-correctness.
+#if a post is a repost then it has a creator and date, and a post has at least one word.
+ex:PostShape a sh:NodeShape;
+
+   sh:targetClass observatory:RePost,observatory:Reply ;
+
+   #tweet metadata
+   sh:property [
+
+      sh:path  sioc:has_creator  ;
+      sh:class sioc:User ;
+      sh:minCount 1;
+      sh:maxCount 1;
+      sh:nodeKind sh:IRI
+
+   ] ;
+
+  sh:property [
+
+      sh:path  dcterms:created  ;
+      sh:minCount 1;
+      sh:maxCount 1;
+      sh:datatype xsd:dateTime
+
+   ] ;
+
+   sh:property [
+
+      sh:path observatory:repost_of ;
+      sh:class sioc:Post ;
+      sh:minCount 1;
+      sh:nodeKind sh:IRI
+   ] ;
+
+   sh:property [
+
+      sh:path  (nif:sentence nif:word) ;
+      sh:class nif:Sentence ;
+      sh:minCount 1;
+      sh:nodeKind sh:IRI
+
+   ] ;
+
+   # word metadata
+   sh:property [
+      sh:path (nif:sentence nif:word earmark:begins );
+      sh:datatype xsd:integer
+
+   ] ;
+
+   sh:property [
+      sh:path (nif:sentence nif:word earmark:ends );
+      sh:datatype xsd:integer
+
+   ] ;
+
+   sh:property [
+      sh:path (nif:sentence nif:word nif:hasTokenIndex );
+      sh:datatype xsd:integer
+
+   ] ;
+
+   sh:property [
+      sh:path (nif:sentence nif:word nif:hasTokenIndex );
+      sh:datatype xsd:integer
+
+   ] ;
+
+    #mentions metadata
+     sh:property [
+        sh:path (schema:mentions earmark:begins );
+        sh:datatype xsd:integer
+
+     ] ;
+
+     sh:property [
+        sh:path (schema:mentions earmark:ends );
+        sh:nodeKind xsd:integer
+
+     ] ;
+
+     # user metadata
+     sh:property [
+        sh:path (sioc:has_creator observatory:is_verified)
+        sh:datatype xsd:boolean
+     ] ;
+
+     sh:property [
+        sh:path (sioc:has_creator observatory:is_verified)
+        sh:datatype xsd:boolean
+     ] ;

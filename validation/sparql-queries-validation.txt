@@ -1,0 +1,62 @@
+#checking for nif:superString correctness
+
+PREFIX schema: <http://schema.org/>
+PREFIX sioc: <http://rdfs.org/sioc/ns#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#>
+
+select ?superstring ?substr where {
+  ?sbstr nif:superString/rdf:value ?superstring .
+  ?sbstr rdf:value ?sbstr_val.
+  MINUS {?sbstr nif:superString/rdf:value ?superstring .
+  ?sbstr rdf:value ?sbstr_val .
+  filter(CONTAINS(?superstring,?sbstr_val))}
+}
+
+#checking for validity of dbpedia entities matched with dbpedia spotlight
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX nee: <http://www.ics.forth.gr/isl/oae/core#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+ASK {
+      ?entity nee:hasMatchedURL ?url .
+      SERVICE <https://dbpedia.org/sparql> {
+      ?url rdf:type ?type
+      }
+  }
+
+  #checking whether the framester argument IRIs were correct
+  PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX nee: <http://www.ics.forth.gr/isl/oae/core#>
+  PREFIX dbo: <http://dbpedia.org/ontology/>
+  prefix nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#>
+  prefix wsj: <https://w3id.org/framester/wsj/>
+
+  ASK {
+   	?tweet nif:sentence/nif:word/wsj:withpbarg ?arg .
+    	MINUS{?tweet nif:sentence/nif:word/wsj:withpbarg ?arg .
+      	FILTER(STRSTARTS(STR(?arg),"http://example.org/muhai/observatory#"))}
+      MINUS{?tweet nif:sentence/nif:word/wsj:withpbarg ?arg .
+      	SERVICE <http://etna.istc.cnr.it/framester2/sparql> {
+        		?arg rdf:type ?type
+      	}
+    	}
+    }
+
+#how many tweets there are that have at least one frame
+PREFIX sioc: <http://rdfs.org/sioc/ns#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#>
+prefix wsj: <https://w3id.org/framester/wsj/>
+prefix observatory: <http://example.org/muhai/observatory#>
+
+SELECT (count(distinct?tweet) as ?tweetcount) WHERE {
+	?tweet rdf:type sioc:Post.
+    ?tweet nif:sentence ?sentence .
+    ?sentence nif:word ?word .
+    ?word ^observatory:onToken ?token .
+    ?token wsj:onRoleSet ?roleset
+}

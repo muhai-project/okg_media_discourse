@@ -37,7 +37,7 @@ class RDFLIBConverterFromTriples:
                 self._convert_sub_pred_obj(self.nif["anchorOf"], graph, **data),  # OK
             "begins": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.earmark["begins"], self.xsd["integer"], graph, **data),  # OK
+                    self.earmark["begins"], self.xsd["int"], graph, **data),  # OK
             "belongsTo": lambda graph, **data: \
                 self._convert_sub_pred_obj(self.sioc["has_container"], graph, **data),  # OK
             "createdAt": lambda graph, **data: \
@@ -45,7 +45,7 @@ class RDFLIBConverterFromTriples:
                     self.dc_ns["created"], self.xsd["dateTime"], graph, **data),  # OK
             "ends": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.earmark["ends"], self.xsd["integer"], graph, **data),  # OK
+                    self.earmark["ends"], self.xsd["int"], graph, **data),  # OK
             "hasMatchedURL": lambda graph, **data: \
                 self._convert_sub_pred_uriref(self.nee["hasMatchedURL"], graph, **data),  # OK
             "hasSentence": lambda graph, **data: \
@@ -62,10 +62,10 @@ class RDFLIBConverterFromTriples:
                 self._convert_sub_pred_obj(self.schema["mentions"], graph, **data),  # OK
             "metric_nb_like": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.observatory["nb_like"], self.xsd["integer"], graph, **data),  # OK
+                    self.observatory["nb_like"], self.xsd["int"], graph, **data),  # OK
             "metric_nb_repost": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.observatory["nb_repost"], self.xsd["integer"], graph, **data),  # OK
+                    self.observatory["nb_repost"], self.xsd["int"], graph, **data),  # OK
             "rdf_type": self._add_rdf_type,  # OK
             "reply_of": lambda graph, **data: \
                 self._convert_sub_pred_obj(self.observatory["reply_of"], graph, **data),  # OK
@@ -75,7 +75,7 @@ class RDFLIBConverterFromTriples:
                 self._convert_sub_pred_obj(self.nif["superString"], graph, **data),  # OK
             "tokenIndex": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.observatory["hasTokenIndex"], self.xsd["integer"], graph, **data),  # OK
+                    self.observatory["hasTokenIndex"], self.xsd["int"], graph, **data),  # OK
             "tokenLemma": lambda graph, **data: \
                 self._convert_sub_pred_literal(self.nif["lemma"], graph, **data),  # OK
             "tokenPos": lambda graph, **data: \
@@ -92,10 +92,10 @@ class RDFLIBConverterFromTriples:
                     self.observatory["description"], graph, **data),   # literal
             "follower": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.observatory["follower"], self.xsd["integer"], graph, **data),   # int
+                    self.observatory["follower"], self.xsd["int"], graph, **data),   # int
             "following": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.observatory["following"], self.xsd["integer"], graph, **data),   # int
+                    self.observatory["following"], self.xsd["int"], graph, **data),   # int
             "location": lambda graph, **data: \
                 self._convert_sub_pred_literal(
                     self.observatory["location"], graph, **data),  # literal
@@ -139,9 +139,9 @@ class RDFLIBConverterFromTriples:
             [start, end] = data["subject"].split("#")[-1].split(",")
             graph.add((self.example[quote(data["subject"])],
                        self.earmark["begins"],
-                       Literal(start, datatype=self.xsd["integer"])))
+                       Literal(start, datatype=self.xsd["int"])))
             graph.add((self.example[quote(data["subject"])], self.earmark["ends"],
-                       Literal(end, datatype=self.xsd["integer"])))
+                       Literal(end, datatype=self.xsd["int"])))
 
         if data["object"] in ["phrase", "token"]:
             self.superstring_cand.append(data["subject"])

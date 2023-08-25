@@ -58,7 +58,7 @@ def get_dask_df(args: dict) -> list[dd.core.DataFrame]:
         dfs = [(dd.read_csv(os.path.join(args["folder"], x ), on_bad_lines='skip', encoding="utf8"),
                 x) for x in dfs]
     else:  # args_main["path"]
-        dfs = [(dd.read_csv(args["path"], on_bad_lines='skip'), args["path"])]
+        dfs = [(dd.read_csv(args["path"], on_bad_lines='skip'), args["path"].split("/")[-1])]
     return dfs
 
 

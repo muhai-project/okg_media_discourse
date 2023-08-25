@@ -150,7 +150,7 @@ class RDFLIBConverterFromPB:
                     role_node = self.example[quote(role_node_id)]
                     self.superstring_cand.append(role_node_id)
                     graph.add((role_node, self.observatory["hasTokenIndex"],
-                               Literal(token_index, datatype=self.xsd["integer"])))
+                               Literal(token_index, datatype=self.xsd["int"])))
                 except Exception as exception:  # mapping not found
                     print(exception)
             else:  # nif:Phrase
@@ -166,10 +166,10 @@ class RDFLIBConverterFromPB:
                     self.superstring_cand.append(role_node_id)
                     graph.add((
                         role_node, self.earmark["begins"],
-                        Literal(token_index_s, datatype=self.xsd["integer"])))
+                        Literal(token_index_s, datatype=self.xsd["int"])))
                     graph.add((
                         role_node, self.earmark["ends"],
-                        Literal(token_index_e, datatype=self.xsd["integer"])))
+                        Literal(token_index_e, datatype=self.xsd["int"])))
                 except Exception as exception:
                     print(exception)
             

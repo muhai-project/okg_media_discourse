@@ -206,12 +206,13 @@ class RDFLIBConverterFromTriples:
         for _, row in tqdm(triples_df.iterrows(),
                            total=triples_df.shape[0]):
             data = {"subject": row.subject, "predicate": row.predicate, "object": row.object}
-            if row.predicate.startswith("dep_"):  # TOCHECK
-                graph = self.convert_dep_rel(graph=graph, **data)
-            elif row.predicate == "description":
-                pass
-            else:
-                graph = self.converter[row.predicate](graph, **data)
+            if row.object:
+                if row.predicate.startswith("dep_"):  # TOCHECK
+                    graph = self.convert_dep_rel(graph=graph, **data)
+                elif row.predicate == "description":
+                    pass
+                else:
+                    graph = self.converter[row.predicate](graph, **data)
 
         return graph, self.superstring_cand
 
@@ -256,6 +257,7 @@ if __name__ == '__main__':
     LOGGER.log_start(name="Building KG from triples")
     for i, (DF_TRIPLE, _) in enumerate(DFS):
         print(f"Processing df {i}/{len(DFS)}")
+        DF_TRIPLE = DF_TRIPLE[[col for col in DF_TRIPLE if col != "Unnamed: 0"]]
         DF_TRIPLE.columns = ["subject", "predicate", "object"]
         ARGS = [DF_TRIPLE.get_partition(i) for i in range(DF_TRIPLE.npartitions)]
 

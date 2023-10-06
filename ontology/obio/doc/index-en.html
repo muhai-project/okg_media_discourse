@@ -1,0 +1,2997 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>The Observatory Integrated Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/obio/","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/obio/","name":"The Observatory Integrated Ontology", "headline":"The OBservatory Integrated Ontology (OBIO) ontology is designed to integrate tweet metadata with various types of linguistic knowledge and Linked Open Data (LOD), such as named entities, dependencies, and frame semantics.", "datePublished":"Date of release", "version":"v1.0.0", "license":"http://creativecommons.org/licenses/by/2.0/", "author":[{"@type":"Person","name":"Inès Blin"},{"@type":"Person","name":"Lise Stork"},{"@type":"Person","name":"Laura Spillner"},{"@type":"Person","name":"Carlo Santagiustina"}], "contributor":[{"@type":"Person","name":"Ilaria Tiddi"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>The Observatory Integrated Ontology</h1>
+<h2>Release Date of release</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/obio/">https://w3id.org/obio/</a></dd>
+<dt>Revision:</dt>
+<dd>v1.0.0</dd>
+<dt>Authors:</dt>
+<dd>Inès Blin, Sony Computer Science Laboratories-Paris, Vrije Universiteit Amsterdam</dd><dd>Lise Stork, Vrije Universiteit Amsterdam</dd><dd>Laura Spillner, Universität Bremen</dd><dd>Carlo Santagiustina, Venice International University</dd>
+
+<dt>Contributors:</dt>
+<dd>Ilaria Tiddi, Vrije Universiteit Amsterdam</dd>
+
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://www.w3.org/2004/02/skos/core#">SKOS</a></dd><dd><a href="http://rdfs.org/sioc/ns#">SIOC</a></dd><dd><a href="http://www.ics.forth.gr/isl/oae/core#">NEE</a></dd><dd><a href="http://schema.org/">SCHEMA</a></dd><dd><a href="http://purl.org/dc/terms/">DC</a></dd><dd><a href="http://www.essepuntato.it/2008/12/earmark">EARMARK</a></dd><dd><a href="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#">NIF</a></dd><dd><a href="http://xmlns.com/foaf/0.1/">FOAF</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC_BY-blue.svg" alt="http://creativecommons.org/licenses/by/2.0/" /></a>
+<a href="http://creativecommons.org/licenses/by/2.0/" rel="license" target="_blank">
+<img src="https://i.creativecommons.org/l/by/2.0/88x31.png" style="border-width:0" alt="License" />
+</a>
+<br/></dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The OBservatory Integrated Ontology (OBIO) ontology is designed to integrate tweet metadata with various types of linguistic knowledge and Linked Open Data (LOD), such as named entities, dependencies, and frame semantics.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">The Observatory Integrated Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:extra="https://w3id.org/extra#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+   </li>
+   <li>
+      <a href="#http://rdfs.org/sioc/ns#Container" title="http://rdfs.org/sioc/ns#Container">Container</a>
+   </li>
+   <li>
+      <a href="#Entity" title="https://w3id.org/obio/Entity">Entity</a>
+   </li>
+   <li>
+      <a href="#http://rdfs.org/sioc/ns#Forum" title="http://rdfs.org/sioc/ns#Forum">Forum</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/OnlineAccount" title="http://xmlns.com/foaf/0.1/OnlineAccount">Online Account</a>
+   </li>
+   <li>
+      <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase"
+         title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase">Phrase</a>
+   </li>
+   <li>
+      <a href="#Reply" title="https://w3id.org/obio/Reply">Reply</a>
+   </li>
+   <li>
+      <a href="#RePost" title="https://w3id.org/obio/RePost">RePost</a>
+   </li>
+   <li>
+      <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence"
+         title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence">Sentence</a>
+   </li>
+   <li>
+      <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+         title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+   </li>
+   <li>
+      <a href="#http://rdfs.org/sioc/ns#User" title="http://rdfs.org/sioc/ns#User">User</a>
+   </li>
+   <li>
+      <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+         title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:extra="https://w3id.org/extra#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#dep_rel_acomp" title="https://w3id.org/obio/dep_rel_acomp">acomp</a>
+   </li>
+   <li>
+      <a href="#advmod" title="https://w3id.org/obio/advmod">advmod</a>
+   </li>
+   <li>
+      <a href="#dep_rel_agent" title="https://w3id.org/obio/dep_rel_agent">agent</a>
+   </li>
+   <li>
+      <a href="#dep_rel_amod" title="https://w3id.org/obio/dep_rel_amod">amod</a>
+   </li>
+   <li>
+      <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf"
+         title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf">anchorOf</a>
+   </li>
+   <li>
+      <a href="#dep_rel_appos" title="https://w3id.org/obio/dep_rel_appos">appos</a>
+   </li>
+   <li>
+      <a href="#dep_rel_attr" title="https://w3id.org/obio/dep_rel_attr">attr</a>
+   </li>
+   <li>
+      <a href="#dep_rel_aux" title="https://w3id.org/obio/dep_rel_aux">aux</a>
+   </li>
+   <li>
+      <a href="#dep_rel_auxpass" title="https://w3id.org/obio/dep_rel_auxpass">auxpass</a>
+   </li>
+   <li>
+      <a href="#http://www.essepuntato.it/2008/12/earmark#begins" title="http://www.essepuntato.it/2008/12/earmark#begins">
+         <span>begins</span>
+      </a>
+   </li>
+   <li>
+      <a href="#dep_rel_cc" title="https://w3id.org/obio/dep_rel_cc">cc</a>
+   </li>
+   <li>
+      <a href="#dep_rel_ccomp" title="https://w3id.org/obio/dep_rel_ccomp">ccomp</a>
+   </li>
+   <li>
+      <a href="#dep_rel_compound" title="https://w3id.org/obio/dep_rel_compound">compound</a>
+   </li>
+   <li>
+      <a href="#dep_rel_conj" title="https://w3id.org/obio/dep_rel_conj">conj</a>
+   </li>
+   <li>
+      <a href="#dep_rel_csubj" title="https://w3id.org/obio/dep_rel_csubj">csubj</a>
+   </li>
+   <li>
+      <a href="#dep_rel_dep" title="https://w3id.org/obio/dep_rel_dep">dep</a>
+   </li>
+   <li>
+      <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+   </li>
+   <li>
+      <a href="#dep_rel_det" title="https://w3id.org/obio/dep_rel_det">det</a>
+   </li>
+   <li>
+      <a href="#dep_rel_dobj" title="https://w3id.org/obio/dep_rel_dobj">dobj</a>
+   </li>
+   <li>
+      <a href="#http://www.essepuntato.it/2008/12/earmark#ends" title="http://www.essepuntato.it/2008/12/earmark#ends">
+         <span>ends</span>
+      </a>
+   </li>
+   <li>
+      <a href="#dep_rel_expl" title="https://w3id.org/obio/dep_rel_expl">expl</a>
+   </li>
+   <li>
+      <a href="#http://rdfs.org/sioc/ns#has_container" title="http://rdfs.org/sioc/ns#has_container">has_container</a>
+   </li>
+   <li>
+      <a href="#http://www.ics.forth.gr/isl/oae/core#hasMatchedURL"
+         title="http://www.ics.forth.gr/isl/oae/core#hasMatchedURL">hasMatchedURL</a>
+   </li>
+   <li>
+      <a href="#http://rdfs.org/sioc/ns#id" title="http://rdfs.org/sioc/ns#id">
+         <span>id</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter"
+         title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter">inter</a>
+   </li>
+   <li>
+      <a href="#dep_rel_intj" title="https://w3id.org/obio/dep_rel_intj">intj</a>
+   </li>
+   <li>
+      <a href="#lemma" title="https://w3id.org/obio/lemma">
+         <span>lemma</span>
+      </a>
+   </li>
+   <li>
+      <a href="#dep_rel_mark" title="https://w3id.org/obio/dep_rel_mark">mark</a>
+   </li>
+   <li>
+      <a href="#http://schema.org/mentions" title="http://schema.org/mentions">mentions</a>
+   </li>
+   <li>
+      <a href="#nb_like" title="https://w3id.org/obio/nb_like">
+         <span>nb_like</span>
+      </a>
+   </li>
+   <li>
+      <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">
+         <span>nb_repost</span>
+      </a>
+   </li>
+   <li>
+      <a href="#dep_npadvmod" title="https://w3id.org/obio/dep_npadvmod">npadvmod</a>
+   </li>
+   <li>
+      <a href="#dep_rel_nsubj" title="https://w3id.org/obio/dep_rel_nsubj">nsubj</a>
+   </li>
+   <li>
+      <a href="#dep_rel_nsubpass" title="https://w3id.org/obio/dep_rel_nsubpass">nsubjpass</a>
+   </li>
+   <li>
+      <a href="#dep_rel_nummod" title="https://w3id.org/obio/dep_rel_nummod">nummod</a>
+   </li>
+   <li>
+      <a href="#dep_rel_pcomp" title="https://w3id.org/obio/dep_rel_pcomp">pcomp</a>
+   </li>
+   <li>
+      <a href="#dep_rel_pobj" title="https://w3id.org/obio/dep_rel_pobj">pobj</a>
+   </li>
+   <li>
+      <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag"
+         title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">
+         <span>pos tag</span>
+      </a>
+   </li>
+   <li>
+      <a href="#dep_rel_poss" title="https://w3id.org/obio/dep_rel_poss">poss</a>
+   </li>
+   <li>
+      <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">
+         <span>post_metrics</span>
+      </a>
+   </li>
+   <li>
+      <a href="#dep_rel_prep" title="https://w3id.org/obio/dep_rel_prep">prep</a>
+   </li>
+   <li>
+      <a href="#dep_rel_prt" title="https://w3id.org/obio/dep_rel_prt">prt</a>
+   </li>
+   <li>
+      <a href="#dep_rel_punct" title="https://w3id.org/obio/dep_rel_punct">punct</a>
+   </li>
+   <li>
+      <a href="#dep_rel_relcl" title="https://w3id.org/obio/dep_rel_relcl">relcl</a>
+   </li>
+   <li>
+      <a href="#reply_of" title="https://w3id.org/obio/reply_of">reply of</a>
+   </li>
+   <li>
+      <a href="#repost_of" title="https://w3id.org/obio/repost_of">repost of</a>
+   </li>
+   <li>
+      <a href="#dep_rel_root" title="https://w3id.org/obio/dep_rel_root">root</a>
+   </li>
+   <li>
+      <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence"
+         title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence">sentence</a>
+   </li>
+   <li>
+      <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString"
+         title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString">superString</a>
+   </li>
+   <li>
+      <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word"
+         title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word">word</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:extra="https://w3id.org/extra#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.essepuntato.it/2008/12/earmark#begins" title="http://www.essepuntato.it/2008/12/earmark#begins">
+         <span>begins</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">created</a>
+   </li>
+   <li>
+      <a href="#description" title="https://w3id.org/obio/description">description</a>
+   </li>
+   <li>
+      <a href="#http://www.essepuntato.it/2008/12/earmark#ends" title="http://www.essepuntato.it/2008/12/earmark#ends">
+         <span>ends</span>
+      </a>
+   </li>
+   <li>
+      <a href="#follower" title="https://w3id.org/obio/follower">follower</a>
+   </li>
+   <li>
+      <a href="#following" title="https://w3id.org/obio/following">following</a>
+   </li>
+   <li>
+      <a href="#http://rdfs.org/sioc/ns#id" title="http://rdfs.org/sioc/ns#id">
+         <span>id</span>
+      </a>
+   </li>
+   <li>
+      <a href="#is_verified" title="https://w3id.org/obio/is_verified">is_verified</a>
+   </li>
+   <li>
+      <a href="#lemma" title="https://w3id.org/obio/lemma">
+         <span>lemma</span>
+      </a>
+   </li>
+   <li>
+      <a href="#location" title="https://w3id.org/obio/location">location</a>
+   </li>
+   <li>
+      <a href="#nb_like" title="https://w3id.org/obio/nb_like">
+         <span>nb_like</span>
+      </a>
+   </li>
+   <li>
+      <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">
+         <span>nb_repost</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag"
+         title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">
+         <span>pos tag</span>
+      </a>
+   </li>
+   <li>
+      <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">
+         <span>post_metrics</span>
+      </a>
+   </li>
+</ul>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">The Observatory Integrated Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for The Observatory Integrated Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The Observatory Integrated Ontology.
+<div xmlns:extra="https://w3id.org/extra#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+      </li>
+      <li>
+         <a href="#http://rdfs.org/sioc/ns#Container" title="http://rdfs.org/sioc/ns#Container">Container</a>
+      </li>
+      <li>
+         <a href="#Entity" title="https://w3id.org/obio/Entity">Entity</a>
+      </li>
+      <li>
+         <a href="#http://rdfs.org/sioc/ns#Forum" title="http://rdfs.org/sioc/ns#Forum">Forum</a>
+      </li>
+      <li>
+         <a href="#http://xmlns.com/foaf/0.1/OnlineAccount" title="http://xmlns.com/foaf/0.1/OnlineAccount">Online Account</a>
+      </li>
+      <li>
+         <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase"
+            title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase">Phrase</a>
+      </li>
+      <li>
+         <a href="#Reply" title="https://w3id.org/obio/Reply">Reply</a>
+      </li>
+      <li>
+         <a href="#RePost" title="https://w3id.org/obio/RePost">RePost</a>
+      </li>
+      <li>
+         <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence"
+            title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence">Sentence</a>
+      </li>
+      <li>
+         <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+            title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+      </li>
+      <li>
+         <a href="#http://rdfs.org/sioc/ns#User" title="http://rdfs.org/sioc/ns#User">User</a>
+      </li>
+      <li>
+         <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+            title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://rdfs.org/sioc/ns#Post">
+      <h3>Concept<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://rdfs.org/sioc/ns#Post</p>
+      <div class="comment">
+         <span class="markdown">A Post is an article or message posted by a User to a Forum. A series of Posts may be threaded if they share a common subject and are connected by reply or by date relationships. Posts will have content and may also have attached files, which can be edited or deleted by the Moderator of the Forum that contains the Post. (from sioc)</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://rdfs.org/sioc/ns#Concept"
+               target="_blank"
+               title="http://rdfs.org/sioc/ns#Concept">concept</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#RePost" title="https://w3id.org/obio/RePost">RePost</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Reply" title="https://w3id.org/obio/Reply">Reply</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">created</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://rdfs.org/sioc/ns#has_container" title="http://rdfs.org/sioc/ns#has_container">has_container</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://schema.org/mentions" title="http://schema.org/mentions">mentions</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#nb_like" title="https://w3id.org/obio/nb_like">nb_like</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">nb_repost</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">post_metrics</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence">sentence</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#reply_of" title="https://w3id.org/obio/reply_of">reply of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#repost_of" title="https://w3id.org/obio/repost_of">repost of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://rdfs.org/sioc/ns#Container">
+      <h3>Container<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://rdfs.org/sioc/ns#Container</p>
+      <div class="comment">
+         <span class="markdown">Container is a high-level concept used to group content Items together. The relationships between a Container and the Items that belong to it are described using sioc:container_of and sioc:has_container properties. A hierarchy of Containers can be defined in terms of parents and children using sioc:has_parent and sioc:parent_of. (from nif)</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://rdfs.org/sioc/ns#Forum" title="http://rdfs.org/sioc/ns#Forum">Forum</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Entity">
+      <h3>Entity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/Entity</p>
+      <div class="comment">
+         <span class="markdown">&lt;to-add&gt;</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf">anchorOf</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.ics.forth.gr/isl/oae/core#hasMatchedURL"
+               title="http://www.ics.forth.gr/isl/oae/core#hasMatchedURL">hasMatchedURL</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase">Phrase</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://rdfs.org/sioc/ns#Forum">
+      <h3>Forum<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://rdfs.org/sioc/ns#Forum</p>
+      <div class="comment">
+         <span class="markdown">
+           Forums can be thought of as channels or discussion area on which Posts are made. A Forum can be linked to the Site that hosts it. Forums will usually discuss a certain topic or set of related topics, or they may contain discussions entirely devoted to a certain community group or organisation. A Forum will have a moderator who can veto or edit posts before or after they appear in the Forum.
+
+           Forums may have a set of subscribed Users who are notified when new Posts are made. The hierarchy of Forums can be defined in terms of parents and children, allowing the creation of structures conforming to topic categories as defined by the Site administrator. Examples of Forums include mailing lists, message boards, Usenet newsgroups and weblogs.
+
+           (from sioc)
+           </span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://rdfs.org/sioc/ns#Container" title="http://rdfs.org/sioc/ns#Container">Container</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://rdfs.org/sioc/ns#has_container" title="http://rdfs.org/sioc/ns#has_container">has_container</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/OnlineAccount">
+      <h3>Online Account<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/OnlineAccount</p>
+      <div class="comment">
+         <span class="markdown"> foaf:OnlineAccount represents the provision of some form of online service, by some party (indicated indirectly via a foaf:accountServiceHomepage) to some foaf:Agent. The foaf:holdsAccount property of the agent is used to indicate accounts that are associated with the agent. (from foaf)</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://rdfs.org/sioc/ns#User" title="http://rdfs.org/sioc/ns#User">User</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase">
+      <h3>Phrase<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase</p>
+      <div class="comment">
+         <span class="markdown">A nif:Phrase can be a nif:String, that is a chunk of several words or a word itself (e.g. a NounPhrase as a Named Entity). The term is underspecified and can be compatible with many defintitions of phrase. Please subClass it to specify the meaning (e.g. for Chunking or Phrase Structure Grammar). Example: ((My dog)(also)(likes)(eating (sausage))) (from nif)</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf">anchorOf</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://schema.org/mentions" title="http://schema.org/mentions">mentions</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Entity" title="https://w3id.org/obio/Entity">Entity</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Reply">
+      <h3>Reply<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/Reply</p>
+      <div class="comment">
+         <span class="markdown">A Reply is a Post that directly answers a previous Post, by adding additional content.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#reply_of" title="https://w3id.org/obio/reply_of">reply of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="RePost">
+      <h3>RePost<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/RePost</p>
+      <div class="comment">
+         <span class="markdown">A RePost if a Post that is republished by another user, without modifications.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#repost_of" title="https://w3id.org/obio/repost_of">repost of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence">
+      <h3>Sentence<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence</p>
+      <div class="comment">
+         <span class="markdown">A sentence (from nif).</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word">word</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence">sentence</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">
+      <h3>String<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String</p>
+      <div class="comment">
+         <span class="markdown">
+         Individuals of this class are a string, i.e. Unicode characters, who have been given a URI and are used in the subject of an RDF statement.
+
+         This class is abstract and should not be serialized.     (from nif)
+         </span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase">Phrase</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://www.essepuntato.it/2008/12/earmark#begins" title="http://www.essepuntato.it/2008/12/earmark#begins">begins</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.essepuntato.it/2008/12/earmark#ends" title="http://www.essepuntato.it/2008/12/earmark#ends">ends</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter">inter</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#lemma" title="https://w3id.org/obio/lemma">lemma</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">pos tag</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString">superString</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter">inter</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString">superString</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://rdfs.org/sioc/ns#User">
+      <h3>User<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://rdfs.org/sioc/ns#User</p>
+      <div class="comment">
+         <span class="markdown">
+          A User is an online account of a member of an online community. It is connected to Items and Posts that a User creates or edits, to Containers and Forums that it is subscribed to or moderates and to Sites that it administers. Users can be grouped for purposes of allowing access to certain Forums or enhanced community site features (weblogs, webmail, etc.).
+
+          A foaf:Person will normally hold a registered User account on a Site (through the property foaf:holdsAccount), and will use this account to create content and interact with the community.
+
+          sioc:User describes properties of an online account, and is used in combination with a foaf:Person (using the property sioc:account_of) which describes information about the individual itself.
+          (from sioc)
+          </span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://xmlns.com/foaf/0.1/OnlineAccount" title="http://xmlns.com/foaf/0.1/OnlineAccount">Online Account</a>
+            <sup class="type-c" title="class">c</sup>, <a href="http://rdfs.org/sioc/ns#Concept"
+               target="_blank"
+               title="http://rdfs.org/sioc/ns#Concept">concept</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#description" title="https://w3id.org/obio/description">description</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#follower" title="https://w3id.org/obio/follower">follower</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#following" title="https://w3id.org/obio/following">following</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#is_verified" title="https://w3id.org/obio/is_verified">is_verified</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#location" title="https://w3id.org/obio/location">location</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">
+      <h3>Word<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word</p>
+      <div class="comment">
+         <span class="markdown">
+         The Word class represents strings that are tokens or words. A string is a Word, if it is a word. We don't nitpic about whether it is a a pronoun, a name, a punctuation mark or an apostrophe or whether it is separated by white space from another Word or something else. The string 'He enters the room.' for example has 5 words. Words are assigned by a tokenizer NIF Implementation. Single word phrases might be tagged as nif:Word and nif:Phrase. (from nif)
+        </span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#dep_rel_acomp" title="https://w3id.org/obio/dep_rel_acomp">acomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#advmod" title="https://w3id.org/obio/advmod">advmod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_agent" title="https://w3id.org/obio/dep_rel_agent">agent</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_amod" title="https://w3id.org/obio/dep_rel_amod">amod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_appos" title="https://w3id.org/obio/dep_rel_appos">appos</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_attr" title="https://w3id.org/obio/dep_rel_attr">attr</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_aux" title="https://w3id.org/obio/dep_rel_aux">aux</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_auxpass" title="https://w3id.org/obio/dep_rel_auxpass">auxpass</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_cc" title="https://w3id.org/obio/dep_rel_cc">cc</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_ccomp" title="https://w3id.org/obio/dep_rel_ccomp">ccomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_compound" title="https://w3id.org/obio/dep_rel_compound">compound</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_conj" title="https://w3id.org/obio/dep_rel_conj">conj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_csubj" title="https://w3id.org/obio/dep_rel_csubj">csubj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dep" title="https://w3id.org/obio/dep_rel_dep">dep</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_det" title="https://w3id.org/obio/dep_rel_det">det</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dobj" title="https://w3id.org/obio/dep_rel_dobj">dobj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_expl" title="https://w3id.org/obio/dep_rel_expl">expl</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_intj" title="https://w3id.org/obio/dep_rel_intj">intj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_mark" title="https://w3id.org/obio/dep_rel_mark">mark</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_npadvmod" title="https://w3id.org/obio/dep_npadvmod">npadvmod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubj" title="https://w3id.org/obio/dep_rel_nsubj">nsubj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubpass" title="https://w3id.org/obio/dep_rel_nsubpass">nsubjpass</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nummod" title="https://w3id.org/obio/dep_rel_nummod">nummod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pcomp" title="https://w3id.org/obio/dep_rel_pcomp">pcomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pobj" title="https://w3id.org/obio/dep_rel_pobj">pobj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_poss" title="https://w3id.org/obio/dep_rel_poss">poss</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prep" title="https://w3id.org/obio/dep_rel_prep">prep</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prt" title="https://w3id.org/obio/dep_rel_prt">prt</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_punct" title="https://w3id.org/obio/dep_rel_punct">punct</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_relcl" title="https://w3id.org/obio/dep_rel_relcl">relcl</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_root" title="https://w3id.org/obio/dep_rel_root">root</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#dep_rel_acomp" title="https://w3id.org/obio/dep_rel_acomp">acomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#advmod" title="https://w3id.org/obio/advmod">advmod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_agent" title="https://w3id.org/obio/dep_rel_agent">agent</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_amod" title="https://w3id.org/obio/dep_rel_amod">amod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_appos" title="https://w3id.org/obio/dep_rel_appos">appos</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_attr" title="https://w3id.org/obio/dep_rel_attr">attr</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_aux" title="https://w3id.org/obio/dep_rel_aux">aux</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_auxpass" title="https://w3id.org/obio/dep_rel_auxpass">auxpass</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_cc" title="https://w3id.org/obio/dep_rel_cc">cc</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_ccomp" title="https://w3id.org/obio/dep_rel_ccomp">ccomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_compound" title="https://w3id.org/obio/dep_rel_compound">compound</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_conj" title="https://w3id.org/obio/dep_rel_conj">conj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_csubj" title="https://w3id.org/obio/dep_rel_csubj">csubj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dep" title="https://w3id.org/obio/dep_rel_dep">dep</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_det" title="https://w3id.org/obio/dep_rel_det">det</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dobj" title="https://w3id.org/obio/dep_rel_dobj">dobj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_expl" title="https://w3id.org/obio/dep_rel_expl">expl</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_intj" title="https://w3id.org/obio/dep_rel_intj">intj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_mark" title="https://w3id.org/obio/dep_rel_mark">mark</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_npadvmod" title="https://w3id.org/obio/dep_npadvmod">npadvmod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubj" title="https://w3id.org/obio/dep_rel_nsubj">nsubj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubpass" title="https://w3id.org/obio/dep_rel_nsubpass">nsubjpass</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nummod" title="https://w3id.org/obio/dep_rel_nummod">nummod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pcomp" title="https://w3id.org/obio/dep_rel_pcomp">pcomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pobj" title="https://w3id.org/obio/dep_rel_pobj">pobj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_poss" title="https://w3id.org/obio/dep_rel_poss">poss</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prep" title="https://w3id.org/obio/dep_rel_prep">prep</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prt" title="https://w3id.org/obio/dep_rel_prt">prt</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_punct" title="https://w3id.org/obio/dep_rel_punct">punct</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_relcl" title="https://w3id.org/obio/dep_rel_relcl">relcl</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_root" title="https://w3id.org/obio/dep_rel_root">root</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word"
+               title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word">word</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:extra="https://w3id.org/extra#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#dep_rel_acomp" title="https://w3id.org/obio/dep_rel_acomp">acomp</a>
+      </li>
+      <li>
+         <a href="#advmod" title="https://w3id.org/obio/advmod">advmod</a>
+      </li>
+      <li>
+         <a href="#dep_rel_agent" title="https://w3id.org/obio/dep_rel_agent">agent</a>
+      </li>
+      <li>
+         <a href="#dep_rel_amod" title="https://w3id.org/obio/dep_rel_amod">amod</a>
+      </li>
+      <li>
+         <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf"
+            title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf">anchorOf</a>
+      </li>
+      <li>
+         <a href="#dep_rel_appos" title="https://w3id.org/obio/dep_rel_appos">appos</a>
+      </li>
+      <li>
+         <a href="#dep_rel_attr" title="https://w3id.org/obio/dep_rel_attr">attr</a>
+      </li>
+      <li>
+         <a href="#dep_rel_aux" title="https://w3id.org/obio/dep_rel_aux">aux</a>
+      </li>
+      <li>
+         <a href="#dep_rel_auxpass" title="https://w3id.org/obio/dep_rel_auxpass">auxpass</a>
+      </li>
+      <li>
+         <a href="#http://www.essepuntato.it/2008/12/earmark#begins" title="http://www.essepuntato.it/2008/12/earmark#begins">
+            <span>begins</span>
+         </a>
+      </li>
+      <li>
+         <a href="#dep_rel_cc" title="https://w3id.org/obio/dep_rel_cc">cc</a>
+      </li>
+      <li>
+         <a href="#dep_rel_ccomp" title="https://w3id.org/obio/dep_rel_ccomp">ccomp</a>
+      </li>
+      <li>
+         <a href="#dep_rel_compound" title="https://w3id.org/obio/dep_rel_compound">compound</a>
+      </li>
+      <li>
+         <a href="#dep_rel_conj" title="https://w3id.org/obio/dep_rel_conj">conj</a>
+      </li>
+      <li>
+         <a href="#dep_rel_csubj" title="https://w3id.org/obio/dep_rel_csubj">csubj</a>
+      </li>
+      <li>
+         <a href="#dep_rel_dep" title="https://w3id.org/obio/dep_rel_dep">dep</a>
+      </li>
+      <li>
+         <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+      </li>
+      <li>
+         <a href="#dep_rel_det" title="https://w3id.org/obio/dep_rel_det">det</a>
+      </li>
+      <li>
+         <a href="#dep_rel_dobj" title="https://w3id.org/obio/dep_rel_dobj">dobj</a>
+      </li>
+      <li>
+         <a href="#http://www.essepuntato.it/2008/12/earmark#ends" title="http://www.essepuntato.it/2008/12/earmark#ends">
+            <span>ends</span>
+         </a>
+      </li>
+      <li>
+         <a href="#dep_rel_expl" title="https://w3id.org/obio/dep_rel_expl">expl</a>
+      </li>
+      <li>
+         <a href="#http://rdfs.org/sioc/ns#has_container" title="http://rdfs.org/sioc/ns#has_container">has_container</a>
+      </li>
+      <li>
+         <a href="#http://www.ics.forth.gr/isl/oae/core#hasMatchedURL"
+            title="http://www.ics.forth.gr/isl/oae/core#hasMatchedURL">hasMatchedURL</a>
+      </li>
+      <li>
+         <a href="#http://rdfs.org/sioc/ns#id" title="http://rdfs.org/sioc/ns#id">
+            <span>id</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter"
+            title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter">inter</a>
+      </li>
+      <li>
+         <a href="#dep_rel_intj" title="https://w3id.org/obio/dep_rel_intj">intj</a>
+      </li>
+      <li>
+         <a href="#lemma" title="https://w3id.org/obio/lemma">
+            <span>lemma</span>
+         </a>
+      </li>
+      <li>
+         <a href="#dep_rel_mark" title="https://w3id.org/obio/dep_rel_mark">mark</a>
+      </li>
+      <li>
+         <a href="#http://schema.org/mentions" title="http://schema.org/mentions">mentions</a>
+      </li>
+      <li>
+         <a href="#nb_like" title="https://w3id.org/obio/nb_like">
+            <span>nb_like</span>
+         </a>
+      </li>
+      <li>
+         <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">
+            <span>nb_repost</span>
+         </a>
+      </li>
+      <li>
+         <a href="#dep_npadvmod" title="https://w3id.org/obio/dep_npadvmod">npadvmod</a>
+      </li>
+      <li>
+         <a href="#dep_rel_nsubj" title="https://w3id.org/obio/dep_rel_nsubj">nsubj</a>
+      </li>
+      <li>
+         <a href="#dep_rel_nsubpass" title="https://w3id.org/obio/dep_rel_nsubpass">nsubjpass</a>
+      </li>
+      <li>
+         <a href="#dep_rel_nummod" title="https://w3id.org/obio/dep_rel_nummod">nummod</a>
+      </li>
+      <li>
+         <a href="#dep_rel_pcomp" title="https://w3id.org/obio/dep_rel_pcomp">pcomp</a>
+      </li>
+      <li>
+         <a href="#dep_rel_pobj" title="https://w3id.org/obio/dep_rel_pobj">pobj</a>
+      </li>
+      <li>
+         <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag"
+            title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">
+            <span>pos tag</span>
+         </a>
+      </li>
+      <li>
+         <a href="#dep_rel_poss" title="https://w3id.org/obio/dep_rel_poss">poss</a>
+      </li>
+      <li>
+         <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">
+            <span>post_metrics</span>
+         </a>
+      </li>
+      <li>
+         <a href="#dep_rel_prep" title="https://w3id.org/obio/dep_rel_prep">prep</a>
+      </li>
+      <li>
+         <a href="#dep_rel_prt" title="https://w3id.org/obio/dep_rel_prt">prt</a>
+      </li>
+      <li>
+         <a href="#dep_rel_punct" title="https://w3id.org/obio/dep_rel_punct">punct</a>
+      </li>
+      <li>
+         <a href="#dep_rel_relcl" title="https://w3id.org/obio/dep_rel_relcl">relcl</a>
+      </li>
+      <li>
+         <a href="#reply_of" title="https://w3id.org/obio/reply_of">reply of</a>
+      </li>
+      <li>
+         <a href="#repost_of" title="https://w3id.org/obio/repost_of">repost of</a>
+      </li>
+      <li>
+         <a href="#dep_rel_root" title="https://w3id.org/obio/dep_rel_root">root</a>
+      </li>
+      <li>
+         <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence"
+            title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence">sentence</a>
+      </li>
+      <li>
+         <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString"
+            title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString">superString</a>
+      </li>
+      <li>
+         <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word"
+            title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word">word</a>
+      </li>
+   </ul>
+   <div class="entity" id="dep_rel_acomp">
+      <h3>acomp<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_acomp</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: acomp.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="advmod">
+      <h3>advmod<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/advmod</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: advmod.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_agent">
+      <h3>agent<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_agent</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: agent.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_amod">
+      <h3>amod<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_amod</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: amod.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf">
+      <h3>anchorOf<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf</p>
+      <div class="comment">
+         <span class="markdown">IRI Entity attached to a string entity</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Entity" title="https://w3id.org/obio/Entity">Entity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase">Phrase</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_appos">
+      <h3>appos<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_appos</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: appos.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_attr">
+      <h3>attr<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_attr</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: attr.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_aux">
+      <h3>aux<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_aux</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: aux.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_auxpass">
+      <h3>auxpass<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_auxpass</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: auxpass.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.essepuntato.it/2008/12/earmark#begins">
+      <h3>begins<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.essepuntato.it/2008/12/earmark#begins</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#http://www.essepuntato.it/2008/12/earmark#begins">data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_cc">
+      <h3>cc<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_cc</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: cc.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_ccomp">
+      <h3>ccomp<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_ccomp</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: ccomp.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_compound">
+      <h3>compound<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_compound</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: compound.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_conj">
+      <h3>conj<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_conj</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: conj.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_csubj">
+      <h3>csubj<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_csubj</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: csubj.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_dep">
+      <h3>dep<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_dep</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: dep.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dependency_relation">
+      <h3>dependency_relation<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dependency_relation</p>
+      <div class="comment">
+         <span class="markdown">Generic property that links a child to his parent (tbc) with a dependency.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter">inter</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#dep_rel_acomp" title="https://w3id.org/obio/dep_rel_acomp">acomp</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#advmod" title="https://w3id.org/obio/advmod">advmod</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_agent" title="https://w3id.org/obio/dep_rel_agent">agent</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_amod" title="https://w3id.org/obio/dep_rel_amod">amod</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_appos" title="https://w3id.org/obio/dep_rel_appos">appos</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_attr" title="https://w3id.org/obio/dep_rel_attr">attr</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_aux" title="https://w3id.org/obio/dep_rel_aux">aux</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_auxpass" title="https://w3id.org/obio/dep_rel_auxpass">auxpass</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_cc" title="https://w3id.org/obio/dep_rel_cc">cc</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_ccomp" title="https://w3id.org/obio/dep_rel_ccomp">ccomp</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_compound" title="https://w3id.org/obio/dep_rel_compound">compound</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_conj" title="https://w3id.org/obio/dep_rel_conj">conj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_csubj" title="https://w3id.org/obio/dep_rel_csubj">csubj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dep" title="https://w3id.org/obio/dep_rel_dep">dep</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_det" title="https://w3id.org/obio/dep_rel_det">det</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dobj" title="https://w3id.org/obio/dep_rel_dobj">dobj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_expl" title="https://w3id.org/obio/dep_rel_expl">expl</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_intj" title="https://w3id.org/obio/dep_rel_intj">intj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_mark" title="https://w3id.org/obio/dep_rel_mark">mark</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_npadvmod" title="https://w3id.org/obio/dep_npadvmod">npadvmod</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubj" title="https://w3id.org/obio/dep_rel_nsubj">nsubj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubpass" title="https://w3id.org/obio/dep_rel_nsubpass">nsubjpass</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nummod" title="https://w3id.org/obio/dep_rel_nummod">nummod</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pcomp" title="https://w3id.org/obio/dep_rel_pcomp">pcomp</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pobj" title="https://w3id.org/obio/dep_rel_pobj">pobj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_poss" title="https://w3id.org/obio/dep_rel_poss">poss</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prep" title="https://w3id.org/obio/dep_rel_prep">prep</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prt" title="https://w3id.org/obio/dep_rel_prt">prt</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_punct" title="https://w3id.org/obio/dep_rel_punct">punct</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_relcl" title="https://w3id.org/obio/dep_rel_relcl">relcl</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_root" title="https://w3id.org/obio/dep_rel_root">root</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_det">
+      <h3>det<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_det</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: det.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_dobj">
+      <h3>dobj<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_dobj</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: dobj.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.essepuntato.it/2008/12/earmark#ends">
+      <h3>ends<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.essepuntato.it/2008/12/earmark#ends</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#http://www.essepuntato.it/2008/12/earmark#ends">data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_expl">
+      <h3>expl<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_expl</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: expl.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://rdfs.org/sioc/ns#has_container">
+      <h3>has_container<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://rdfs.org/sioc/ns#has_container</p>
+      <div class="comment">
+         <span class="markdown">The Forum to which this Post belongs.  (adapted from sioc)</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#Forum" title="http://rdfs.org/sioc/ns#Forum">Forum</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.ics.forth.gr/isl/oae/core#hasMatchedURL">
+      <h3>hasMatchedURL<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.ics.forth.gr/isl/oae/core#hasMatchedURL</p>
+      <div class="comment">
+         <span class="markdown">Linking IRI entities from posts to other KG resources like DBpedia.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Entity" title="https://w3id.org/obio/Entity">Entity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Resource"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Resource">resource</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://rdfs.org/sioc/ns#id">
+      <h3>id<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://rdfs.org/sioc/ns#id</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="http://rdfs.org/sioc/ns#Concept"
+                  target="_blank"
+                  title="http://rdfs.org/sioc/ns#Concept">concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#id">data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter">
+      <h3>inter<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter</p>
+      <div class="comment">
+         <span class="markdown">This object property models a relation between two nif:Strings. The name "inter" is kept generic and can be used to express any kind of relation in between (inter) two nif:Strings. Extensions can create rdfs:subPropertyOf for "head", "dependent", nif:substring and nif:nextWord.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_intj">
+      <h3>intj<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_intj</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: intj.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="lemma">
+      <h3>lemma<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/lemma</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#lemma">data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_mark">
+      <h3>mark<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_mark</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: mark.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://schema.org/mentions">
+      <h3>mentions<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/mentions</p>
+      <div class="comment">
+         <span class="markdown">String entities that are mentioned in the post.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase">Phrase</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="nb_like">
+      <h3>nb_like<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/nb_like</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">post_metrics</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#nb_like">data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="nb_repost">
+      <h3>nb_repost<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/nb_repost</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">post_metrics</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#nb_repost">data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_npadvmod">
+      <h3>npadvmod<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_npadvmod</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: npadvmod.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_nsubj">
+      <h3>nsubj<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_nsubj</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: nsubj.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_nsubpass">
+      <h3>nsubjpass<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_nsubpass</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: nsubjpass.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_nummod">
+      <h3>nummod<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_nummod</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: nummod.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_pcomp">
+      <h3>pcomp<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_pcomp</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: pcomp.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_pobj">
+      <h3>pobj<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_pobj</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: pobj.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">
+      <h3>pos tag<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_poss">
+      <h3>poss<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_poss</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: poss.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="post_metrics">
+      <h3>post_metrics<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/post_metrics</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#nb_like" title="https://w3id.org/obio/nb_like">nb_like</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">nb_repost</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#post_metrics">data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_prep">
+      <h3>prep<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_prep</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: prep.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_prt">
+      <h3>prt<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_prt</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: prt.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_punct">
+      <h3>punct<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_punct</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: punct.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_relcl">
+      <h3>relcl<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_relcl</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: relcl.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="reply_of">
+      <h3>reply of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/reply_of</p>
+      <div class="comment">
+         <span class="markdown">Links a reply to the post it replies to.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Reply" title="https://w3id.org/obio/Reply">Reply</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="repost_of">
+      <h3>repost of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/repost_of</p>
+      <div class="comment">
+         <span class="markdown">Links a repost to its original post.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#RePost" title="https://w3id.org/obio/RePost">RePost</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dep_rel_root">
+      <h3>root<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_root</p>
+      <div class="comment">
+         <span class="markdown">Dependency relation: root.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence">
+      <h3>sentence<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence</p>
+      <div class="comment">
+         <span class="markdown">Links a post to a sentence in its content (adapted from nif)</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence">Sentence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString">
+      <h3>superString<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString</p>
+      <div class="comment">
+         <span class="markdown">One string is contained in another (inverse of substring in nif)</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String">String</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word">
+      <h3>word<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word</p>
+      <div class="comment">
+         <span class="markdown">This property links sentences to their words (from nif)</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence">Sentence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
+                  title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word">Word</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:extra="https://w3id.org/extra#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://www.essepuntato.it/2008/12/earmark#begins" title="http://www.essepuntato.it/2008/12/earmark#begins">
+            <span>begins</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">created</a>
+      </li>
+      <li>
+         <a href="#description" title="https://w3id.org/obio/description">description</a>
+      </li>
+      <li>
+         <a href="#http://www.essepuntato.it/2008/12/earmark#ends" title="http://www.essepuntato.it/2008/12/earmark#ends">
+            <span>ends</span>
+         </a>
+      </li>
+      <li>
+         <a href="#follower" title="https://w3id.org/obio/follower">follower</a>
+      </li>
+      <li>
+         <a href="#following" title="https://w3id.org/obio/following">following</a>
+      </li>
+      <li>
+         <a href="#http://rdfs.org/sioc/ns#id" title="http://rdfs.org/sioc/ns#id">
+            <span>id</span>
+         </a>
+      </li>
+      <li>
+         <a href="#is_verified" title="https://w3id.org/obio/is_verified">is_verified</a>
+      </li>
+      <li>
+         <a href="#lemma" title="https://w3id.org/obio/lemma">
+            <span>lemma</span>
+         </a>
+      </li>
+      <li>
+         <a href="#location" title="https://w3id.org/obio/location">location</a>
+      </li>
+      <li>
+         <a href="#nb_like" title="https://w3id.org/obio/nb_like">
+            <span>nb_like</span>
+         </a>
+      </li>
+      <li>
+         <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">
+            <span>nb_repost</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag"
+            title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">
+            <span>pos tag</span>
+         </a>
+      </li>
+      <li>
+         <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">
+            <span>post_metrics</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="http://www.essepuntato.it/2008/12/earmark#begins">
+      <h3>begins<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.essepuntato.it/2008/12/earmark#begins</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/10/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2000/10/XMLSchema#integer">integer</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#http://www.essepuntato.it/2008/12/earmark#begins">object property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/created">
+      <h3>created<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/created</p>
+      <div class="comment">
+         <span class="markdown">Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty. (from dc)</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#Post" title="http://rdfs.org/sioc/ns#Post">Concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/10/XMLSchema#date"
+                  target="_blank"
+                  title="http://www.w3.org/2000/10/XMLSchema#date">date</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="description">
+      <h3>description<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/description</p>
+      <div class="comment">
+         <span class="markdown">Text description of the online user account.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#User" title="http://rdfs.org/sioc/ns#User">User</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.essepuntato.it/2008/12/earmark#ends">
+      <h3>ends<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.essepuntato.it/2008/12/earmark#ends</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/10/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2000/10/XMLSchema#integer">integer</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#http://www.essepuntato.it/2008/12/earmark#ends">object property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="follower">
+      <h3>follower<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/follower</p>
+      <div class="comment">
+         <span class="markdown">Number of followers of the online user account.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#User" title="http://rdfs.org/sioc/ns#User">User</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/10/XMLSchema#positiveInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2000/10/XMLSchema#positiveInteger">positive integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="following">
+      <h3>following<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/following</p>
+      <div class="comment">
+         <span class="markdown">Number of accounts that the online user account is following.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#User" title="http://rdfs.org/sioc/ns#User">User</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/10/XMLSchema#positiveInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2000/10/XMLSchema#positiveInteger">positive integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://rdfs.org/sioc/ns#id">
+      <h3>id<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://rdfs.org/sioc/ns#id</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#id">object property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="is_verified">
+      <h3>is_verified<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/is_verified</p>
+      <div class="comment">
+         <span class="markdown">Whether an online user account is verified or not.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#User" title="http://rdfs.org/sioc/ns#User">User</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/10/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2000/10/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="lemma">
+      <h3>lemma<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/lemma</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#lemma">object property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="location">
+      <h3>location<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/location</p>
+      <div class="comment">
+         <span class="markdown">Location of the online user account.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://rdfs.org/sioc/ns#User" title="http://rdfs.org/sioc/ns#User">User</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="nb_like">
+      <h3>nb_like<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/nb_like</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+            <dd>
+               <a href="http://www.w3.org/2000/10/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2000/10/XMLSchema#float">float</a>
+            </dd>
+            <dd>
+               <a href="http://www.w3.org/2000/10/XMLSchema#positiveInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2000/10/XMLSchema#positiveInteger">positive integer</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#nb_like">object property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="nb_repost">
+      <h3>nb_repost<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/nb_repost</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/10/XMLSchema#positiveInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2000/10/XMLSchema#positiveInteger">positive integer</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#nb_repost">object property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">
+      <h3>pos tag<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/01/rdf-schema#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">object property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="post_metrics">
+      <h3>post_metrics<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/obio/post_metrics</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#nb_like" title="https://w3id.org/obio/nb_like">nb_like</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">nb_repost</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2000/10/XMLSchema#positiveInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2000/10/XMLSchema#positiveInteger">positive integer</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#post_metrics">object property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

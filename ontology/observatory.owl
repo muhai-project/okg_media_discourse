@@ -11,9 +11,9 @@
 @prefix nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-@prefix observatory: <http://example.org/muhai/observatory#> .
+@prefix obio: <https://w3id.org/obio/> .
 
-<http://example.org/muhai/observatory> rdf:type owl:Ontology .
+<https://w3id.org/obio> rdf:type owl:Ontology .
 
 #################################################################
 #    Datatypes
@@ -29,36 +29,36 @@ xsd:float rdf:type rdfs:Datatype .
 #    Datatype properties
 #################################################################
 
-###  http://example.org/muhai/observatory#is_verified
-observatory:is_verified rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/obio/is_verified
+obio:is_verified rdf:type owl:DatatypeProperty ;
                        rdfs:domain sioc:User ;
                        rdfs:range xsd:boolean ;
                        rdfs:comment "Whether an online user account is verified or not." ;
                        rdfs:label "is_verified" .
 
-###  http://example.org/muhai/observatory#description
-observatory:description rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/obio/description
+obio:description rdf:type owl:DatatypeProperty ;
                         rdfs:domain sioc:User ;
                         rdfs:range rdfs:Literal ;
                         rdfs:comment "Text description of the online user account." ;
                         rdfs:label "description" .
 
-###  http://example.org/muhai/observatory#follower
-observatory:follower rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/obio/follower
+obio:follower rdf:type owl:DatatypeProperty ;
                      rdfs:domain sioc:User ;
                      rdfs:range xsd:positiveInteger ;
                      rdfs:comment "Number of followers of the online user account." ;
                      rdfs:label "follower" .
 
-###  http://example.org/muhai/observatory#following
-observatory:following rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/obio/following
+obio:following rdf:type owl:DatatypeProperty ;
                       rdfs:domain sioc:User ;
                       rdfs:range xsd:positiveInteger ;
                       rdfs:comment "Number of accounts that the online user account is following." ;
                       rdfs:label "following" .
 
-###  http://example.org/muhai/observatory#location
-observatory:location rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/obio/location
+obio:location rdf:type owl:DatatypeProperty ;
                      rdfs:domain sioc:User ;
                      rdfs:range rdfs:Literal ;
                      rdfs:comment "Location of the online user account." ;
@@ -78,48 +78,48 @@ dc:created rdf:type owl:DatatypeProperty ;
            rdfs:comment "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty. (from dc)" ;
            rdfs:label "created" .
 
-###  http://example.org/muhai/observatory#post_metrics
-observatory:post_metrics rdf:type owl:ObjectProperty ;
+###  https://w3id.org/obio/post_metrics
+obio:post_metrics rdf:type owl:ObjectProperty ;
                          rdfs:domain sioc:Post ;
                          rdfs:range xsd:positiveInteger ;
                          rdfs:comment "Generic property to link a Post to some metrics, like the number of likes or reposts." ;
                          rdfs:label "post_metrics" .
 
-###  http://example.org/muhai/observatory#nb_repost
-observatory:nb_repost rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf observatory:post_metrics  ;
+###  https://w3id.org/obio/nb_repost
+obio:nb_repost rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf obio:post_metrics  ;
                       rdfs:domain sioc:Post ;
                       rdfs:range xsd:positiveInteger ;
                       rdfs:comment "Number of reposts of a post." ;
                       rdfs:label "nb_repost" .
 
-###  http://example.org/muhai/observatory#nb_like
-observatory:nb_like rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf observatory:post_metrics  ;
+###  https://w3id.org/obio/nb_like
+obio:nb_like rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf obio:post_metrics  ;
                     rdfs:domain sioc:Post ;
                     rdfs:range xsd:positiveInteger ;
                     rdfs:comment "Number of likes of a post." ;
                     rdfs:label "nb_like" .
 
-###  http://example.org/muhai/observatory#sentiment_label
-observatory:nb_like rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf observatory:post_metrics  ;
+###  https://w3id.org/obio/sentiment_label
+obio:nb_like rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf obio:post_metrics  ;
                     rdfs:domain sioc:Post ;
                     rdfs:range rdfs:Literal ;
                     rdfs:comment "Sentiment label of a post (positive/negative)" ;
                     rdfs:label "sentiment_label" .
 
-###  http://example.org/muhai/observatory#polarity_score
-observatory:nb_like rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf observatory:post_metrics  ;
+###  https://w3id.org/obio/polarity_score
+obio:nb_like rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf obio:post_metrics  ;
                     rdfs:domain sioc:Post ;
                     rdfs:range xsd:float ;
                     rdfs:comment "Polarity score of a post (between 0 and 1)." ;
                     rdfs:label "polarity_score" .
 
-###  http://example.org/muhai/observatory#subjectivity_score
-observatory:nb_like rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf observatory:post_metrics  ;
+###  https://w3id.org/obio/subjectivity_score
+obio:nb_like rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf obio:post_metrics  ;
                     rdfs:domain sioc:Post ;
                     rdfs:range xsd:float ;
                     rdfs:comment "Subjectivity Score of a post." ;
@@ -146,8 +146,8 @@ nif:pos_tag rdf:type owl:ObjectProperty ;
            rdfs:comment "To include the pos tag as it comes out of the NLP tool as RDF Literal." ;
            rdfs:label "pos tag" .
 
-### http://example.org/muhai/observatory#lemma
-observatory:lemma rdf:type owl:ObjectProperty ;
+### https://w3id.org/obio/lemma
+obio:lemma rdf:type owl:ObjectProperty ;
                   rdfs:domain nif:String ;
                   rdfs:range rdfs:Literal ;
                   rdfs:comment "The lemma(s) of the nif:String." ;
@@ -165,16 +165,16 @@ sioc:has_container rdf:type owl:ObjectProperty ;
                    rdfs:comment "The Forum to which this Post belongs.  (adapted from sioc)" ;
                    rdfs:label "has_container" .
 
-###  http://example.org/muhai/observatory#repost_of
-observatory:repost_of rdf:type owl:ObjectProperty ;
-                      rdfs:domain observatory:RePost ;
+###  https://w3id.org/obio/repost_of
+obio:repost_of rdf:type owl:ObjectProperty ;
+                      rdfs:domain obio:RePost ;
                       rdfs:range sioc:Post ;
                       rdfs:comment "Links a repost to its original post." ;
                       rdfs:label "repost of" .
 
-###  http://example.org/muhai/observatory#reply_of
-observatory:reply_of rdf:type owl:ObjectProperty ;
-                      rdfs:domain observatory:Reply ;
+###  https://w3id.org/obio/reply_of
+obio:reply_of rdf:type owl:ObjectProperty ;
+                      rdfs:domain obio:Reply ;
                       rdfs:range sioc:Post ;
                       rdfs:comment "Links a reply to the post it replies to." ;
                       rdfs:label "reply of" .
@@ -193,257 +193,257 @@ nif:word rdf:type owl:ObjectProperty ;
          rdfs:comment "This property links sentences to their words (from nif)" ;
          rdfs:label "word" .
 
-###  http://example.org/muhai/observatory#dependency_relation
-observatory:dependency_relation rdf:type owl:ObjectProperty ;
+###  https://w3id.org/obio/dependency_relation
+obio:dependency_relation rdf:type owl:ObjectProperty ;
                                 rdfs:domain nif:Word ;
                                 rdfs:range nif:Word ;
                                 rdfs:subPropertyOf nif:inter ;
                                 rdfs:comment "Generic property that links a child to his parent (tbc) with a dependency." ;
                                 rdfs:label "dependency_relation" .
 
-###  http://example.org/muhai/observatory#dep_rel_npadvmod
-observatory:dep_npadvmod rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_npadvmod
+obio:dep_npadvmod rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: npadvmod." ;
                          rdfs:label "npadvmod" .
 
-###  http://example.org/muhai/observatory#dep_rel_advmod
-observatory:advmod rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_advmod
+obio:advmod rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf obio:dependency_relation ;
                    rdfs:comment "Dependency relation: advmod." ;
                    rdfs:domain nif:Word ;
                    rdfs:range nif:Word ;
                    rdfs:label "advmod" .
 
-###  http://example.org/muhai/observatory#dep_rel_intj
-observatory:dep_rel_intj rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_intj
+obio:dep_rel_intj rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: intj." ;
                          rdfs:label "intj" .
 
-###  http://example.org/muhai/observatory#dep_rel_prep
-observatory:dep_rel_prep rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_prep
+obio:dep_rel_prep rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: prep." ;
                          rdfs:label "prep" .
 
-###  http://example.org/muhai/observatory#dep_rel_det
-observatory:dep_rel_det rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_det
+obio:dep_rel_det rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf obio:dependency_relation ;
                         rdfs:domain nif:Word ;
                         rdfs:range nif:Word ;
                         rdfs:comment "Dependency relation: det." ;
                         rdfs:label "det" .
 
-###  http://example.org/muhai/observatory#dep_rel_pobj
-observatory:dep_rel_pobj rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_pobj
+obio:dep_rel_pobj rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: pobj." ;
                          rdfs:label "pobj" .
 
-###  http://example.org/muhai/observatory#dep_rel_amod
-observatory:dep_rel_amod rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_amod
+obio:dep_rel_amod rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: amod." ;
                          rdfs:label "amod" .
 
-###  http://example.org/muhai/observatory#dep_rel_nsubj
-observatory:dep_rel_nsubj rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_nsubj
+obio:dep_rel_nsubj rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf obio:dependency_relation ;
                           rdfs:domain nif:Word ;
                           rdfs:range nif:Word ;
                           rdfs:comment "Dependency relation: nsubj." ;
                           rdfs:label "nsubj" .
 
-###  http://example.org/muhai/observatory#dep_rel_root
-observatory:dep_rel_root rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_root
+obio:dep_rel_root rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: root." ;
                          rdfs:label "root" .
 
-###  http://example.org/muhai/observatory#dep_rel_attr
-observatory:dep_rel_attr rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_attr
+obio:dep_rel_attr rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: attr." ;
                          rdfs:label "attr" .
 
-###  http://example.org/muhai/observatory#dep_rel_punct
-observatory:dep_rel_punct rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_punct
+obio:dep_rel_punct rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf obio:dependency_relation ;
                           rdfs:domain nif:Word ;
                           rdfs:range nif:Word ;
                           rdfs:comment "Dependency relation: punct." ;
                           rdfs:label "punct" .
 
-###  http://example.org/muhai/observatory#dep_rel_cc
-observatory:dep_rel_cc rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_cc
+obio:dep_rel_cc rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf obio:dependency_relation ;
                        rdfs:domain nif:Word ;
                        rdfs:range nif:Word ;
                        rdfs:comment "Dependency relation: cc." ;
                        rdfs:label "cc" .
 
-###  http://example.org/muhai/observatory#dep_rel_conj
-observatory:dep_rel_conj rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_conj
+obio:dep_rel_conj rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: conj." ;
                          rdfs:label "conj" .
 
-###  http://example.org/muhai/observatory#dep_rel_nummod
-observatory:dep_rel_nummod rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_nummod
+obio:dep_rel_nummod rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf obio:dependency_relation ;
                            rdfs:domain nif:Word ;
                            rdfs:range nif:Word ;
                            rdfs:comment "Dependency relation: nummod." ;
                            rdfs:label "nummod" .
 
-###  http://example.org/muhai/observatory#dep_rel_compound
-observatory:dep_rel_compound rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_compound
+obio:dep_rel_compound rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf obio:dependency_relation ;
                              rdfs:domain nif:Word ;
                              rdfs:range nif:Word ;
                              rdfs:comment "Dependency relation: compound." ;
                              rdfs:label "compound" .
 
-###  http://example.org/muhai/observatory#dep_rel_expl
-observatory:dep_rel_expl rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_expl
+obio:dep_rel_expl rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: expl." ;
                          rdfs:label "expl" .
 
-###  http://example.org/muhai/observatory#dep_rel_acomp
-observatory:dep_rel_acomp rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_acomp
+obio:dep_rel_acomp rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf obio:dependency_relation ;
                           rdfs:domain nif:Word ;
                           rdfs:range nif:Word ;
                           rdfs:comment "Dependency relation: acomp." ;
                           rdfs:label "acomp" .
 
-###  http://example.org/muhai/observatory#dep_rel_mark
-observatory:dep_rel_mark rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_mark
+obio:dep_rel_mark rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: mark." ;
                          rdfs:label "mark" .
 
-###  http://example.org/muhai/observatory#dep_rel_auxpass
-observatory:dep_rel_auxpass rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_auxpass
+obio:dep_rel_auxpass rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf obio:dependency_relation ;
                             rdfs:domain nif:Word ;
                             rdfs:range nif:Word ;
                             rdfs:comment "Dependency relation: auxpass." ;
                             rdfs:label "auxpass" .
 
-###  http://example.org/muhai/observatory#dep_rel_ccomp
-observatory:dep_rel_ccomp rdf:type owl:ObjectProperty ;
-                                rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_ccomp
+obio:dep_rel_ccomp rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf obio:dependency_relation ;
                                 rdfs:domain nif:Word ;
                                 rdfs:range nif:Word ;
                                 rdfs:comment "Dependency relation: ccomp." ;
                                 rdfs:label "ccomp" .
 
-###  http://example.org/muhai/observatory#dep_rel_prt
-observatory:dep_rel_prt rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_prt
+obio:dep_rel_prt rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf obio:dependency_relation ;
                         rdfs:domain nif:Word ;
                         rdfs:range nif:Word ;
                         rdfs:comment "Dependency relation: prt." ;
                         rdfs:label "prt" .
 
-###  http://example.org/muhai/observatory#dep_rel_dobj
-observatory:dep_rel_dobj rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_dobj
+obio:dep_rel_dobj rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: dobj." ;
                          rdfs:label "dobj" .
 
-###  http://example.org/muhai/observatory#dep_rel_appos
-observatory:dep_rel_appos rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_appos
+obio:dep_rel_appos rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf obio:dependency_relation ;
                           rdfs:domain nif:Word ;
                           rdfs:range nif:Word ;
                           rdfs:comment "Dependency relation: appos." ;
                           rdfs:label "appos" .
 
-###  http://example.org/muhai/observatory#dep_rel_dep
-observatory:dep_rel_dep rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_dep
+obio:dep_rel_dep rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf obio:dependency_relation ;
                         rdfs:domain nif:Word ;
                         rdfs:range nif:Word ;
                         rdfs:comment "Dependency relation: dep." ;
                         rdfs:label "dep" .
 
-###  http://example.org/muhai/observatory#dep_rel_csubj
-observatory:dep_rel_csubj rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_csubj
+obio:dep_rel_csubj rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf obio:dependency_relation ;
                           rdfs:domain nif:Word ;
                           rdfs:range nif:Word ;
                           rdfs:comment "Dependency relation: csubj." ;
                           rdfs:label "csubj" .
 
-###  http://example.org/muhai/observatory#dep_rel_poss
-observatory:dep_rel_poss rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_poss
+obio:dep_rel_poss rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf obio:dependency_relation ;
                          rdfs:domain nif:Word ;
                          rdfs:range nif:Word ;
                          rdfs:comment "Dependency relation: poss." ;
                          rdfs:label "poss" .
 
-###  http://example.org/muhai/observatory#dep_rel_nsubjpass
-observatory:dep_rel_nsubpass rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_nsubjpass
+obio:dep_rel_nsubpass rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf obio:dependency_relation ;
                              rdfs:domain nif:Word ;
                              rdfs:range nif:Word ;
                              rdfs:comment "Dependency relation: nsubjpass." ;
                              rdfs:label "nsubjpass" .
 
-###  http://example.org/muhai/observatory#dep_rel_aux
-observatory:dep_rel_aux rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_aux
+obio:dep_rel_aux rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf obio:dependency_relation ;
                         rdfs:domain nif:Word ;
                         rdfs:range nif:Word ;
                         rdfs:comment "Dependency relation: aux." ;
                         rdfs:label "aux" .
 
-###  http://example.org/muhai/observatory#dep_rel_relcl
-observatory:dep_rel_relcl rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_relcl
+obio:dep_rel_relcl rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf obio:dependency_relation ;
                           rdfs:domain nif:Word ;
                           rdfs:range nif:Word ;
                           rdfs:comment "Dependency relation: relcl." ;
                           rdfs:label "relcl" .
 
-###  http://example.org/muhai/observatory#dep_rel_agent
-observatory:dep_rel_agent rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_agent
+obio:dep_rel_agent rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf obio:dependency_relation ;
                           rdfs:domain nif:Word ;
                           rdfs:range nif:Word ;
                           rdfs:comment "Dependency relation: agent." ;
                           rdfs:label "agent" .
 
-###  http://example.org/muhai/observatory#dep_rel_pcomp
-observatory:dep_rel_pcomp rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf observatory:dependency_relation ;
+###  https://w3id.org/obio/dep_rel_pcomp
+obio:dep_rel_pcomp rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf obio:dependency_relation ;
                           rdfs:domain nif:Word ;
                           rdfs:range nif:Word ;
                           rdfs:comment "Dependency relation: pcomp." ;
@@ -465,14 +465,14 @@ nif:superString rdf:type owl:ObjectProperty ;
 
 ### http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf
 nif:anchorOf rdf:type owl:ObjectProperty ;
-             rdfs:domain observatory:Entity ;
+             rdfs:domain obio:Entity ;
              rdfs:range nif:Phrase ;
              rdfs:comment "IRI Entity attached to a string entity" ;
              rdfs:label "anchorOf" .
 
 ### http://www.ics.forth.gr/isl/oae/core#hasMatchedURL
 nee:hasMatchedURL rdf:type owl:ObjectProperty ;
-                  rdfs:domain observatory:Entity ;
+                  rdfs:domain obio:Entity ;
                   rdfs:range rdfs:Resource ;
                   rdfs:comment "Linking IRI entities from posts to other KG resources like DBpedia." ;
                   rdfs:label "hasMatchedURL" .
@@ -501,15 +501,15 @@ sioc:Post rdf:type owl:Class ;
           rdfs:comment "A Post is an article or message posted by a User to a Forum. A series of Posts may be threaded if they share a common subject and are connected by reply or by date relationships. Posts will have content and may also have attached files, which can be edited or deleted by the Moderator of the Forum that contains the Post. (from sioc)" ;
           rdfs:subClassOf sioc:Concept .
 
-###  http://example.org/muhai/observatory#RePost
-observatory:RePost rdf:type owl:Class ;
+###  https://w3id.org/obio/RePost
+obio:RePost rdf:type owl:Class ;
                    rdfs:subClassOf sioc:Post ;
                    rdfs:label "RePost" ;
                    rdfs:comment "A RePost if a Post that is republished by another user, without modifications." .
 
 
-###  http://example.org/muhai/observatory#Reply
-observatory:Reply rdf:type owl:Class ;
+###  https://w3id.org/obio/Reply
+obio:Reply rdf:type owl:Class ;
                    rdfs:subClassOf sioc:Post ;
                    rdfs:label "Reply" ;
                    rdfs:comment "A Reply is a Post that directly answers a previous Post, by adding additional content." .
@@ -541,8 +541,8 @@ sioc:User rdf:type owl:Class ;
           rdfs:subClassOf sioc:Concept .
 
 
-###  http://example.org/muhai/observatory#Entity
-observatory:Entity rdf:type owl:Class ;
+###  https://w3id.org/obio/Entity
+obio:Entity rdf:type owl:Class ;
                    rdfs:label "Entity" ;
                    rdfs:comment "<to-add>" ;
                    owl:disjointWith nif:Phrase .
@@ -557,7 +557,7 @@ nif:Phrase rdf:type owl:Class ;
            rdfs:label "Phrase" ;
            rdfs:comment "A nif:Phrase can be a nif:String, that is a chunk of several words or a word itself (e.g. a NounPhrase as a Named Entity). The term is underspecified and can be compatible with many defintitions of phrase. Please subClass it to specify the meaning (e.g. for Chunking or Phrase Structure Grammar). Example: ((My dog)(also)(likes)(eating (sausage))) (from nif)" ;
            rdfs:subClassOf nif:String ;
-           owl:disjointWith observatory:Entity .
+           owl:disjointWith obio:Entity .
 
 ###  http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word
 nif:Word rdf:type owl:Class ;

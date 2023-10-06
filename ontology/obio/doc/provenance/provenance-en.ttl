@@ -1,0 +1,19 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<https://w3id.org/obio/> a prov:Entity;
+	 dc:title "The Observatory Integrated Ontology";
+	 prov:wasAttributedTo :agent0;
+	 prov:wasAttributedTo :agent1;
+	 prov:wasAttributedTo :agent2;
+	 prov:wasAttributedTo :agent3;
+	 prov:wasAttributedTo :agent4;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:wasGeneratedAt "Date of release";
+.
+:agent0 a prov:Agent; foaf:name "Inès Blin".
+:agent1 a prov:Agent; foaf:name "Lise Stork".
+:agent2 a prov:Agent; foaf:name "Laura Spillner".
+:agent3 a prov:Agent; foaf:name "Carlo Santagiustina".
+:agent4 a prov:Agent; foaf:name "Ilaria Tiddi".

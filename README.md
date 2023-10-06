@@ -59,6 +59,11 @@ We used the [Widoco](https://github.com/dgarijo/Widoco) Wizard for documenting o
 
 The full HTML documentation can be found in `ontology/observatory/index-en.html`.
 
+To generate content from the Widoco software (from the `ontology` folder): 
+```bash
+java -jar widoco-1.4.19-jar-with-dependencies_JDK-17.jar -ontFile observatory.owl -outFolder obio -confFile config.properties -uniteSections
+```
+
 ## 3. Pipeline
 
 The `src/main.py` file runs all the components in the pipeline.

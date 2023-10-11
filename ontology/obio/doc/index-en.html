@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/obio/","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/obio/","name":"The Observatory Integrated Ontology", "headline":"The OBservatory Integrated Ontology (OBIO) ontology is designed to integrate tweet metadata with various types of linguistic knowledge and Linked Open Data (LOD), such as named entities, dependencies, and frame semantics.", "datePublished":"Date of release", "version":"v1.0.0", "license":"http://creativecommons.org/licenses/by/2.0/", "author":[{"@type":"Person","name":"Inès Blin"},{"@type":"Person","name":"Lise Stork"},{"@type":"Person","name":"Laura Spillner"},{"@type":"Person","name":"Carlo Santagiustina"}], "contributor":[{"@type":"Person","name":"Ilaria Tiddi"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/okg/obio-ontology/","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/okg/obio-ontology/","name":"The Observatory Integrated Ontology", "headline":"The OBservatory Integrated Ontology (OBIO) ontology is designed to integrate tweet metadata with various types of linguistic knowledge and Linked Open Data (LOD), such as named entities, dependencies, and frame semantics.", "datePublished":"Date of release", "version":"v1.0.0", "license":"http://creativecommons.org/licenses/by/2.0/", "author":[{"@type":"Person","name":"Inès Blin"},{"@type":"Person","name":"Lise Stork"},{"@type":"Person","name":"Laura Spillner"},{"@type":"Person","name":"Carlo Santagiustina"}], "contributor":[{"@type":"Person","name":"Ilaria Tiddi"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -60,7 +60,7 @@ $(function(){
 
 <dl>
 <dt>This version:</dt>
-<dd><a href="https://w3id.org/obio/">https://w3id.org/obio/</a></dd>
+<dd><a href="https://w3id.org/okg/obio-ontology/">https://w3id.org/okg/obio-ontology/</a></dd>
 <dt>Revision:</dt>
 <dd>v1.0.0</dd>
 <dt>Authors:</dt>
@@ -111,7 +111,7 @@ This ontology has the following classes and properties.</span>
       <a href="#http://rdfs.org/sioc/ns#Container" title="http://rdfs.org/sioc/ns#Container">Container</a>
    </li>
    <li>
-      <a href="#Entity" title="https://w3id.org/obio/Entity">Entity</a>
+      <a href="#Entity" title="https://w3id.org/okg/obio-ontology/Entity">Entity</a>
    </li>
    <li>
       <a href="#http://rdfs.org/sioc/ns#Forum" title="http://rdfs.org/sioc/ns#Forum">Forum</a>
@@ -124,10 +124,10 @@ This ontology has the following classes and properties.</span>
          title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase">Phrase</a>
    </li>
    <li>
-      <a href="#Reply" title="https://w3id.org/obio/Reply">Reply</a>
+      <a href="#Reply" title="https://w3id.org/okg/obio-ontology/Reply">Reply</a>
    </li>
    <li>
-      <a href="#RePost" title="https://w3id.org/obio/RePost">RePost</a>
+      <a href="#RePost" title="https://w3id.org/okg/obio-ontology/RePost">RePost</a>
    </li>
    <li>
       <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence"
@@ -148,32 +148,33 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#dep_rel_acomp" title="https://w3id.org/obio/dep_rel_acomp">acomp</a>
+      <a href="#dep_rel_acomp" title="https://w3id.org/okg/obio-ontology/dep_rel_acomp">acomp</a>
    </li>
    <li>
-      <a href="#advmod" title="https://w3id.org/obio/advmod">advmod</a>
+      <a href="#advmod" title="https://w3id.org/okg/obio-ontology/advmod">advmod</a>
    </li>
    <li>
-      <a href="#dep_rel_agent" title="https://w3id.org/obio/dep_rel_agent">agent</a>
+      <a href="#dep_rel_agent" title="https://w3id.org/okg/obio-ontology/dep_rel_agent">agent</a>
    </li>
    <li>
-      <a href="#dep_rel_amod" title="https://w3id.org/obio/dep_rel_amod">amod</a>
+      <a href="#dep_rel_amod" title="https://w3id.org/okg/obio-ontology/dep_rel_amod">amod</a>
    </li>
    <li>
       <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf"
          title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf">anchorOf</a>
    </li>
    <li>
-      <a href="#dep_rel_appos" title="https://w3id.org/obio/dep_rel_appos">appos</a>
+      <a href="#dep_rel_appos" title="https://w3id.org/okg/obio-ontology/dep_rel_appos">appos</a>
    </li>
    <li>
-      <a href="#dep_rel_attr" title="https://w3id.org/obio/dep_rel_attr">attr</a>
+      <a href="#dep_rel_attr" title="https://w3id.org/okg/obio-ontology/dep_rel_attr">attr</a>
    </li>
    <li>
-      <a href="#dep_rel_aux" title="https://w3id.org/obio/dep_rel_aux">aux</a>
+      <a href="#dep_rel_aux" title="https://w3id.org/okg/obio-ontology/dep_rel_aux">aux</a>
    </li>
    <li>
-      <a href="#dep_rel_auxpass" title="https://w3id.org/obio/dep_rel_auxpass">auxpass</a>
+      <a href="#dep_rel_auxpass"
+         title="https://w3id.org/okg/obio-ontology/dep_rel_auxpass">auxpass</a>
    </li>
    <li>
       <a href="#http://www.essepuntato.it/2008/12/earmark#begins" title="http://www.essepuntato.it/2008/12/earmark#begins">
@@ -181,31 +182,33 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#dep_rel_cc" title="https://w3id.org/obio/dep_rel_cc">cc</a>
+      <a href="#dep_rel_cc" title="https://w3id.org/okg/obio-ontology/dep_rel_cc">cc</a>
    </li>
    <li>
-      <a href="#dep_rel_ccomp" title="https://w3id.org/obio/dep_rel_ccomp">ccomp</a>
+      <a href="#dep_rel_ccomp" title="https://w3id.org/okg/obio-ontology/dep_rel_ccomp">ccomp</a>
    </li>
    <li>
-      <a href="#dep_rel_compound" title="https://w3id.org/obio/dep_rel_compound">compound</a>
+      <a href="#dep_rel_compound"
+         title="https://w3id.org/okg/obio-ontology/dep_rel_compound">compound</a>
    </li>
    <li>
-      <a href="#dep_rel_conj" title="https://w3id.org/obio/dep_rel_conj">conj</a>
+      <a href="#dep_rel_conj" title="https://w3id.org/okg/obio-ontology/dep_rel_conj">conj</a>
    </li>
    <li>
-      <a href="#dep_rel_csubj" title="https://w3id.org/obio/dep_rel_csubj">csubj</a>
+      <a href="#dep_rel_csubj" title="https://w3id.org/okg/obio-ontology/dep_rel_csubj">csubj</a>
    </li>
    <li>
-      <a href="#dep_rel_dep" title="https://w3id.org/obio/dep_rel_dep">dep</a>
+      <a href="#dep_rel_dep" title="https://w3id.org/okg/obio-ontology/dep_rel_dep">dep</a>
    </li>
    <li>
-      <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+      <a href="#dependency_relation"
+         title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
    </li>
    <li>
-      <a href="#dep_rel_det" title="https://w3id.org/obio/dep_rel_det">det</a>
+      <a href="#dep_rel_det" title="https://w3id.org/okg/obio-ontology/dep_rel_det">det</a>
    </li>
    <li>
-      <a href="#dep_rel_dobj" title="https://w3id.org/obio/dep_rel_dobj">dobj</a>
+      <a href="#dep_rel_dobj" title="https://w3id.org/okg/obio-ontology/dep_rel_dobj">dobj</a>
    </li>
    <li>
       <a href="#http://www.essepuntato.it/2008/12/earmark#ends" title="http://www.essepuntato.it/2008/12/earmark#ends">
@@ -213,7 +216,7 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#dep_rel_expl" title="https://w3id.org/obio/dep_rel_expl">expl</a>
+      <a href="#dep_rel_expl" title="https://w3id.org/okg/obio-ontology/dep_rel_expl">expl</a>
    </li>
    <li>
       <a href="#http://rdfs.org/sioc/ns#has_container" title="http://rdfs.org/sioc/ns#has_container">has_container</a>
@@ -232,46 +235,48 @@ This ontology has the following classes and properties.</span>
          title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter">inter</a>
    </li>
    <li>
-      <a href="#dep_rel_intj" title="https://w3id.org/obio/dep_rel_intj">intj</a>
+      <a href="#dep_rel_intj" title="https://w3id.org/okg/obio-ontology/dep_rel_intj">intj</a>
    </li>
    <li>
-      <a href="#lemma" title="https://w3id.org/obio/lemma">
+      <a href="#lemma" title="https://w3id.org/okg/obio-ontology/lemma">
          <span>lemma</span>
       </a>
    </li>
    <li>
-      <a href="#dep_rel_mark" title="https://w3id.org/obio/dep_rel_mark">mark</a>
+      <a href="#dep_rel_mark" title="https://w3id.org/okg/obio-ontology/dep_rel_mark">mark</a>
    </li>
    <li>
       <a href="#http://schema.org/mentions" title="http://schema.org/mentions">mentions</a>
    </li>
    <li>
-      <a href="#nb_like" title="https://w3id.org/obio/nb_like">
+      <a href="#nb_like" title="https://w3id.org/okg/obio-ontology/nb_like">
          <span>nb_like</span>
       </a>
    </li>
    <li>
-      <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">
+      <a href="#nb_repost" title="https://w3id.org/okg/obio-ontology/nb_repost">
          <span>nb_repost</span>
       </a>
    </li>
    <li>
-      <a href="#dep_npadvmod" title="https://w3id.org/obio/dep_npadvmod">npadvmod</a>
+      <a href="#dep_npadvmod" title="https://w3id.org/okg/obio-ontology/dep_npadvmod">npadvmod</a>
    </li>
    <li>
-      <a href="#dep_rel_nsubj" title="https://w3id.org/obio/dep_rel_nsubj">nsubj</a>
+      <a href="#dep_rel_nsubj" title="https://w3id.org/okg/obio-ontology/dep_rel_nsubj">nsubj</a>
    </li>
    <li>
-      <a href="#dep_rel_nsubpass" title="https://w3id.org/obio/dep_rel_nsubpass">nsubjpass</a>
+      <a href="#dep_rel_nsubpass"
+         title="https://w3id.org/okg/obio-ontology/dep_rel_nsubpass">nsubjpass</a>
    </li>
    <li>
-      <a href="#dep_rel_nummod" title="https://w3id.org/obio/dep_rel_nummod">nummod</a>
+      <a href="#dep_rel_nummod"
+         title="https://w3id.org/okg/obio-ontology/dep_rel_nummod">nummod</a>
    </li>
    <li>
-      <a href="#dep_rel_pcomp" title="https://w3id.org/obio/dep_rel_pcomp">pcomp</a>
+      <a href="#dep_rel_pcomp" title="https://w3id.org/okg/obio-ontology/dep_rel_pcomp">pcomp</a>
    </li>
    <li>
-      <a href="#dep_rel_pobj" title="https://w3id.org/obio/dep_rel_pobj">pobj</a>
+      <a href="#dep_rel_pobj" title="https://w3id.org/okg/obio-ontology/dep_rel_pobj">pobj</a>
    </li>
    <li>
       <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag"
@@ -280,33 +285,33 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#dep_rel_poss" title="https://w3id.org/obio/dep_rel_poss">poss</a>
+      <a href="#dep_rel_poss" title="https://w3id.org/okg/obio-ontology/dep_rel_poss">poss</a>
    </li>
    <li>
-      <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">
+      <a href="#post_metrics" title="https://w3id.org/okg/obio-ontology/post_metrics">
          <span>post_metrics</span>
       </a>
    </li>
    <li>
-      <a href="#dep_rel_prep" title="https://w3id.org/obio/dep_rel_prep">prep</a>
+      <a href="#dep_rel_prep" title="https://w3id.org/okg/obio-ontology/dep_rel_prep">prep</a>
    </li>
    <li>
-      <a href="#dep_rel_prt" title="https://w3id.org/obio/dep_rel_prt">prt</a>
+      <a href="#dep_rel_prt" title="https://w3id.org/okg/obio-ontology/dep_rel_prt">prt</a>
    </li>
    <li>
-      <a href="#dep_rel_punct" title="https://w3id.org/obio/dep_rel_punct">punct</a>
+      <a href="#dep_rel_punct" title="https://w3id.org/okg/obio-ontology/dep_rel_punct">punct</a>
    </li>
    <li>
-      <a href="#dep_rel_relcl" title="https://w3id.org/obio/dep_rel_relcl">relcl</a>
+      <a href="#dep_rel_relcl" title="https://w3id.org/okg/obio-ontology/dep_rel_relcl">relcl</a>
    </li>
    <li>
-      <a href="#reply_of" title="https://w3id.org/obio/reply_of">reply of</a>
+      <a href="#reply_of" title="https://w3id.org/okg/obio-ontology/reply_of">reply of</a>
    </li>
    <li>
-      <a href="#repost_of" title="https://w3id.org/obio/repost_of">repost of</a>
+      <a href="#repost_of" title="https://w3id.org/okg/obio-ontology/repost_of">repost of</a>
    </li>
    <li>
-      <a href="#dep_rel_root" title="https://w3id.org/obio/dep_rel_root">root</a>
+      <a href="#dep_rel_root" title="https://w3id.org/okg/obio-ontology/dep_rel_root">root</a>
    </li>
    <li>
       <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence"
@@ -332,7 +337,7 @@ This ontology has the following classes and properties.</span>
       <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">created</a>
    </li>
    <li>
-      <a href="#description" title="https://w3id.org/obio/description">description</a>
+      <a href="#description" title="https://w3id.org/okg/obio-ontology/description">description</a>
    </li>
    <li>
       <a href="#http://www.essepuntato.it/2008/12/earmark#ends" title="http://www.essepuntato.it/2008/12/earmark#ends">
@@ -340,10 +345,10 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#follower" title="https://w3id.org/obio/follower">follower</a>
+      <a href="#follower" title="https://w3id.org/okg/obio-ontology/follower">follower</a>
    </li>
    <li>
-      <a href="#following" title="https://w3id.org/obio/following">following</a>
+      <a href="#following" title="https://w3id.org/okg/obio-ontology/following">following</a>
    </li>
    <li>
       <a href="#http://rdfs.org/sioc/ns#id" title="http://rdfs.org/sioc/ns#id">
@@ -351,23 +356,23 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#is_verified" title="https://w3id.org/obio/is_verified">is_verified</a>
+      <a href="#is_verified" title="https://w3id.org/okg/obio-ontology/is_verified">is_verified</a>
    </li>
    <li>
-      <a href="#lemma" title="https://w3id.org/obio/lemma">
+      <a href="#lemma" title="https://w3id.org/okg/obio-ontology/lemma">
          <span>lemma</span>
       </a>
    </li>
    <li>
-      <a href="#location" title="https://w3id.org/obio/location">location</a>
+      <a href="#location" title="https://w3id.org/okg/obio-ontology/location">location</a>
    </li>
    <li>
-      <a href="#nb_like" title="https://w3id.org/obio/nb_like">
+      <a href="#nb_like" title="https://w3id.org/okg/obio-ontology/nb_like">
          <span>nb_like</span>
       </a>
    </li>
    <li>
-      <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">
+      <a href="#nb_repost" title="https://w3id.org/okg/obio-ontology/nb_repost">
          <span>nb_repost</span>
       </a>
    </li>
@@ -378,7 +383,7 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">
+      <a href="#post_metrics" title="https://w3id.org/okg/obio-ontology/post_metrics">
          <span>post_metrics</span>
       </a>
    </li>
@@ -409,7 +414,7 @@ This section provides details for each class and property defined by The Observa
          <a href="#http://rdfs.org/sioc/ns#Container" title="http://rdfs.org/sioc/ns#Container">Container</a>
       </li>
       <li>
-         <a href="#Entity" title="https://w3id.org/obio/Entity">Entity</a>
+         <a href="#Entity" title="https://w3id.org/okg/obio-ontology/Entity">Entity</a>
       </li>
       <li>
          <a href="#http://rdfs.org/sioc/ns#Forum" title="http://rdfs.org/sioc/ns#Forum">Forum</a>
@@ -422,10 +427,10 @@ This section provides details for each class and property defined by The Observa
             title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase">Phrase</a>
       </li>
       <li>
-         <a href="#Reply" title="https://w3id.org/obio/Reply">Reply</a>
+         <a href="#Reply" title="https://w3id.org/okg/obio-ontology/Reply">Reply</a>
       </li>
       <li>
-         <a href="#RePost" title="https://w3id.org/obio/RePost">RePost</a>
+         <a href="#RePost" title="https://w3id.org/okg/obio-ontology/RePost">RePost</a>
       </li>
       <li>
          <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence"
@@ -463,8 +468,8 @@ This section provides details for each class and property defined by The Observa
          </dd>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#RePost" title="https://w3id.org/obio/RePost">RePost</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Reply" title="https://w3id.org/obio/Reply">Reply</a>
+            <a href="#RePost" title="https://w3id.org/okg/obio-ontology/RePost">RePost</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Reply" title="https://w3id.org/okg/obio-ontology/Reply">Reply</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -472,17 +477,17 @@ This section provides details for each class and property defined by The Observa
             <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">created</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#http://rdfs.org/sioc/ns#has_container" title="http://rdfs.org/sioc/ns#has_container">has_container</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://schema.org/mentions" title="http://schema.org/mentions">mentions</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#nb_like" title="https://w3id.org/obio/nb_like">nb_like</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">nb_repost</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">post_metrics</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#nb_like" title="https://w3id.org/okg/obio-ontology/nb_like">nb_like</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#nb_repost" title="https://w3id.org/okg/obio-ontology/nb_repost">nb_repost</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#post_metrics" title="https://w3id.org/okg/obio-ontology/post_metrics">post_metrics</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence"
                title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence">sentence</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#reply_of" title="https://w3id.org/obio/reply_of">reply of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#repost_of" title="https://w3id.org/obio/repost_of">repost of</a>
+            <a href="#reply_of" title="https://w3id.org/okg/obio-ontology/reply_of">reply of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#repost_of" title="https://w3id.org/okg/obio-ontology/repost_of">repost of</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -511,7 +516,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/Entity</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/Entity</p>
       <div class="comment">
          <span class="markdown">&lt;to-add&gt;</span>
       </div>
@@ -605,7 +610,7 @@ This section provides details for each class and property defined by The Observa
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#Entity" title="https://w3id.org/obio/Entity">Entity</a>
+            <a href="#Entity" title="https://w3id.org/okg/obio-ontology/Entity">Entity</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -616,7 +621,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/Reply</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/Reply</p>
       <div class="comment">
          <span class="markdown">A Reply is a Post that directly answers a previous Post, by adding additional content.</span>
       </div>
@@ -628,7 +633,7 @@ This section provides details for each class and property defined by The Observa
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#reply_of" title="https://w3id.org/obio/reply_of">reply of</a>
+            <a href="#reply_of" title="https://w3id.org/okg/obio-ontology/reply_of">reply of</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -639,7 +644,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/RePost</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/RePost</p>
       <div class="comment">
          <span class="markdown">A RePost if a Post that is republished by another user, without modifications.</span>
       </div>
@@ -651,7 +656,7 @@ This section provides details for each class and property defined by The Observa
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#repost_of" title="https://w3id.org/obio/repost_of">repost of</a>
+            <a href="#repost_of" title="https://w3id.org/okg/obio-ontology/repost_of">repost of</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -710,7 +715,7 @@ This section provides details for each class and property defined by The Observa
             <sup class="type-op" title="object property">op</sup>, <a href="#http://www.essepuntato.it/2008/12/earmark#ends" title="http://www.essepuntato.it/2008/12/earmark#ends">ends</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter"
                title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter">inter</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#lemma" title="https://w3id.org/obio/lemma">lemma</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#lemma" title="https://w3id.org/okg/obio-ontology/lemma">lemma</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag"
                title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag">pos tag</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#superString"
@@ -755,11 +760,11 @@ This section provides details for each class and property defined by The Observa
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#description" title="https://w3id.org/obio/description">description</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#follower" title="https://w3id.org/obio/follower">follower</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#following" title="https://w3id.org/obio/following">following</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#is_verified" title="https://w3id.org/obio/is_verified">is_verified</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#location" title="https://w3id.org/obio/location">location</a>
+            <a href="#description" title="https://w3id.org/okg/obio-ontology/description">description</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#follower" title="https://w3id.org/okg/obio-ontology/follower">follower</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#following" title="https://w3id.org/okg/obio-ontology/following">following</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#is_verified" title="https://w3id.org/okg/obio-ontology/is_verified">is_verified</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#location" title="https://w3id.org/okg/obio-ontology/location">location</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
@@ -785,74 +790,84 @@ This section provides details for each class and property defined by The Observa
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#dep_rel_acomp" title="https://w3id.org/obio/dep_rel_acomp">acomp</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#advmod" title="https://w3id.org/obio/advmod">advmod</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_agent" title="https://w3id.org/obio/dep_rel_agent">agent</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_amod" title="https://w3id.org/obio/dep_rel_amod">amod</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_appos" title="https://w3id.org/obio/dep_rel_appos">appos</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_attr" title="https://w3id.org/obio/dep_rel_attr">attr</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_aux" title="https://w3id.org/obio/dep_rel_aux">aux</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_auxpass" title="https://w3id.org/obio/dep_rel_auxpass">auxpass</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_cc" title="https://w3id.org/obio/dep_rel_cc">cc</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_ccomp" title="https://w3id.org/obio/dep_rel_ccomp">ccomp</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_compound" title="https://w3id.org/obio/dep_rel_compound">compound</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_conj" title="https://w3id.org/obio/dep_rel_conj">conj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_csubj" title="https://w3id.org/obio/dep_rel_csubj">csubj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dep" title="https://w3id.org/obio/dep_rel_dep">dep</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_det" title="https://w3id.org/obio/dep_rel_det">det</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dobj" title="https://w3id.org/obio/dep_rel_dobj">dobj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_expl" title="https://w3id.org/obio/dep_rel_expl">expl</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_intj" title="https://w3id.org/obio/dep_rel_intj">intj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_mark" title="https://w3id.org/obio/dep_rel_mark">mark</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_npadvmod" title="https://w3id.org/obio/dep_npadvmod">npadvmod</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubj" title="https://w3id.org/obio/dep_rel_nsubj">nsubj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubpass" title="https://w3id.org/obio/dep_rel_nsubpass">nsubjpass</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nummod" title="https://w3id.org/obio/dep_rel_nummod">nummod</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pcomp" title="https://w3id.org/obio/dep_rel_pcomp">pcomp</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pobj" title="https://w3id.org/obio/dep_rel_pobj">pobj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_poss" title="https://w3id.org/obio/dep_rel_poss">poss</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prep" title="https://w3id.org/obio/dep_rel_prep">prep</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prt" title="https://w3id.org/obio/dep_rel_prt">prt</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_punct" title="https://w3id.org/obio/dep_rel_punct">punct</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_relcl" title="https://w3id.org/obio/dep_rel_relcl">relcl</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_root" title="https://w3id.org/obio/dep_rel_root">root</a>
+            <a href="#dep_rel_acomp" title="https://w3id.org/okg/obio-ontology/dep_rel_acomp">acomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#advmod" title="https://w3id.org/okg/obio-ontology/advmod">advmod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_agent" title="https://w3id.org/okg/obio-ontology/dep_rel_agent">agent</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_amod" title="https://w3id.org/okg/obio-ontology/dep_rel_amod">amod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_appos" title="https://w3id.org/okg/obio-ontology/dep_rel_appos">appos</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_attr" title="https://w3id.org/okg/obio-ontology/dep_rel_attr">attr</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_aux" title="https://w3id.org/okg/obio-ontology/dep_rel_aux">aux</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_auxpass"
+               title="https://w3id.org/okg/obio-ontology/dep_rel_auxpass">auxpass</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_cc" title="https://w3id.org/okg/obio-ontology/dep_rel_cc">cc</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_ccomp" title="https://w3id.org/okg/obio-ontology/dep_rel_ccomp">ccomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_compound"
+               title="https://w3id.org/okg/obio-ontology/dep_rel_compound">compound</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_conj" title="https://w3id.org/okg/obio-ontology/dep_rel_conj">conj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_csubj" title="https://w3id.org/okg/obio-ontology/dep_rel_csubj">csubj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dep" title="https://w3id.org/okg/obio-ontology/dep_rel_dep">dep</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dependency_relation"
+               title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_det" title="https://w3id.org/okg/obio-ontology/dep_rel_det">det</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dobj" title="https://w3id.org/okg/obio-ontology/dep_rel_dobj">dobj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_expl" title="https://w3id.org/okg/obio-ontology/dep_rel_expl">expl</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_intj" title="https://w3id.org/okg/obio-ontology/dep_rel_intj">intj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_mark" title="https://w3id.org/okg/obio-ontology/dep_rel_mark">mark</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_npadvmod" title="https://w3id.org/okg/obio-ontology/dep_npadvmod">npadvmod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubj" title="https://w3id.org/okg/obio-ontology/dep_rel_nsubj">nsubj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubpass"
+               title="https://w3id.org/okg/obio-ontology/dep_rel_nsubpass">nsubjpass</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nummod"
+               title="https://w3id.org/okg/obio-ontology/dep_rel_nummod">nummod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pcomp" title="https://w3id.org/okg/obio-ontology/dep_rel_pcomp">pcomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pobj" title="https://w3id.org/okg/obio-ontology/dep_rel_pobj">pobj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_poss" title="https://w3id.org/okg/obio-ontology/dep_rel_poss">poss</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prep" title="https://w3id.org/okg/obio-ontology/dep_rel_prep">prep</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prt" title="https://w3id.org/okg/obio-ontology/dep_rel_prt">prt</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_punct" title="https://w3id.org/okg/obio-ontology/dep_rel_punct">punct</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_relcl" title="https://w3id.org/okg/obio-ontology/dep_rel_relcl">relcl</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_root" title="https://w3id.org/okg/obio-ontology/dep_rel_root">root</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#dep_rel_acomp" title="https://w3id.org/obio/dep_rel_acomp">acomp</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#advmod" title="https://w3id.org/obio/advmod">advmod</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_agent" title="https://w3id.org/obio/dep_rel_agent">agent</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_amod" title="https://w3id.org/obio/dep_rel_amod">amod</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_appos" title="https://w3id.org/obio/dep_rel_appos">appos</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_attr" title="https://w3id.org/obio/dep_rel_attr">attr</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_aux" title="https://w3id.org/obio/dep_rel_aux">aux</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_auxpass" title="https://w3id.org/obio/dep_rel_auxpass">auxpass</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_cc" title="https://w3id.org/obio/dep_rel_cc">cc</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_ccomp" title="https://w3id.org/obio/dep_rel_ccomp">ccomp</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_compound" title="https://w3id.org/obio/dep_rel_compound">compound</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_conj" title="https://w3id.org/obio/dep_rel_conj">conj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_csubj" title="https://w3id.org/obio/dep_rel_csubj">csubj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dep" title="https://w3id.org/obio/dep_rel_dep">dep</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_det" title="https://w3id.org/obio/dep_rel_det">det</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dobj" title="https://w3id.org/obio/dep_rel_dobj">dobj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_expl" title="https://w3id.org/obio/dep_rel_expl">expl</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_intj" title="https://w3id.org/obio/dep_rel_intj">intj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_mark" title="https://w3id.org/obio/dep_rel_mark">mark</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_npadvmod" title="https://w3id.org/obio/dep_npadvmod">npadvmod</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubj" title="https://w3id.org/obio/dep_rel_nsubj">nsubj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubpass" title="https://w3id.org/obio/dep_rel_nsubpass">nsubjpass</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nummod" title="https://w3id.org/obio/dep_rel_nummod">nummod</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pcomp" title="https://w3id.org/obio/dep_rel_pcomp">pcomp</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pobj" title="https://w3id.org/obio/dep_rel_pobj">pobj</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_poss" title="https://w3id.org/obio/dep_rel_poss">poss</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prep" title="https://w3id.org/obio/dep_rel_prep">prep</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prt" title="https://w3id.org/obio/dep_rel_prt">prt</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_punct" title="https://w3id.org/obio/dep_rel_punct">punct</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_relcl" title="https://w3id.org/obio/dep_rel_relcl">relcl</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_root" title="https://w3id.org/obio/dep_rel_root">root</a>
+            <a href="#dep_rel_acomp" title="https://w3id.org/okg/obio-ontology/dep_rel_acomp">acomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#advmod" title="https://w3id.org/okg/obio-ontology/advmod">advmod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_agent" title="https://w3id.org/okg/obio-ontology/dep_rel_agent">agent</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_amod" title="https://w3id.org/okg/obio-ontology/dep_rel_amod">amod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_appos" title="https://w3id.org/okg/obio-ontology/dep_rel_appos">appos</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_attr" title="https://w3id.org/okg/obio-ontology/dep_rel_attr">attr</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_aux" title="https://w3id.org/okg/obio-ontology/dep_rel_aux">aux</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_auxpass"
+               title="https://w3id.org/okg/obio-ontology/dep_rel_auxpass">auxpass</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_cc" title="https://w3id.org/okg/obio-ontology/dep_rel_cc">cc</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_ccomp" title="https://w3id.org/okg/obio-ontology/dep_rel_ccomp">ccomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_compound"
+               title="https://w3id.org/okg/obio-ontology/dep_rel_compound">compound</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_conj" title="https://w3id.org/okg/obio-ontology/dep_rel_conj">conj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_csubj" title="https://w3id.org/okg/obio-ontology/dep_rel_csubj">csubj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dep" title="https://w3id.org/okg/obio-ontology/dep_rel_dep">dep</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dependency_relation"
+               title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_det" title="https://w3id.org/okg/obio-ontology/dep_rel_det">det</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dobj" title="https://w3id.org/okg/obio-ontology/dep_rel_dobj">dobj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_expl" title="https://w3id.org/okg/obio-ontology/dep_rel_expl">expl</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_intj" title="https://w3id.org/okg/obio-ontology/dep_rel_intj">intj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_mark" title="https://w3id.org/okg/obio-ontology/dep_rel_mark">mark</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_npadvmod" title="https://w3id.org/okg/obio-ontology/dep_npadvmod">npadvmod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubj" title="https://w3id.org/okg/obio-ontology/dep_rel_nsubj">nsubj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubpass"
+               title="https://w3id.org/okg/obio-ontology/dep_rel_nsubpass">nsubjpass</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nummod"
+               title="https://w3id.org/okg/obio-ontology/dep_rel_nummod">nummod</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pcomp" title="https://w3id.org/okg/obio-ontology/dep_rel_pcomp">pcomp</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pobj" title="https://w3id.org/okg/obio-ontology/dep_rel_pobj">pobj</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_poss" title="https://w3id.org/okg/obio-ontology/dep_rel_poss">poss</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prep" title="https://w3id.org/okg/obio-ontology/dep_rel_prep">prep</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prt" title="https://w3id.org/okg/obio-ontology/dep_rel_prt">prt</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_punct" title="https://w3id.org/okg/obio-ontology/dep_rel_punct">punct</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_relcl" title="https://w3id.org/okg/obio-ontology/dep_rel_relcl">relcl</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_root" title="https://w3id.org/okg/obio-ontology/dep_rel_root">root</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word"
                title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#word">word</a>
             <sup class="type-op" title="object property">op</sup>
@@ -865,32 +880,33 @@ This section provides details for each class and property defined by The Observa
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#dep_rel_acomp" title="https://w3id.org/obio/dep_rel_acomp">acomp</a>
+         <a href="#dep_rel_acomp" title="https://w3id.org/okg/obio-ontology/dep_rel_acomp">acomp</a>
       </li>
       <li>
-         <a href="#advmod" title="https://w3id.org/obio/advmod">advmod</a>
+         <a href="#advmod" title="https://w3id.org/okg/obio-ontology/advmod">advmod</a>
       </li>
       <li>
-         <a href="#dep_rel_agent" title="https://w3id.org/obio/dep_rel_agent">agent</a>
+         <a href="#dep_rel_agent" title="https://w3id.org/okg/obio-ontology/dep_rel_agent">agent</a>
       </li>
       <li>
-         <a href="#dep_rel_amod" title="https://w3id.org/obio/dep_rel_amod">amod</a>
+         <a href="#dep_rel_amod" title="https://w3id.org/okg/obio-ontology/dep_rel_amod">amod</a>
       </li>
       <li>
          <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf"
             title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf">anchorOf</a>
       </li>
       <li>
-         <a href="#dep_rel_appos" title="https://w3id.org/obio/dep_rel_appos">appos</a>
+         <a href="#dep_rel_appos" title="https://w3id.org/okg/obio-ontology/dep_rel_appos">appos</a>
       </li>
       <li>
-         <a href="#dep_rel_attr" title="https://w3id.org/obio/dep_rel_attr">attr</a>
+         <a href="#dep_rel_attr" title="https://w3id.org/okg/obio-ontology/dep_rel_attr">attr</a>
       </li>
       <li>
-         <a href="#dep_rel_aux" title="https://w3id.org/obio/dep_rel_aux">aux</a>
+         <a href="#dep_rel_aux" title="https://w3id.org/okg/obio-ontology/dep_rel_aux">aux</a>
       </li>
       <li>
-         <a href="#dep_rel_auxpass" title="https://w3id.org/obio/dep_rel_auxpass">auxpass</a>
+         <a href="#dep_rel_auxpass"
+            title="https://w3id.org/okg/obio-ontology/dep_rel_auxpass">auxpass</a>
       </li>
       <li>
          <a href="#http://www.essepuntato.it/2008/12/earmark#begins" title="http://www.essepuntato.it/2008/12/earmark#begins">
@@ -898,31 +914,33 @@ This section provides details for each class and property defined by The Observa
          </a>
       </li>
       <li>
-         <a href="#dep_rel_cc" title="https://w3id.org/obio/dep_rel_cc">cc</a>
+         <a href="#dep_rel_cc" title="https://w3id.org/okg/obio-ontology/dep_rel_cc">cc</a>
       </li>
       <li>
-         <a href="#dep_rel_ccomp" title="https://w3id.org/obio/dep_rel_ccomp">ccomp</a>
+         <a href="#dep_rel_ccomp" title="https://w3id.org/okg/obio-ontology/dep_rel_ccomp">ccomp</a>
       </li>
       <li>
-         <a href="#dep_rel_compound" title="https://w3id.org/obio/dep_rel_compound">compound</a>
+         <a href="#dep_rel_compound"
+            title="https://w3id.org/okg/obio-ontology/dep_rel_compound">compound</a>
       </li>
       <li>
-         <a href="#dep_rel_conj" title="https://w3id.org/obio/dep_rel_conj">conj</a>
+         <a href="#dep_rel_conj" title="https://w3id.org/okg/obio-ontology/dep_rel_conj">conj</a>
       </li>
       <li>
-         <a href="#dep_rel_csubj" title="https://w3id.org/obio/dep_rel_csubj">csubj</a>
+         <a href="#dep_rel_csubj" title="https://w3id.org/okg/obio-ontology/dep_rel_csubj">csubj</a>
       </li>
       <li>
-         <a href="#dep_rel_dep" title="https://w3id.org/obio/dep_rel_dep">dep</a>
+         <a href="#dep_rel_dep" title="https://w3id.org/okg/obio-ontology/dep_rel_dep">dep</a>
       </li>
       <li>
-         <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+         <a href="#dependency_relation"
+            title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
       </li>
       <li>
-         <a href="#dep_rel_det" title="https://w3id.org/obio/dep_rel_det">det</a>
+         <a href="#dep_rel_det" title="https://w3id.org/okg/obio-ontology/dep_rel_det">det</a>
       </li>
       <li>
-         <a href="#dep_rel_dobj" title="https://w3id.org/obio/dep_rel_dobj">dobj</a>
+         <a href="#dep_rel_dobj" title="https://w3id.org/okg/obio-ontology/dep_rel_dobj">dobj</a>
       </li>
       <li>
          <a href="#http://www.essepuntato.it/2008/12/earmark#ends" title="http://www.essepuntato.it/2008/12/earmark#ends">
@@ -930,7 +948,7 @@ This section provides details for each class and property defined by The Observa
          </a>
       </li>
       <li>
-         <a href="#dep_rel_expl" title="https://w3id.org/obio/dep_rel_expl">expl</a>
+         <a href="#dep_rel_expl" title="https://w3id.org/okg/obio-ontology/dep_rel_expl">expl</a>
       </li>
       <li>
          <a href="#http://rdfs.org/sioc/ns#has_container" title="http://rdfs.org/sioc/ns#has_container">has_container</a>
@@ -949,46 +967,48 @@ This section provides details for each class and property defined by The Observa
             title="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter">inter</a>
       </li>
       <li>
-         <a href="#dep_rel_intj" title="https://w3id.org/obio/dep_rel_intj">intj</a>
+         <a href="#dep_rel_intj" title="https://w3id.org/okg/obio-ontology/dep_rel_intj">intj</a>
       </li>
       <li>
-         <a href="#lemma" title="https://w3id.org/obio/lemma">
+         <a href="#lemma" title="https://w3id.org/okg/obio-ontology/lemma">
             <span>lemma</span>
          </a>
       </li>
       <li>
-         <a href="#dep_rel_mark" title="https://w3id.org/obio/dep_rel_mark">mark</a>
+         <a href="#dep_rel_mark" title="https://w3id.org/okg/obio-ontology/dep_rel_mark">mark</a>
       </li>
       <li>
          <a href="#http://schema.org/mentions" title="http://schema.org/mentions">mentions</a>
       </li>
       <li>
-         <a href="#nb_like" title="https://w3id.org/obio/nb_like">
+         <a href="#nb_like" title="https://w3id.org/okg/obio-ontology/nb_like">
             <span>nb_like</span>
          </a>
       </li>
       <li>
-         <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">
+         <a href="#nb_repost" title="https://w3id.org/okg/obio-ontology/nb_repost">
             <span>nb_repost</span>
          </a>
       </li>
       <li>
-         <a href="#dep_npadvmod" title="https://w3id.org/obio/dep_npadvmod">npadvmod</a>
+         <a href="#dep_npadvmod" title="https://w3id.org/okg/obio-ontology/dep_npadvmod">npadvmod</a>
       </li>
       <li>
-         <a href="#dep_rel_nsubj" title="https://w3id.org/obio/dep_rel_nsubj">nsubj</a>
+         <a href="#dep_rel_nsubj" title="https://w3id.org/okg/obio-ontology/dep_rel_nsubj">nsubj</a>
       </li>
       <li>
-         <a href="#dep_rel_nsubpass" title="https://w3id.org/obio/dep_rel_nsubpass">nsubjpass</a>
+         <a href="#dep_rel_nsubpass"
+            title="https://w3id.org/okg/obio-ontology/dep_rel_nsubpass">nsubjpass</a>
       </li>
       <li>
-         <a href="#dep_rel_nummod" title="https://w3id.org/obio/dep_rel_nummod">nummod</a>
+         <a href="#dep_rel_nummod"
+            title="https://w3id.org/okg/obio-ontology/dep_rel_nummod">nummod</a>
       </li>
       <li>
-         <a href="#dep_rel_pcomp" title="https://w3id.org/obio/dep_rel_pcomp">pcomp</a>
+         <a href="#dep_rel_pcomp" title="https://w3id.org/okg/obio-ontology/dep_rel_pcomp">pcomp</a>
       </li>
       <li>
-         <a href="#dep_rel_pobj" title="https://w3id.org/obio/dep_rel_pobj">pobj</a>
+         <a href="#dep_rel_pobj" title="https://w3id.org/okg/obio-ontology/dep_rel_pobj">pobj</a>
       </li>
       <li>
          <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#pos_tag"
@@ -997,33 +1017,33 @@ This section provides details for each class and property defined by The Observa
          </a>
       </li>
       <li>
-         <a href="#dep_rel_poss" title="https://w3id.org/obio/dep_rel_poss">poss</a>
+         <a href="#dep_rel_poss" title="https://w3id.org/okg/obio-ontology/dep_rel_poss">poss</a>
       </li>
       <li>
-         <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">
+         <a href="#post_metrics" title="https://w3id.org/okg/obio-ontology/post_metrics">
             <span>post_metrics</span>
          </a>
       </li>
       <li>
-         <a href="#dep_rel_prep" title="https://w3id.org/obio/dep_rel_prep">prep</a>
+         <a href="#dep_rel_prep" title="https://w3id.org/okg/obio-ontology/dep_rel_prep">prep</a>
       </li>
       <li>
-         <a href="#dep_rel_prt" title="https://w3id.org/obio/dep_rel_prt">prt</a>
+         <a href="#dep_rel_prt" title="https://w3id.org/okg/obio-ontology/dep_rel_prt">prt</a>
       </li>
       <li>
-         <a href="#dep_rel_punct" title="https://w3id.org/obio/dep_rel_punct">punct</a>
+         <a href="#dep_rel_punct" title="https://w3id.org/okg/obio-ontology/dep_rel_punct">punct</a>
       </li>
       <li>
-         <a href="#dep_rel_relcl" title="https://w3id.org/obio/dep_rel_relcl">relcl</a>
+         <a href="#dep_rel_relcl" title="https://w3id.org/okg/obio-ontology/dep_rel_relcl">relcl</a>
       </li>
       <li>
-         <a href="#reply_of" title="https://w3id.org/obio/reply_of">reply of</a>
+         <a href="#reply_of" title="https://w3id.org/okg/obio-ontology/reply_of">reply of</a>
       </li>
       <li>
-         <a href="#repost_of" title="https://w3id.org/obio/repost_of">repost of</a>
+         <a href="#repost_of" title="https://w3id.org/okg/obio-ontology/repost_of">repost of</a>
       </li>
       <li>
-         <a href="#dep_rel_root" title="https://w3id.org/obio/dep_rel_root">root</a>
+         <a href="#dep_rel_root" title="https://w3id.org/okg/obio-ontology/dep_rel_root">root</a>
       </li>
       <li>
          <a href="#http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence"
@@ -1044,7 +1064,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_acomp</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_acomp</p>
       <div class="comment">
          <span class="markdown">Dependency relation: acomp.</span>
       </div>
@@ -1052,7 +1072,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1076,7 +1097,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/advmod</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/advmod</p>
       <div class="comment">
          <span class="markdown">Dependency relation: advmod.</span>
       </div>
@@ -1084,7 +1105,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1108,7 +1130,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_agent</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_agent</p>
       <div class="comment">
          <span class="markdown">Dependency relation: agent.</span>
       </div>
@@ -1116,7 +1138,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1140,7 +1163,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_amod</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_amod</p>
       <div class="comment">
          <span class="markdown">Dependency relation: amod.</span>
       </div>
@@ -1148,7 +1171,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1180,7 +1204,7 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Entity" title="https://w3id.org/obio/Entity">Entity</a>
+               <a href="#Entity" title="https://w3id.org/okg/obio-ontology/Entity">Entity</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1198,7 +1222,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_appos</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_appos</p>
       <div class="comment">
          <span class="markdown">Dependency relation: appos.</span>
       </div>
@@ -1206,7 +1230,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1230,7 +1255,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_attr</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_attr</p>
       <div class="comment">
          <span class="markdown">Dependency relation: attr.</span>
       </div>
@@ -1238,7 +1263,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1262,7 +1288,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_aux</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_aux</p>
       <div class="comment">
          <span class="markdown">Dependency relation: aux.</span>
       </div>
@@ -1270,7 +1296,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1294,7 +1321,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_auxpass</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_auxpass</p>
       <div class="comment">
          <span class="markdown">Dependency relation: auxpass.</span>
       </div>
@@ -1302,7 +1329,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1348,7 +1376,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_cc</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_cc</p>
       <div class="comment">
          <span class="markdown">Dependency relation: cc.</span>
       </div>
@@ -1356,7 +1384,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1380,7 +1409,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_ccomp</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_ccomp</p>
       <div class="comment">
          <span class="markdown">Dependency relation: ccomp.</span>
       </div>
@@ -1388,7 +1417,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1412,7 +1442,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_compound</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_compound</p>
       <div class="comment">
          <span class="markdown">Dependency relation: compound.</span>
       </div>
@@ -1420,7 +1450,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1444,7 +1475,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_conj</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_conj</p>
       <div class="comment">
          <span class="markdown">Dependency relation: conj.</span>
       </div>
@@ -1452,7 +1483,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1476,7 +1508,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_csubj</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_csubj</p>
       <div class="comment">
          <span class="markdown">Dependency relation: csubj.</span>
       </div>
@@ -1484,7 +1516,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1508,7 +1541,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_dep</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_dep</p>
       <div class="comment">
          <span class="markdown">Dependency relation: dep.</span>
       </div>
@@ -1516,7 +1549,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1540,7 +1574,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dependency_relation</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dependency_relation</p>
       <div class="comment">
          <span class="markdown">Generic property that links a child to his parent (tbc) with a dependency.</span>
       </div>
@@ -1554,37 +1588,41 @@ This section provides details for each class and property defined by The Observa
             </dd>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#dep_rel_acomp" title="https://w3id.org/obio/dep_rel_acomp">acomp</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#advmod" title="https://w3id.org/obio/advmod">advmod</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_agent" title="https://w3id.org/obio/dep_rel_agent">agent</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_amod" title="https://w3id.org/obio/dep_rel_amod">amod</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_appos" title="https://w3id.org/obio/dep_rel_appos">appos</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_attr" title="https://w3id.org/obio/dep_rel_attr">attr</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_aux" title="https://w3id.org/obio/dep_rel_aux">aux</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_auxpass" title="https://w3id.org/obio/dep_rel_auxpass">auxpass</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_cc" title="https://w3id.org/obio/dep_rel_cc">cc</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_ccomp" title="https://w3id.org/obio/dep_rel_ccomp">ccomp</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_compound" title="https://w3id.org/obio/dep_rel_compound">compound</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_conj" title="https://w3id.org/obio/dep_rel_conj">conj</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_csubj" title="https://w3id.org/obio/dep_rel_csubj">csubj</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dep" title="https://w3id.org/obio/dep_rel_dep">dep</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_det" title="https://w3id.org/obio/dep_rel_det">det</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dobj" title="https://w3id.org/obio/dep_rel_dobj">dobj</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_expl" title="https://w3id.org/obio/dep_rel_expl">expl</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_intj" title="https://w3id.org/obio/dep_rel_intj">intj</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_mark" title="https://w3id.org/obio/dep_rel_mark">mark</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_npadvmod" title="https://w3id.org/obio/dep_npadvmod">npadvmod</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubj" title="https://w3id.org/obio/dep_rel_nsubj">nsubj</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubpass" title="https://w3id.org/obio/dep_rel_nsubpass">nsubjpass</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nummod" title="https://w3id.org/obio/dep_rel_nummod">nummod</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pcomp" title="https://w3id.org/obio/dep_rel_pcomp">pcomp</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pobj" title="https://w3id.org/obio/dep_rel_pobj">pobj</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_poss" title="https://w3id.org/obio/dep_rel_poss">poss</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prep" title="https://w3id.org/obio/dep_rel_prep">prep</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prt" title="https://w3id.org/obio/dep_rel_prt">prt</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_punct" title="https://w3id.org/obio/dep_rel_punct">punct</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_relcl" title="https://w3id.org/obio/dep_rel_relcl">relcl</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_root" title="https://w3id.org/obio/dep_rel_root">root</a>
+               <a href="#dep_rel_acomp" title="https://w3id.org/okg/obio-ontology/dep_rel_acomp">acomp</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#advmod" title="https://w3id.org/okg/obio-ontology/advmod">advmod</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_agent" title="https://w3id.org/okg/obio-ontology/dep_rel_agent">agent</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_amod" title="https://w3id.org/okg/obio-ontology/dep_rel_amod">amod</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_appos" title="https://w3id.org/okg/obio-ontology/dep_rel_appos">appos</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_attr" title="https://w3id.org/okg/obio-ontology/dep_rel_attr">attr</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_aux" title="https://w3id.org/okg/obio-ontology/dep_rel_aux">aux</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_auxpass"
+                  title="https://w3id.org/okg/obio-ontology/dep_rel_auxpass">auxpass</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_cc" title="https://w3id.org/okg/obio-ontology/dep_rel_cc">cc</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_ccomp" title="https://w3id.org/okg/obio-ontology/dep_rel_ccomp">ccomp</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_compound"
+                  title="https://w3id.org/okg/obio-ontology/dep_rel_compound">compound</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_conj" title="https://w3id.org/okg/obio-ontology/dep_rel_conj">conj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_csubj" title="https://w3id.org/okg/obio-ontology/dep_rel_csubj">csubj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dep" title="https://w3id.org/okg/obio-ontology/dep_rel_dep">dep</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_det" title="https://w3id.org/okg/obio-ontology/dep_rel_det">det</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_dobj" title="https://w3id.org/okg/obio-ontology/dep_rel_dobj">dobj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_expl" title="https://w3id.org/okg/obio-ontology/dep_rel_expl">expl</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_intj" title="https://w3id.org/okg/obio-ontology/dep_rel_intj">intj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_mark" title="https://w3id.org/okg/obio-ontology/dep_rel_mark">mark</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_npadvmod" title="https://w3id.org/okg/obio-ontology/dep_npadvmod">npadvmod</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubj" title="https://w3id.org/okg/obio-ontology/dep_rel_nsubj">nsubj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nsubpass"
+                  title="https://w3id.org/okg/obio-ontology/dep_rel_nsubpass">nsubjpass</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_nummod"
+                  title="https://w3id.org/okg/obio-ontology/dep_rel_nummod">nummod</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pcomp" title="https://w3id.org/okg/obio-ontology/dep_rel_pcomp">pcomp</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_pobj" title="https://w3id.org/okg/obio-ontology/dep_rel_pobj">pobj</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_poss" title="https://w3id.org/okg/obio-ontology/dep_rel_poss">poss</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prep" title="https://w3id.org/okg/obio-ontology/dep_rel_prep">prep</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_prt" title="https://w3id.org/okg/obio-ontology/dep_rel_prt">prt</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_punct" title="https://w3id.org/okg/obio-ontology/dep_rel_punct">punct</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_relcl" title="https://w3id.org/okg/obio-ontology/dep_rel_relcl">relcl</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#dep_rel_root" title="https://w3id.org/okg/obio-ontology/dep_rel_root">root</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1608,7 +1646,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_det</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_det</p>
       <div class="comment">
          <span class="markdown">Dependency relation: det.</span>
       </div>
@@ -1616,7 +1654,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1640,7 +1679,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_dobj</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_dobj</p>
       <div class="comment">
          <span class="markdown">Dependency relation: dobj.</span>
       </div>
@@ -1648,7 +1687,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1694,7 +1734,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_expl</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_expl</p>
       <div class="comment">
          <span class="markdown">Dependency relation: expl.</span>
       </div>
@@ -1702,7 +1742,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1759,7 +1800,7 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Entity" title="https://w3id.org/obio/Entity">Entity</a>
+               <a href="#Entity" title="https://w3id.org/okg/obio-ontology/Entity">Entity</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1809,7 +1850,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1833,7 +1875,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_intj</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_intj</p>
       <div class="comment">
          <span class="markdown">Dependency relation: intj.</span>
       </div>
@@ -1841,7 +1883,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1865,7 +1908,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/lemma</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/lemma</p>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -1887,7 +1930,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_mark</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_mark</p>
       <div class="comment">
          <span class="markdown">Dependency relation: mark.</span>
       </div>
@@ -1895,7 +1938,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1945,12 +1989,12 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/nb_like</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/nb_like</p>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">post_metrics</a>
+               <a href="#post_metrics" title="https://w3id.org/okg/obio-ontology/post_metrics">post_metrics</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1971,12 +2015,12 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/nb_repost</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/nb_repost</p>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">post_metrics</a>
+               <a href="#post_metrics" title="https://w3id.org/okg/obio-ontology/post_metrics">post_metrics</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1997,7 +2041,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_npadvmod</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_npadvmod</p>
       <div class="comment">
          <span class="markdown">Dependency relation: npadvmod.</span>
       </div>
@@ -2005,7 +2049,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2029,7 +2074,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_nsubj</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_nsubj</p>
       <div class="comment">
          <span class="markdown">Dependency relation: nsubj.</span>
       </div>
@@ -2037,7 +2082,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2061,7 +2107,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_nsubpass</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_nsubpass</p>
       <div class="comment">
          <span class="markdown">Dependency relation: nsubjpass.</span>
       </div>
@@ -2069,7 +2115,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2093,7 +2140,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_nummod</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_nummod</p>
       <div class="comment">
          <span class="markdown">Dependency relation: nummod.</span>
       </div>
@@ -2101,7 +2148,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2125,7 +2173,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_pcomp</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_pcomp</p>
       <div class="comment">
          <span class="markdown">Dependency relation: pcomp.</span>
       </div>
@@ -2133,7 +2181,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2157,7 +2206,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_pobj</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_pobj</p>
       <div class="comment">
          <span class="markdown">Dependency relation: pobj.</span>
       </div>
@@ -2165,7 +2214,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2211,7 +2261,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_poss</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_poss</p>
       <div class="comment">
          <span class="markdown">Dependency relation: poss.</span>
       </div>
@@ -2219,7 +2269,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2243,13 +2294,13 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/post_metrics</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/post_metrics</p>
       <div class="description">
          <dl>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#nb_like" title="https://w3id.org/obio/nb_like">nb_like</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">nb_repost</a>
+               <a href="#nb_like" title="https://w3id.org/okg/obio-ontology/nb_like">nb_like</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#nb_repost" title="https://w3id.org/okg/obio-ontology/nb_repost">nb_repost</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2270,7 +2321,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_prep</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_prep</p>
       <div class="comment">
          <span class="markdown">Dependency relation: prep.</span>
       </div>
@@ -2278,7 +2329,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2302,7 +2354,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_prt</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_prt</p>
       <div class="comment">
          <span class="markdown">Dependency relation: prt.</span>
       </div>
@@ -2310,7 +2362,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2334,7 +2387,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_punct</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_punct</p>
       <div class="comment">
          <span class="markdown">Dependency relation: punct.</span>
       </div>
@@ -2342,7 +2395,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2366,7 +2420,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_relcl</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_relcl</p>
       <div class="comment">
          <span class="markdown">Dependency relation: relcl.</span>
       </div>
@@ -2374,7 +2428,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2398,7 +2453,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/reply_of</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/reply_of</p>
       <div class="comment">
          <span class="markdown">Links a reply to the post it replies to.</span>
       </div>
@@ -2406,7 +2461,7 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Reply" title="https://w3id.org/obio/Reply">Reply</a>
+               <a href="#Reply" title="https://w3id.org/okg/obio-ontology/Reply">Reply</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2423,7 +2478,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/repost_of</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/repost_of</p>
       <div class="comment">
          <span class="markdown">Links a repost to its original post.</span>
       </div>
@@ -2431,7 +2486,7 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#RePost" title="https://w3id.org/obio/RePost">RePost</a>
+               <a href="#RePost" title="https://w3id.org/okg/obio-ontology/RePost">RePost</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2448,7 +2503,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/dep_rel_root</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/dep_rel_root</p>
       <div class="comment">
          <span class="markdown">Dependency relation: root.</span>
       </div>
@@ -2456,7 +2511,8 @@ This section provides details for each class and property defined by The Observa
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#dependency_relation" title="https://w3id.org/obio/dependency_relation">dependency_relation</a>
+               <a href="#dependency_relation"
+                  title="https://w3id.org/okg/obio-ontology/dependency_relation">dependency_relation</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -2568,7 +2624,7 @@ This section provides details for each class and property defined by The Observa
          <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">created</a>
       </li>
       <li>
-         <a href="#description" title="https://w3id.org/obio/description">description</a>
+         <a href="#description" title="https://w3id.org/okg/obio-ontology/description">description</a>
       </li>
       <li>
          <a href="#http://www.essepuntato.it/2008/12/earmark#ends" title="http://www.essepuntato.it/2008/12/earmark#ends">
@@ -2576,10 +2632,10 @@ This section provides details for each class and property defined by The Observa
          </a>
       </li>
       <li>
-         <a href="#follower" title="https://w3id.org/obio/follower">follower</a>
+         <a href="#follower" title="https://w3id.org/okg/obio-ontology/follower">follower</a>
       </li>
       <li>
-         <a href="#following" title="https://w3id.org/obio/following">following</a>
+         <a href="#following" title="https://w3id.org/okg/obio-ontology/following">following</a>
       </li>
       <li>
          <a href="#http://rdfs.org/sioc/ns#id" title="http://rdfs.org/sioc/ns#id">
@@ -2587,23 +2643,23 @@ This section provides details for each class and property defined by The Observa
          </a>
       </li>
       <li>
-         <a href="#is_verified" title="https://w3id.org/obio/is_verified">is_verified</a>
+         <a href="#is_verified" title="https://w3id.org/okg/obio-ontology/is_verified">is_verified</a>
       </li>
       <li>
-         <a href="#lemma" title="https://w3id.org/obio/lemma">
+         <a href="#lemma" title="https://w3id.org/okg/obio-ontology/lemma">
             <span>lemma</span>
          </a>
       </li>
       <li>
-         <a href="#location" title="https://w3id.org/obio/location">location</a>
+         <a href="#location" title="https://w3id.org/okg/obio-ontology/location">location</a>
       </li>
       <li>
-         <a href="#nb_like" title="https://w3id.org/obio/nb_like">
+         <a href="#nb_like" title="https://w3id.org/okg/obio-ontology/nb_like">
             <span>nb_like</span>
          </a>
       </li>
       <li>
-         <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">
+         <a href="#nb_repost" title="https://w3id.org/okg/obio-ontology/nb_repost">
             <span>nb_repost</span>
          </a>
       </li>
@@ -2614,7 +2670,7 @@ This section provides details for each class and property defined by The Observa
          </a>
       </li>
       <li>
-         <a href="#post_metrics" title="https://w3id.org/obio/post_metrics">
+         <a href="#post_metrics" title="https://w3id.org/okg/obio-ontology/post_metrics">
             <span>post_metrics</span>
          </a>
       </li>
@@ -2673,7 +2729,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/description</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/description</p>
       <div class="comment">
          <span class="markdown">Text description of the online user account.</span>
       </div>
@@ -2721,7 +2777,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/follower</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/follower</p>
       <div class="comment">
          <span class="markdown">Number of followers of the online user account.</span>
       </div>
@@ -2747,7 +2803,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/following</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/following</p>
       <div class="comment">
          <span class="markdown">Number of accounts that the online user account is following.</span>
       </div>
@@ -2795,7 +2851,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/is_verified</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/is_verified</p>
       <div class="comment">
          <span class="markdown">Whether an online user account is verified or not.</span>
       </div>
@@ -2821,7 +2877,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/lemma</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/lemma</p>
       <div class="description">
          <dl>
             <dt>has range</dt>
@@ -2843,7 +2899,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/location</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/location</p>
       <div class="comment">
          <span class="markdown">Location of the online user account.</span>
       </div>
@@ -2869,7 +2925,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/nb_like</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/nb_like</p>
       <div class="description">
          <dl>
             <dt>has range</dt>
@@ -2901,7 +2957,7 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/nb_repost</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/nb_repost</p>
       <div class="description">
          <dl>
             <dt>has range</dt>
@@ -2945,13 +3001,13 @@ This section provides details for each class and property defined by The Observa
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/obio/post_metrics</p>
+         <strong>IRI:</strong> https://w3id.org/okg/obio-ontology/post_metrics</p>
       <div class="description">
          <dl>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#nb_like" title="https://w3id.org/obio/nb_like">nb_like</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#nb_repost" title="https://w3id.org/obio/nb_repost">nb_repost</a>
+               <a href="#nb_like" title="https://w3id.org/okg/obio-ontology/nb_like">nb_like</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#nb_repost" title="https://w3id.org/okg/obio-ontology/nb_repost">nb_repost</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has range</dt>

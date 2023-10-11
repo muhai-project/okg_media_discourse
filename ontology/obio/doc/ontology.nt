@@ -1,4 +1,4 @@
-<https://w3id.org/obio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/okg/obio-ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 # 
 # 
 # #################################################################
@@ -34,7 +34,7 @@
 # 
 # http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf
 <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/obio/Entity> .
+<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/okg/obio-ontology/Entity> .
 <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase> .
 <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf> <http://www.w3.org/2000/01/rdf-schema#comment> "IRI Entity attached to a string entity" .
 <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf> <http://www.w3.org/2000/01/rdf-schema#label> "anchorOf" .
@@ -100,299 +100,299 @@
 # 
 # http://www.ics.forth.gr/isl/oae/core#hasMatchedURL
 <http://www.ics.forth.gr/isl/oae/core#hasMatchedURL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.ics.forth.gr/isl/oae/core#hasMatchedURL> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/obio/Entity> .
+<http://www.ics.forth.gr/isl/oae/core#hasMatchedURL> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/okg/obio-ontology/Entity> .
 <http://www.ics.forth.gr/isl/oae/core#hasMatchedURL> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Resource> .
 <http://www.w3.org/2000/01/rdf-schema#Resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.ics.forth.gr/isl/oae/core#hasMatchedURL> <http://www.w3.org/2000/01/rdf-schema#comment> "Linking IRI entities from posts to other KG resources like DBpedia." .
 <http://www.ics.forth.gr/isl/oae/core#hasMatchedURL> <http://www.w3.org/2000/01/rdf-schema#label> "hasMatchedURL" .
 # 
-# https://w3id.org/obio/advmod
-<https://w3id.org/obio/advmod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/advmod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/advmod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/advmod> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/advmod> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: advmod." .
-<https://w3id.org/obio/advmod> <http://www.w3.org/2000/01/rdf-schema#label> "advmod" .
+# https://w3id.org/okg/obio-ontology/advmod
+<https://w3id.org/okg/obio-ontology/advmod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/advmod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/advmod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/advmod> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/advmod> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: advmod." .
+<https://w3id.org/okg/obio-ontology/advmod> <http://www.w3.org/2000/01/rdf-schema#label> "advmod" .
 # 
-# https://w3id.org/obio/dep_npadvmod
-<https://w3id.org/obio/dep_npadvmod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_npadvmod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_npadvmod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_npadvmod> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_npadvmod> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: npadvmod." .
-<https://w3id.org/obio/dep_npadvmod> <http://www.w3.org/2000/01/rdf-schema#label> "npadvmod" .
+# https://w3id.org/okg/obio-ontology/dep_npadvmod
+<https://w3id.org/okg/obio-ontology/dep_npadvmod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_npadvmod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_npadvmod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_npadvmod> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_npadvmod> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: npadvmod." .
+<https://w3id.org/okg/obio-ontology/dep_npadvmod> <http://www.w3.org/2000/01/rdf-schema#label> "npadvmod" .
 # 
-# https://w3id.org/obio/dep_rel_acomp
-<https://w3id.org/obio/dep_rel_acomp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_acomp> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_acomp> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_acomp> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_acomp> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: acomp." .
-<https://w3id.org/obio/dep_rel_acomp> <http://www.w3.org/2000/01/rdf-schema#label> "acomp" .
+# https://w3id.org/okg/obio-ontology/dep_rel_acomp
+<https://w3id.org/okg/obio-ontology/dep_rel_acomp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_acomp> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_acomp> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_acomp> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_acomp> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: acomp." .
+<https://w3id.org/okg/obio-ontology/dep_rel_acomp> <http://www.w3.org/2000/01/rdf-schema#label> "acomp" .
 # 
-# https://w3id.org/obio/dep_rel_agent
-<https://w3id.org/obio/dep_rel_agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_agent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_agent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_agent> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_agent> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: agent." .
-<https://w3id.org/obio/dep_rel_agent> <http://www.w3.org/2000/01/rdf-schema#label> "agent" .
+# https://w3id.org/okg/obio-ontology/dep_rel_agent
+<https://w3id.org/okg/obio-ontology/dep_rel_agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_agent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_agent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_agent> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_agent> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: agent." .
+<https://w3id.org/okg/obio-ontology/dep_rel_agent> <http://www.w3.org/2000/01/rdf-schema#label> "agent" .
 # 
-# https://w3id.org/obio/dep_rel_amod
-<https://w3id.org/obio/dep_rel_amod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_amod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_amod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_amod> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_amod> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: amod." .
-<https://w3id.org/obio/dep_rel_amod> <http://www.w3.org/2000/01/rdf-schema#label> "amod" .
+# https://w3id.org/okg/obio-ontology/dep_rel_amod
+<https://w3id.org/okg/obio-ontology/dep_rel_amod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_amod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_amod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_amod> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_amod> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: amod." .
+<https://w3id.org/okg/obio-ontology/dep_rel_amod> <http://www.w3.org/2000/01/rdf-schema#label> "amod" .
 # 
-# https://w3id.org/obio/dep_rel_appos
-<https://w3id.org/obio/dep_rel_appos> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_appos> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_appos> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_appos> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_appos> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: appos." .
-<https://w3id.org/obio/dep_rel_appos> <http://www.w3.org/2000/01/rdf-schema#label> "appos" .
+# https://w3id.org/okg/obio-ontology/dep_rel_appos
+<https://w3id.org/okg/obio-ontology/dep_rel_appos> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_appos> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_appos> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_appos> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_appos> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: appos." .
+<https://w3id.org/okg/obio-ontology/dep_rel_appos> <http://www.w3.org/2000/01/rdf-schema#label> "appos" .
 # 
-# https://w3id.org/obio/dep_rel_attr
-<https://w3id.org/obio/dep_rel_attr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_attr> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_attr> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_attr> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_attr> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: attr." .
-<https://w3id.org/obio/dep_rel_attr> <http://www.w3.org/2000/01/rdf-schema#label> "attr" .
+# https://w3id.org/okg/obio-ontology/dep_rel_attr
+<https://w3id.org/okg/obio-ontology/dep_rel_attr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_attr> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_attr> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_attr> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_attr> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: attr." .
+<https://w3id.org/okg/obio-ontology/dep_rel_attr> <http://www.w3.org/2000/01/rdf-schema#label> "attr" .
 # 
-# https://w3id.org/obio/dep_rel_aux
-<https://w3id.org/obio/dep_rel_aux> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_aux> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_aux> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_aux> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_aux> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: aux." .
-<https://w3id.org/obio/dep_rel_aux> <http://www.w3.org/2000/01/rdf-schema#label> "aux" .
+# https://w3id.org/okg/obio-ontology/dep_rel_aux
+<https://w3id.org/okg/obio-ontology/dep_rel_aux> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_aux> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_aux> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_aux> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_aux> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: aux." .
+<https://w3id.org/okg/obio-ontology/dep_rel_aux> <http://www.w3.org/2000/01/rdf-schema#label> "aux" .
 # 
-# https://w3id.org/obio/dep_rel_auxpass
-<https://w3id.org/obio/dep_rel_auxpass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_auxpass> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_auxpass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_auxpass> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_auxpass> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: auxpass." .
-<https://w3id.org/obio/dep_rel_auxpass> <http://www.w3.org/2000/01/rdf-schema#label> "auxpass" .
+# https://w3id.org/okg/obio-ontology/dep_rel_auxpass
+<https://w3id.org/okg/obio-ontology/dep_rel_auxpass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_auxpass> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_auxpass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_auxpass> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_auxpass> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: auxpass." .
+<https://w3id.org/okg/obio-ontology/dep_rel_auxpass> <http://www.w3.org/2000/01/rdf-schema#label> "auxpass" .
 # 
-# https://w3id.org/obio/dep_rel_cc
-<https://w3id.org/obio/dep_rel_cc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_cc> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_cc> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_cc> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_cc> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: cc." .
-<https://w3id.org/obio/dep_rel_cc> <http://www.w3.org/2000/01/rdf-schema#label> "cc" .
+# https://w3id.org/okg/obio-ontology/dep_rel_cc
+<https://w3id.org/okg/obio-ontology/dep_rel_cc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_cc> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_cc> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_cc> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_cc> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: cc." .
+<https://w3id.org/okg/obio-ontology/dep_rel_cc> <http://www.w3.org/2000/01/rdf-schema#label> "cc" .
 # 
-# https://w3id.org/obio/dep_rel_ccomp
-<https://w3id.org/obio/dep_rel_ccomp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_ccomp> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_ccomp> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_ccomp> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_ccomp> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: ccomp." .
-<https://w3id.org/obio/dep_rel_ccomp> <http://www.w3.org/2000/01/rdf-schema#label> "ccomp" .
+# https://w3id.org/okg/obio-ontology/dep_rel_ccomp
+<https://w3id.org/okg/obio-ontology/dep_rel_ccomp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_ccomp> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_ccomp> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_ccomp> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_ccomp> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: ccomp." .
+<https://w3id.org/okg/obio-ontology/dep_rel_ccomp> <http://www.w3.org/2000/01/rdf-schema#label> "ccomp" .
 # 
-# https://w3id.org/obio/dep_rel_compound
-<https://w3id.org/obio/dep_rel_compound> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_compound> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_compound> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_compound> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_compound> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: compound." .
-<https://w3id.org/obio/dep_rel_compound> <http://www.w3.org/2000/01/rdf-schema#label> "compound" .
+# https://w3id.org/okg/obio-ontology/dep_rel_compound
+<https://w3id.org/okg/obio-ontology/dep_rel_compound> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_compound> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_compound> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_compound> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_compound> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: compound." .
+<https://w3id.org/okg/obio-ontology/dep_rel_compound> <http://www.w3.org/2000/01/rdf-schema#label> "compound" .
 # 
-# https://w3id.org/obio/dep_rel_conj
-<https://w3id.org/obio/dep_rel_conj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_conj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_conj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_conj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_conj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: conj." .
-<https://w3id.org/obio/dep_rel_conj> <http://www.w3.org/2000/01/rdf-schema#label> "conj" .
+# https://w3id.org/okg/obio-ontology/dep_rel_conj
+<https://w3id.org/okg/obio-ontology/dep_rel_conj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_conj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_conj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_conj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_conj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: conj." .
+<https://w3id.org/okg/obio-ontology/dep_rel_conj> <http://www.w3.org/2000/01/rdf-schema#label> "conj" .
 # 
-# https://w3id.org/obio/dep_rel_csubj
-<https://w3id.org/obio/dep_rel_csubj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_csubj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_csubj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_csubj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_csubj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: csubj." .
-<https://w3id.org/obio/dep_rel_csubj> <http://www.w3.org/2000/01/rdf-schema#label> "csubj" .
+# https://w3id.org/okg/obio-ontology/dep_rel_csubj
+<https://w3id.org/okg/obio-ontology/dep_rel_csubj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_csubj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_csubj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_csubj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_csubj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: csubj." .
+<https://w3id.org/okg/obio-ontology/dep_rel_csubj> <http://www.w3.org/2000/01/rdf-schema#label> "csubj" .
 # 
-# https://w3id.org/obio/dep_rel_dep
-<https://w3id.org/obio/dep_rel_dep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_dep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_dep> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_dep> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_dep> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: dep." .
-<https://w3id.org/obio/dep_rel_dep> <http://www.w3.org/2000/01/rdf-schema#label> "dep" .
+# https://w3id.org/okg/obio-ontology/dep_rel_dep
+<https://w3id.org/okg/obio-ontology/dep_rel_dep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_dep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_dep> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_dep> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_dep> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: dep." .
+<https://w3id.org/okg/obio-ontology/dep_rel_dep> <http://www.w3.org/2000/01/rdf-schema#label> "dep" .
 # 
-# https://w3id.org/obio/dep_rel_det
-<https://w3id.org/obio/dep_rel_det> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_det> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_det> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_det> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_det> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: det." .
-<https://w3id.org/obio/dep_rel_det> <http://www.w3.org/2000/01/rdf-schema#label> "det" .
+# https://w3id.org/okg/obio-ontology/dep_rel_det
+<https://w3id.org/okg/obio-ontology/dep_rel_det> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_det> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_det> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_det> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_det> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: det." .
+<https://w3id.org/okg/obio-ontology/dep_rel_det> <http://www.w3.org/2000/01/rdf-schema#label> "det" .
 # 
-# https://w3id.org/obio/dep_rel_dobj
-<https://w3id.org/obio/dep_rel_dobj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_dobj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_dobj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_dobj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_dobj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: dobj." .
-<https://w3id.org/obio/dep_rel_dobj> <http://www.w3.org/2000/01/rdf-schema#label> "dobj" .
+# https://w3id.org/okg/obio-ontology/dep_rel_dobj
+<https://w3id.org/okg/obio-ontology/dep_rel_dobj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_dobj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_dobj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_dobj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_dobj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: dobj." .
+<https://w3id.org/okg/obio-ontology/dep_rel_dobj> <http://www.w3.org/2000/01/rdf-schema#label> "dobj" .
 # 
-# https://w3id.org/obio/dep_rel_expl
-<https://w3id.org/obio/dep_rel_expl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_expl> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_expl> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_expl> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_expl> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: expl." .
-<https://w3id.org/obio/dep_rel_expl> <http://www.w3.org/2000/01/rdf-schema#label> "expl" .
+# https://w3id.org/okg/obio-ontology/dep_rel_expl
+<https://w3id.org/okg/obio-ontology/dep_rel_expl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_expl> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_expl> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_expl> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_expl> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: expl." .
+<https://w3id.org/okg/obio-ontology/dep_rel_expl> <http://www.w3.org/2000/01/rdf-schema#label> "expl" .
 # 
-# https://w3id.org/obio/dep_rel_intj
-<https://w3id.org/obio/dep_rel_intj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_intj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_intj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_intj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_intj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: intj." .
-<https://w3id.org/obio/dep_rel_intj> <http://www.w3.org/2000/01/rdf-schema#label> "intj" .
+# https://w3id.org/okg/obio-ontology/dep_rel_intj
+<https://w3id.org/okg/obio-ontology/dep_rel_intj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_intj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_intj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_intj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_intj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: intj." .
+<https://w3id.org/okg/obio-ontology/dep_rel_intj> <http://www.w3.org/2000/01/rdf-schema#label> "intj" .
 # 
-# https://w3id.org/obio/dep_rel_mark
-<https://w3id.org/obio/dep_rel_mark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_mark> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_mark> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_mark> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_mark> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: mark." .
-<https://w3id.org/obio/dep_rel_mark> <http://www.w3.org/2000/01/rdf-schema#label> "mark" .
+# https://w3id.org/okg/obio-ontology/dep_rel_mark
+<https://w3id.org/okg/obio-ontology/dep_rel_mark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_mark> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_mark> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_mark> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_mark> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: mark." .
+<https://w3id.org/okg/obio-ontology/dep_rel_mark> <http://www.w3.org/2000/01/rdf-schema#label> "mark" .
 # 
-# https://w3id.org/obio/dep_rel_nsubj
-<https://w3id.org/obio/dep_rel_nsubj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_nsubj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_nsubj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_nsubj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_nsubj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: nsubj." .
-<https://w3id.org/obio/dep_rel_nsubj> <http://www.w3.org/2000/01/rdf-schema#label> "nsubj" .
+# https://w3id.org/okg/obio-ontology/dep_rel_nsubj
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: nsubj." .
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubj> <http://www.w3.org/2000/01/rdf-schema#label> "nsubj" .
 # 
-# https://w3id.org/obio/dep_rel_nsubpass
-<https://w3id.org/obio/dep_rel_nsubpass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_nsubpass> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_nsubpass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_nsubpass> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_nsubpass> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: nsubjpass." .
-<https://w3id.org/obio/dep_rel_nsubpass> <http://www.w3.org/2000/01/rdf-schema#label> "nsubjpass" .
+# https://w3id.org/okg/obio-ontology/dep_rel_nsubpass
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubpass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubpass> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubpass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubpass> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubpass> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: nsubjpass." .
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubpass> <http://www.w3.org/2000/01/rdf-schema#label> "nsubjpass" .
 # 
-# https://w3id.org/obio/dep_rel_nummod
-<https://w3id.org/obio/dep_rel_nummod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_nummod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_nummod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_nummod> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_nummod> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: nummod." .
-<https://w3id.org/obio/dep_rel_nummod> <http://www.w3.org/2000/01/rdf-schema#label> "nummod" .
+# https://w3id.org/okg/obio-ontology/dep_rel_nummod
+<https://w3id.org/okg/obio-ontology/dep_rel_nummod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nummod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nummod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nummod> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_nummod> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: nummod." .
+<https://w3id.org/okg/obio-ontology/dep_rel_nummod> <http://www.w3.org/2000/01/rdf-schema#label> "nummod" .
 # 
-# https://w3id.org/obio/dep_rel_pcomp
-<https://w3id.org/obio/dep_rel_pcomp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_pcomp> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_pcomp> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_pcomp> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_pcomp> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: pcomp." .
-<https://w3id.org/obio/dep_rel_pcomp> <http://www.w3.org/2000/01/rdf-schema#label> "pcomp" .
+# https://w3id.org/okg/obio-ontology/dep_rel_pcomp
+<https://w3id.org/okg/obio-ontology/dep_rel_pcomp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_pcomp> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_pcomp> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_pcomp> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_pcomp> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: pcomp." .
+<https://w3id.org/okg/obio-ontology/dep_rel_pcomp> <http://www.w3.org/2000/01/rdf-schema#label> "pcomp" .
 # 
-# https://w3id.org/obio/dep_rel_pobj
-<https://w3id.org/obio/dep_rel_pobj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_pobj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_pobj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_pobj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_pobj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: pobj." .
-<https://w3id.org/obio/dep_rel_pobj> <http://www.w3.org/2000/01/rdf-schema#label> "pobj" .
+# https://w3id.org/okg/obio-ontology/dep_rel_pobj
+<https://w3id.org/okg/obio-ontology/dep_rel_pobj> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_pobj> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_pobj> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_pobj> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_pobj> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: pobj." .
+<https://w3id.org/okg/obio-ontology/dep_rel_pobj> <http://www.w3.org/2000/01/rdf-schema#label> "pobj" .
 # 
-# https://w3id.org/obio/dep_rel_poss
-<https://w3id.org/obio/dep_rel_poss> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_poss> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_poss> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_poss> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_poss> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: poss." .
-<https://w3id.org/obio/dep_rel_poss> <http://www.w3.org/2000/01/rdf-schema#label> "poss" .
+# https://w3id.org/okg/obio-ontology/dep_rel_poss
+<https://w3id.org/okg/obio-ontology/dep_rel_poss> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_poss> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_poss> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_poss> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_poss> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: poss." .
+<https://w3id.org/okg/obio-ontology/dep_rel_poss> <http://www.w3.org/2000/01/rdf-schema#label> "poss" .
 # 
-# https://w3id.org/obio/dep_rel_prep
-<https://w3id.org/obio/dep_rel_prep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_prep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_prep> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_prep> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_prep> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: prep." .
-<https://w3id.org/obio/dep_rel_prep> <http://www.w3.org/2000/01/rdf-schema#label> "prep" .
+# https://w3id.org/okg/obio-ontology/dep_rel_prep
+<https://w3id.org/okg/obio-ontology/dep_rel_prep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_prep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_prep> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_prep> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_prep> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: prep." .
+<https://w3id.org/okg/obio-ontology/dep_rel_prep> <http://www.w3.org/2000/01/rdf-schema#label> "prep" .
 # 
-# https://w3id.org/obio/dep_rel_prt
-<https://w3id.org/obio/dep_rel_prt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_prt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_prt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_prt> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_prt> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: prt." .
-<https://w3id.org/obio/dep_rel_prt> <http://www.w3.org/2000/01/rdf-schema#label> "prt" .
+# https://w3id.org/okg/obio-ontology/dep_rel_prt
+<https://w3id.org/okg/obio-ontology/dep_rel_prt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_prt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_prt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_prt> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_prt> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: prt." .
+<https://w3id.org/okg/obio-ontology/dep_rel_prt> <http://www.w3.org/2000/01/rdf-schema#label> "prt" .
 # 
-# https://w3id.org/obio/dep_rel_punct
-<https://w3id.org/obio/dep_rel_punct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_punct> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_punct> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_punct> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_punct> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: punct." .
-<https://w3id.org/obio/dep_rel_punct> <http://www.w3.org/2000/01/rdf-schema#label> "punct" .
+# https://w3id.org/okg/obio-ontology/dep_rel_punct
+<https://w3id.org/okg/obio-ontology/dep_rel_punct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_punct> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_punct> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_punct> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_punct> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: punct." .
+<https://w3id.org/okg/obio-ontology/dep_rel_punct> <http://www.w3.org/2000/01/rdf-schema#label> "punct" .
 # 
-# https://w3id.org/obio/dep_rel_relcl
-<https://w3id.org/obio/dep_rel_relcl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_relcl> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_relcl> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_relcl> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_relcl> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: relcl." .
-<https://w3id.org/obio/dep_rel_relcl> <http://www.w3.org/2000/01/rdf-schema#label> "relcl" .
+# https://w3id.org/okg/obio-ontology/dep_rel_relcl
+<https://w3id.org/okg/obio-ontology/dep_rel_relcl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_relcl> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_relcl> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_relcl> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_relcl> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: relcl." .
+<https://w3id.org/okg/obio-ontology/dep_rel_relcl> <http://www.w3.org/2000/01/rdf-schema#label> "relcl" .
 # 
-# https://w3id.org/obio/dep_rel_root
-<https://w3id.org/obio/dep_rel_root> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dep_rel_root> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/dependency_relation> .
-<https://w3id.org/obio/dep_rel_root> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_root> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dep_rel_root> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: root." .
-<https://w3id.org/obio/dep_rel_root> <http://www.w3.org/2000/01/rdf-schema#label> "root" .
+# https://w3id.org/okg/obio-ontology/dep_rel_root
+<https://w3id.org/okg/obio-ontology/dep_rel_root> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dep_rel_root> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/dependency_relation> .
+<https://w3id.org/okg/obio-ontology/dep_rel_root> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_root> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dep_rel_root> <http://www.w3.org/2000/01/rdf-schema#comment> "Dependency relation: root." .
+<https://w3id.org/okg/obio-ontology/dep_rel_root> <http://www.w3.org/2000/01/rdf-schema#label> "root" .
 # 
-# https://w3id.org/obio/dependency_relation
-<https://w3id.org/obio/dependency_relation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/dependency_relation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter> .
-<https://w3id.org/obio/dependency_relation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dependency_relation> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
-<https://w3id.org/obio/dependency_relation> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic property that links a child to his parent (tbc) with a dependency." .
-<https://w3id.org/obio/dependency_relation> <http://www.w3.org/2000/01/rdf-schema#label> "dependency_relation" .
+# https://w3id.org/okg/obio-ontology/dependency_relation
+<https://w3id.org/okg/obio-ontology/dependency_relation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/dependency_relation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter> .
+<https://w3id.org/okg/obio-ontology/dependency_relation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dependency_relation> <http://www.w3.org/2000/01/rdf-schema#range> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> .
+<https://w3id.org/okg/obio-ontology/dependency_relation> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic property that links a child to his parent (tbc) with a dependency." .
+<https://w3id.org/okg/obio-ontology/dependency_relation> <http://www.w3.org/2000/01/rdf-schema#label> "dependency_relation" .
 # 
-# https://w3id.org/obio/lemma
-<https://w3id.org/obio/lemma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/lemma> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> .
+# https://w3id.org/okg/obio-ontology/lemma
+<https://w3id.org/okg/obio-ontology/lemma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/lemma> <http://www.w3.org/2000/01/rdf-schema#domain> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> .
 # 
-# https://w3id.org/obio/nb_like
-<https://w3id.org/obio/nb_like> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/post_metrics> .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Post> .
+# https://w3id.org/okg/obio-ontology/nb_like
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/post_metrics> .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Post> .
 # 
-# https://w3id.org/obio/nb_repost
-<https://w3id.org/obio/nb_repost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/nb_repost> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/obio/post_metrics> .
-<https://w3id.org/obio/nb_repost> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Post> .
+# https://w3id.org/okg/obio-ontology/nb_repost
+<https://w3id.org/okg/obio-ontology/nb_repost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/nb_repost> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/okg/obio-ontology/post_metrics> .
+<https://w3id.org/okg/obio-ontology/nb_repost> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Post> .
 # 
-# https://w3id.org/obio/post_metrics
-<https://w3id.org/obio/post_metrics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/post_metrics> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Post> .
+# https://w3id.org/okg/obio-ontology/post_metrics
+<https://w3id.org/okg/obio-ontology/post_metrics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/post_metrics> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Post> .
 # 
-# https://w3id.org/obio/reply_of
-<https://w3id.org/obio/reply_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/reply_of> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/obio/Reply> .
-<https://w3id.org/obio/reply_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://rdfs.org/sioc/ns#Post> .
-<https://w3id.org/obio/reply_of> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a reply to the post it replies to." .
-<https://w3id.org/obio/reply_of> <http://www.w3.org/2000/01/rdf-schema#label> "reply of" .
+# https://w3id.org/okg/obio-ontology/reply_of
+<https://w3id.org/okg/obio-ontology/reply_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/reply_of> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/okg/obio-ontology/Reply> .
+<https://w3id.org/okg/obio-ontology/reply_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://rdfs.org/sioc/ns#Post> .
+<https://w3id.org/okg/obio-ontology/reply_of> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a reply to the post it replies to." .
+<https://w3id.org/okg/obio-ontology/reply_of> <http://www.w3.org/2000/01/rdf-schema#label> "reply of" .
 # 
-# https://w3id.org/obio/repost_of
-<https://w3id.org/obio/repost_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/obio/repost_of> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/obio/RePost> .
-<https://w3id.org/obio/repost_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://rdfs.org/sioc/ns#Post> .
-<https://w3id.org/obio/repost_of> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a repost to its original post." .
-<https://w3id.org/obio/repost_of> <http://www.w3.org/2000/01/rdf-schema#label> "repost of" .
+# https://w3id.org/okg/obio-ontology/repost_of
+<https://w3id.org/okg/obio-ontology/repost_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/okg/obio-ontology/repost_of> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/okg/obio-ontology/RePost> .
+<https://w3id.org/okg/obio-ontology/repost_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://rdfs.org/sioc/ns#Post> .
+<https://w3id.org/okg/obio-ontology/repost_of> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a repost to its original post." .
+<https://w3id.org/okg/obio-ontology/repost_of> <http://www.w3.org/2000/01/rdf-schema#label> "repost of" .
 # 
 # 
 # 
@@ -426,58 +426,58 @@
 <http://www.essepuntato.it/2008/12/earmark#ends> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://www.essepuntato.it/2008/12/earmark#ends> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#integer> .
 # 
-# https://w3id.org/obio/description
-<https://w3id.org/obio/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/obio/description> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#User> .
-<https://w3id.org/obio/description> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<https://w3id.org/obio/description> <http://www.w3.org/2000/01/rdf-schema#comment> "Text description of the online user account." .
-<https://w3id.org/obio/description> <http://www.w3.org/2000/01/rdf-schema#label> "description" .
+# https://w3id.org/okg/obio-ontology/description
+<https://w3id.org/okg/obio-ontology/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/okg/obio-ontology/description> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#User> .
+<https://w3id.org/okg/obio-ontology/description> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://w3id.org/okg/obio-ontology/description> <http://www.w3.org/2000/01/rdf-schema#comment> "Text description of the online user account." .
+<https://w3id.org/okg/obio-ontology/description> <http://www.w3.org/2000/01/rdf-schema#label> "description" .
 # 
-# https://w3id.org/obio/follower
-<https://w3id.org/obio/follower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/obio/follower> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#User> .
-<https://w3id.org/obio/follower> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
-<https://w3id.org/obio/follower> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of followers of the online user account." .
-<https://w3id.org/obio/follower> <http://www.w3.org/2000/01/rdf-schema#label> "follower" .
+# https://w3id.org/okg/obio-ontology/follower
+<https://w3id.org/okg/obio-ontology/follower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/okg/obio-ontology/follower> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#User> .
+<https://w3id.org/okg/obio-ontology/follower> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
+<https://w3id.org/okg/obio-ontology/follower> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of followers of the online user account." .
+<https://w3id.org/okg/obio-ontology/follower> <http://www.w3.org/2000/01/rdf-schema#label> "follower" .
 # 
-# https://w3id.org/obio/following
-<https://w3id.org/obio/following> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/obio/following> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#User> .
-<https://w3id.org/obio/following> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
-<https://w3id.org/obio/following> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of accounts that the online user account is following." .
-<https://w3id.org/obio/following> <http://www.w3.org/2000/01/rdf-schema#label> "following" .
+# https://w3id.org/okg/obio-ontology/following
+<https://w3id.org/okg/obio-ontology/following> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/okg/obio-ontology/following> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#User> .
+<https://w3id.org/okg/obio-ontology/following> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
+<https://w3id.org/okg/obio-ontology/following> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of accounts that the online user account is following." .
+<https://w3id.org/okg/obio-ontology/following> <http://www.w3.org/2000/01/rdf-schema#label> "following" .
 # 
-# https://w3id.org/obio/is_verified
-<https://w3id.org/obio/is_verified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/obio/is_verified> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#User> .
-<https://w3id.org/obio/is_verified> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#boolean> .
-<https://w3id.org/obio/is_verified> <http://www.w3.org/2000/01/rdf-schema#comment> "Whether an online user account is verified or not." .
-<https://w3id.org/obio/is_verified> <http://www.w3.org/2000/01/rdf-schema#label> "is_verified" .
+# https://w3id.org/okg/obio-ontology/is_verified
+<https://w3id.org/okg/obio-ontology/is_verified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/okg/obio-ontology/is_verified> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#User> .
+<https://w3id.org/okg/obio-ontology/is_verified> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#boolean> .
+<https://w3id.org/okg/obio-ontology/is_verified> <http://www.w3.org/2000/01/rdf-schema#comment> "Whether an online user account is verified or not." .
+<https://w3id.org/okg/obio-ontology/is_verified> <http://www.w3.org/2000/01/rdf-schema#label> "is_verified" .
 # 
-# https://w3id.org/obio/lemma
-<https://w3id.org/obio/lemma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/obio/lemma> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# https://w3id.org/okg/obio-ontology/lemma
+<https://w3id.org/okg/obio-ontology/lemma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/okg/obio-ontology/lemma> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 # 
-# https://w3id.org/obio/location
-<https://w3id.org/obio/location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/obio/location> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#User> .
-<https://w3id.org/obio/location> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<https://w3id.org/obio/location> <http://www.w3.org/2000/01/rdf-schema#comment> "Location of the online user account." .
-<https://w3id.org/obio/location> <http://www.w3.org/2000/01/rdf-schema#label> "location" .
+# https://w3id.org/okg/obio-ontology/location
+<https://w3id.org/okg/obio-ontology/location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/okg/obio-ontology/location> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#User> .
+<https://w3id.org/okg/obio-ontology/location> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://w3id.org/okg/obio-ontology/location> <http://www.w3.org/2000/01/rdf-schema#comment> "Location of the online user account." .
+<https://w3id.org/okg/obio-ontology/location> <http://www.w3.org/2000/01/rdf-schema#label> "location" .
 # 
-# https://w3id.org/obio/nb_like
-<https://w3id.org/obio/nb_like> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#float> .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
+# https://w3id.org/okg/obio-ontology/nb_like
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#float> .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
 # 
-# https://w3id.org/obio/nb_repost
-<https://w3id.org/obio/nb_repost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/obio/nb_repost> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
+# https://w3id.org/okg/obio-ontology/nb_repost
+<https://w3id.org/okg/obio-ontology/nb_repost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/okg/obio-ontology/nb_repost> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
 # 
-# https://w3id.org/obio/post_metrics
-<https://w3id.org/obio/post_metrics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/obio/post_metrics> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
+# https://w3id.org/okg/obio-ontology/post_metrics
+<https://w3id.org/okg/obio-ontology/post_metrics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/okg/obio-ontology/post_metrics> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
 # 
 # 
 # 
@@ -491,7 +491,7 @@
 # http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase
 <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> .
-<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/obio/Entity> .
+<http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/okg/obio-ontology/Entity> .
 <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase> <http://www.w3.org/2000/01/rdf-schema#comment> "A nif:Phrase can be a nif:String, that is a chunk of several words or a word itself (e.g. a NounPhrase as a Named Entity). The term is underspecified and can be compatible with many defintitions of phrase. Please subClass it to specify the meaning (e.g. for Chunking or Phrase Structure Grammar). Example: ((My dog)(also)(likes)(eating (sausage))) (from nif)" .
 <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase> <http://www.w3.org/2000/01/rdf-schema#label> "Phrase" .
 # 
@@ -546,22 +546,22 @@
 <http://xmlns.com/foaf/0.1/OnlineAccount> <http://www.w3.org/2000/01/rdf-schema#comment> " foaf:OnlineAccount represents the provision of some form of online service, by some party (indicated indirectly via a foaf:accountServiceHomepage) to some foaf:Agent. The foaf:holdsAccount property of the agent is used to indicate accounts that are associated with the agent. (from foaf)" .
 <http://xmlns.com/foaf/0.1/OnlineAccount> <http://www.w3.org/2000/01/rdf-schema#label> "Online Account" .
 # 
-# https://w3id.org/obio/Entity
-<https://w3id.org/obio/Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/obio/Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "<to-add>" .
-<https://w3id.org/obio/Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entity" .
+# https://w3id.org/okg/obio-ontology/Entity
+<https://w3id.org/okg/obio-ontology/Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/okg/obio-ontology/Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "<to-add>" .
+<https://w3id.org/okg/obio-ontology/Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entity" .
 # 
-# https://w3id.org/obio/RePost
-<https://w3id.org/obio/RePost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/obio/RePost> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/sioc/ns#Post> .
-<https://w3id.org/obio/RePost> <http://www.w3.org/2000/01/rdf-schema#comment> "A RePost if a Post that is republished by another user, without modifications." .
-<https://w3id.org/obio/RePost> <http://www.w3.org/2000/01/rdf-schema#label> "RePost" .
+# https://w3id.org/okg/obio-ontology/RePost
+<https://w3id.org/okg/obio-ontology/RePost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/okg/obio-ontology/RePost> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/sioc/ns#Post> .
+<https://w3id.org/okg/obio-ontology/RePost> <http://www.w3.org/2000/01/rdf-schema#comment> "A RePost if a Post that is republished by another user, without modifications." .
+<https://w3id.org/okg/obio-ontology/RePost> <http://www.w3.org/2000/01/rdf-schema#label> "RePost" .
 # 
-# https://w3id.org/obio/Reply
-<https://w3id.org/obio/Reply> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/obio/Reply> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/sioc/ns#Post> .
-<https://w3id.org/obio/Reply> <http://www.w3.org/2000/01/rdf-schema#comment> "A Reply is a Post that directly answers a previous Post, by adding additional content." .
-<https://w3id.org/obio/Reply> <http://www.w3.org/2000/01/rdf-schema#label> "Reply" .
+# https://w3id.org/okg/obio-ontology/Reply
+<https://w3id.org/okg/obio-ontology/Reply> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/okg/obio-ontology/Reply> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/sioc/ns#Post> .
+<https://w3id.org/okg/obio-ontology/Reply> <http://www.w3.org/2000/01/rdf-schema#comment> "A Reply is a Post that directly answers a previous Post, by adding additional content." .
+<https://w3id.org/okg/obio-ontology/Reply> <http://www.w3.org/2000/01/rdf-schema#label> "Reply" .
 # 
 # 
 # 
@@ -584,22 +584,22 @@
 <http://www.essepuntato.it/2008/12/earmark#ends> <http://www.w3.org/2000/01/rdf-schema#comment> "Sentence index end" .
 <http://www.essepuntato.it/2008/12/earmark#ends> <http://www.w3.org/2000/01/rdf-schema#label> "ends" .
 # 
-<https://w3id.org/obio/lemma> <http://www.w3.org/2000/01/rdf-schema#comment> "The lemma(s) of the nif:String." .
-<https://w3id.org/obio/lemma> <http://www.w3.org/2000/01/rdf-schema#label> "lemma" .
+<https://w3id.org/okg/obio-ontology/lemma> <http://www.w3.org/2000/01/rdf-schema#comment> "The lemma(s) of the nif:String." .
+<https://w3id.org/okg/obio-ontology/lemma> <http://www.w3.org/2000/01/rdf-schema#label> "lemma" .
 # 
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of likes of a post." .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#comment> "Polarity score of a post (between 0 and 1)." .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#comment> "Sentiment label of a post (positive/negative)" .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#comment> "Subjectivity Score of a post." .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#label> "nb_like" .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#label> "polarity_score" .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#label> "sentiment_label" .
-<https://w3id.org/obio/nb_like> <http://www.w3.org/2000/01/rdf-schema#label> "subjectivity_score" .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of likes of a post." .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#comment> "Polarity score of a post (between 0 and 1)." .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#comment> "Sentiment label of a post (positive/negative)" .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#comment> "Subjectivity Score of a post." .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#label> "nb_like" .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#label> "polarity_score" .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#label> "sentiment_label" .
+<https://w3id.org/okg/obio-ontology/nb_like> <http://www.w3.org/2000/01/rdf-schema#label> "subjectivity_score" .
 # 
-<https://w3id.org/obio/nb_repost> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of reposts of a post." .
-<https://w3id.org/obio/nb_repost> <http://www.w3.org/2000/01/rdf-schema#label> "nb_repost" .
+<https://w3id.org/okg/obio-ontology/nb_repost> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of reposts of a post." .
+<https://w3id.org/okg/obio-ontology/nb_repost> <http://www.w3.org/2000/01/rdf-schema#label> "nb_repost" .
 # 
-<https://w3id.org/obio/post_metrics> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic property to link a Post to some metrics, like the number of likes or reposts." .
-<https://w3id.org/obio/post_metrics> <http://www.w3.org/2000/01/rdf-schema#label> "post_metrics" .
+<https://w3id.org/okg/obio-ontology/post_metrics> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic property to link a Post to some metrics, like the number of likes or reposts." .
+<https://w3id.org/okg/obio-ontology/post_metrics> <http://www.w3.org/2000/01/rdf-schema#label> "post_metrics" .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

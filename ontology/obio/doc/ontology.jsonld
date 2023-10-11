@@ -11,7 +11,7 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
-    "@id" : "https://w3id.org/obio/Entity"
+    "@id" : "https://w3id.org/okg/obio-ontology/Entity"
   } ]
 }, {
   "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence",
@@ -50,7 +50,7 @@
     "@value" : "IRI Entity attached to a string entity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/obio/Entity"
+    "@id" : "https://w3id.org/okg/obio-ontology/Entity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "anchorOf"
@@ -284,7 +284,7 @@
     "@value" : "Linking IRI entities from posts to other KG resources like DBpedia."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/obio/Entity"
+    "@id" : "https://w3id.org/okg/obio-ontology/Entity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasMatchedURL"
@@ -320,10 +320,10 @@
     "@value" : "Online Account"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio",
+  "@id" : "https://w3id.org/okg/obio-ontology",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
 }, {
-  "@id" : "https://w3id.org/obio/Entity",
+  "@id" : "https://w3id.org/okg/obio-ontology/Entity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "<to-add>"
@@ -332,7 +332,7 @@
     "@value" : "Entity"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/RePost",
+  "@id" : "https://w3id.org/okg/obio-ontology/RePost",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A RePost if a Post that is republished by another user, without modifications."
@@ -344,7 +344,7 @@
     "@id" : "http://rdfs.org/sioc/ns#Post"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/Reply",
+  "@id" : "https://w3id.org/okg/obio-ontology/Reply",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A Reply is a Post that directly answers a previous Post, by adding additional content."
@@ -356,7 +356,7 @@
     "@id" : "http://rdfs.org/sioc/ns#Post"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/advmod",
+  "@id" : "https://w3id.org/okg/obio-ontology/advmod",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: advmod."
@@ -371,10 +371,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_npadvmod",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_npadvmod",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: npadvmod."
@@ -389,10 +389,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_acomp",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_acomp",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: acomp."
@@ -407,10 +407,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_agent",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_agent",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: agent."
@@ -425,10 +425,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_amod",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_amod",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: amod."
@@ -443,10 +443,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_appos",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_appos",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: appos."
@@ -461,10 +461,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_attr",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_attr",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: attr."
@@ -479,10 +479,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_aux",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_aux",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: aux."
@@ -497,10 +497,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_auxpass",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_auxpass",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: auxpass."
@@ -515,10 +515,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_cc",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_cc",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: cc."
@@ -533,10 +533,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_ccomp",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_ccomp",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: ccomp."
@@ -551,10 +551,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_compound",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_compound",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: compound."
@@ -569,10 +569,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_conj",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_conj",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: conj."
@@ -587,10 +587,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_csubj",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_csubj",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: csubj."
@@ -605,10 +605,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_dep",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_dep",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: dep."
@@ -623,10 +623,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_det",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_det",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: det."
@@ -641,10 +641,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_dobj",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_dobj",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: dobj."
@@ -659,10 +659,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_expl",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_expl",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: expl."
@@ -677,10 +677,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_intj",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_intj",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: intj."
@@ -695,10 +695,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_mark",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_mark",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: mark."
@@ -713,10 +713,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_nsubj",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_nsubj",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: nsubj."
@@ -731,10 +731,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_nsubpass",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_nsubpass",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: nsubjpass."
@@ -749,10 +749,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_nummod",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_nummod",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: nummod."
@@ -767,10 +767,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_pcomp",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_pcomp",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: pcomp."
@@ -785,10 +785,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_pobj",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_pobj",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: pobj."
@@ -803,10 +803,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_poss",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_poss",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: poss."
@@ -821,10 +821,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_prep",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_prep",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: prep."
@@ -839,10 +839,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_prt",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_prt",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: prt."
@@ -857,10 +857,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_punct",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_punct",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: punct."
@@ -875,10 +875,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_relcl",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_relcl",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: relcl."
@@ -893,10 +893,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dep_rel_root",
+  "@id" : "https://w3id.org/okg/obio-ontology/dep_rel_root",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Dependency relation: root."
@@ -911,10 +911,10 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/dependency_relation"
+    "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/dependency_relation",
+  "@id" : "https://w3id.org/okg/obio-ontology/dependency_relation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Generic property that links a child to his parent (tbc) with a dependency."
@@ -932,7 +932,7 @@
     "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/description",
+  "@id" : "https://w3id.org/okg/obio-ontology/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Text description of the online user account."
@@ -947,7 +947,7 @@
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/follower",
+  "@id" : "https://w3id.org/okg/obio-ontology/follower",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Number of followers of the online user account."
@@ -962,7 +962,7 @@
     "@id" : "http://www.w3.org/2000/10/XMLSchema#positiveInteger"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/following",
+  "@id" : "https://w3id.org/okg/obio-ontology/following",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Number of accounts that the online user account is following."
@@ -977,7 +977,7 @@
     "@id" : "http://www.w3.org/2000/10/XMLSchema#positiveInteger"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/is_verified",
+  "@id" : "https://w3id.org/okg/obio-ontology/is_verified",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Whether an online user account is verified or not."
@@ -992,7 +992,7 @@
     "@id" : "http://www.w3.org/2000/10/XMLSchema#boolean"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/lemma",
+  "@id" : "https://w3id.org/okg/obio-ontology/lemma",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "The lemma(s) of the nif:String."
@@ -1007,7 +1007,7 @@
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/location",
+  "@id" : "https://w3id.org/okg/obio-ontology/location",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Location of the online user account."
@@ -1022,7 +1022,7 @@
     "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/nb_like",
+  "@id" : "https://w3id.org/okg/obio-ontology/nb_like",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Number of likes of a post."
@@ -1053,10 +1053,10 @@
     "@id" : "http://www.w3.org/2000/10/XMLSchema#positiveInteger"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/post_metrics"
+    "@id" : "https://w3id.org/okg/obio-ontology/post_metrics"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/nb_repost",
+  "@id" : "https://w3id.org/okg/obio-ontology/nb_repost",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Number of reposts of a post."
@@ -1071,10 +1071,10 @@
     "@id" : "http://www.w3.org/2000/10/XMLSchema#positiveInteger"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/obio/post_metrics"
+    "@id" : "https://w3id.org/okg/obio-ontology/post_metrics"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/post_metrics",
+  "@id" : "https://w3id.org/okg/obio-ontology/post_metrics",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Generic property to link a Post to some metrics, like the number of likes or reposts."
@@ -1089,13 +1089,13 @@
     "@id" : "http://www.w3.org/2000/10/XMLSchema#positiveInteger"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/reply_of",
+  "@id" : "https://w3id.org/okg/obio-ontology/reply_of",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Links a reply to the post it replies to."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/obio/Reply"
+    "@id" : "https://w3id.org/okg/obio-ontology/Reply"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "reply of"
@@ -1104,13 +1104,13 @@
     "@id" : "http://rdfs.org/sioc/ns#Post"
   } ]
 }, {
-  "@id" : "https://w3id.org/obio/repost_of",
+  "@id" : "https://w3id.org/okg/obio-ontology/repost_of",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Links a repost to its original post."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/obio/RePost"
+    "@id" : "https://w3id.org/okg/obio-ontology/RePost"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "repost of"

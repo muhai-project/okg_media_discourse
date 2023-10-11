@@ -1,12 +1,12 @@
-@prefix : <https://w3id.org/obio#> .
+@prefix : <https://w3id.org/okg/obio-ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/obio#> .
+@base <https://w3id.org/okg/obio-ontology#> .
 
-<https://w3id.org/obio> rdf:type owl:Ontology .
+<https://w3id.org/okg/obio-ontology> rdf:type owl:Ontology .
 
 #################################################################
 #    Datatypes
@@ -38,7 +38,7 @@
 
 ###  http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf
 <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#anchorOf> rdf:type owl:ObjectProperty ;
-                                                                          rdfs:domain <https://w3id.org/obio/Entity> ;
+                                                                          rdfs:domain <https://w3id.org/okg/obio-ontology/Entity> ;
                                                                           rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase> ;
                                                                           rdfs:comment "IRI Entity attached to a string entity" ;
                                                                           rdfs:label "anchorOf" .
@@ -114,336 +114,336 @@
 
 ###  http://www.ics.forth.gr/isl/oae/core#hasMatchedURL
 <http://www.ics.forth.gr/isl/oae/core#hasMatchedURL> rdf:type owl:ObjectProperty ;
-                                                     rdfs:domain <https://w3id.org/obio/Entity> ;
+                                                     rdfs:domain <https://w3id.org/okg/obio-ontology/Entity> ;
                                                      rdfs:range rdfs:Resource ;
                                                      rdfs:comment "Linking IRI entities from posts to other KG resources like DBpedia." ;
                                                      rdfs:label "hasMatchedURL" .
 
 
-###  https://w3id.org/obio/advmod
-<https://w3id.org/obio/advmod> rdf:type owl:ObjectProperty ;
-                               rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                               rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                               rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                               rdfs:comment "Dependency relation: advmod." ;
-                               rdfs:label "advmod" .
-
-
-###  https://w3id.org/obio/dep_npadvmod
-<https://w3id.org/obio/dep_npadvmod> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: npadvmod." ;
-                                     rdfs:label "npadvmod" .
-
-
-###  https://w3id.org/obio/dep_rel_acomp
-<https://w3id.org/obio/dep_rel_acomp> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                      rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:comment "Dependency relation: acomp." ;
-                                      rdfs:label "acomp" .
-
-
-###  https://w3id.org/obio/dep_rel_agent
-<https://w3id.org/obio/dep_rel_agent> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                      rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:comment "Dependency relation: agent." ;
-                                      rdfs:label "agent" .
-
-
-###  https://w3id.org/obio/dep_rel_amod
-<https://w3id.org/obio/dep_rel_amod> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: amod." ;
-                                     rdfs:label "amod" .
-
-
-###  https://w3id.org/obio/dep_rel_appos
-<https://w3id.org/obio/dep_rel_appos> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                      rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:comment "Dependency relation: appos." ;
-                                      rdfs:label "appos" .
-
-
-###  https://w3id.org/obio/dep_rel_attr
-<https://w3id.org/obio/dep_rel_attr> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: attr." ;
-                                     rdfs:label "attr" .
-
-
-###  https://w3id.org/obio/dep_rel_aux
-<https://w3id.org/obio/dep_rel_aux> rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                    rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                    rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                    rdfs:comment "Dependency relation: aux." ;
-                                    rdfs:label "aux" .
-
-
-###  https://w3id.org/obio/dep_rel_auxpass
-<https://w3id.org/obio/dep_rel_auxpass> rdf:type owl:ObjectProperty ;
-                                        rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                        rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                        rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                        rdfs:comment "Dependency relation: auxpass." ;
-                                        rdfs:label "auxpass" .
-
-
-###  https://w3id.org/obio/dep_rel_cc
-<https://w3id.org/obio/dep_rel_cc> rdf:type owl:ObjectProperty ;
-                                   rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                   rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                   rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                   rdfs:comment "Dependency relation: cc." ;
-                                   rdfs:label "cc" .
-
-
-###  https://w3id.org/obio/dep_rel_ccomp
-<https://w3id.org/obio/dep_rel_ccomp> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                      rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:comment "Dependency relation: ccomp." ;
-                                      rdfs:label "ccomp" .
-
-
-###  https://w3id.org/obio/dep_rel_compound
-<https://w3id.org/obio/dep_rel_compound> rdf:type owl:ObjectProperty ;
-                                         rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                         rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                         rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                         rdfs:comment "Dependency relation: compound." ;
-                                         rdfs:label "compound" .
-
-
-###  https://w3id.org/obio/dep_rel_conj
-<https://w3id.org/obio/dep_rel_conj> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: conj." ;
-                                     rdfs:label "conj" .
-
-
-###  https://w3id.org/obio/dep_rel_csubj
-<https://w3id.org/obio/dep_rel_csubj> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                      rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:comment "Dependency relation: csubj." ;
-                                      rdfs:label "csubj" .
-
-
-###  https://w3id.org/obio/dep_rel_dep
-<https://w3id.org/obio/dep_rel_dep> rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                    rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                    rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                    rdfs:comment "Dependency relation: dep." ;
-                                    rdfs:label "dep" .
-
-
-###  https://w3id.org/obio/dep_rel_det
-<https://w3id.org/obio/dep_rel_det> rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                    rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                    rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                    rdfs:comment "Dependency relation: det." ;
-                                    rdfs:label "det" .
-
-
-###  https://w3id.org/obio/dep_rel_dobj
-<https://w3id.org/obio/dep_rel_dobj> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: dobj." ;
-                                     rdfs:label "dobj" .
-
-
-###  https://w3id.org/obio/dep_rel_expl
-<https://w3id.org/obio/dep_rel_expl> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: expl." ;
-                                     rdfs:label "expl" .
-
-
-###  https://w3id.org/obio/dep_rel_intj
-<https://w3id.org/obio/dep_rel_intj> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: intj." ;
-                                     rdfs:label "intj" .
-
-
-###  https://w3id.org/obio/dep_rel_mark
-<https://w3id.org/obio/dep_rel_mark> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: mark." ;
-                                     rdfs:label "mark" .
-
-
-###  https://w3id.org/obio/dep_rel_nsubj
-<https://w3id.org/obio/dep_rel_nsubj> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                      rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:comment "Dependency relation: nsubj." ;
-                                      rdfs:label "nsubj" .
-
-
-###  https://w3id.org/obio/dep_rel_nsubpass
-<https://w3id.org/obio/dep_rel_nsubpass> rdf:type owl:ObjectProperty ;
-                                         rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                         rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                         rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                         rdfs:comment "Dependency relation: nsubjpass." ;
-                                         rdfs:label "nsubjpass" .
-
-
-###  https://w3id.org/obio/dep_rel_nummod
-<https://w3id.org/obio/dep_rel_nummod> rdf:type owl:ObjectProperty ;
-                                       rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                       rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                       rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                       rdfs:comment "Dependency relation: nummod." ;
-                                       rdfs:label "nummod" .
-
-
-###  https://w3id.org/obio/dep_rel_pcomp
-<https://w3id.org/obio/dep_rel_pcomp> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                      rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:comment "Dependency relation: pcomp." ;
-                                      rdfs:label "pcomp" .
-
-
-###  https://w3id.org/obio/dep_rel_pobj
-<https://w3id.org/obio/dep_rel_pobj> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: pobj." ;
-                                     rdfs:label "pobj" .
-
-
-###  https://w3id.org/obio/dep_rel_poss
-<https://w3id.org/obio/dep_rel_poss> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: poss." ;
-                                     rdfs:label "poss" .
-
-
-###  https://w3id.org/obio/dep_rel_prep
-<https://w3id.org/obio/dep_rel_prep> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: prep." ;
-                                     rdfs:label "prep" .
-
-
-###  https://w3id.org/obio/dep_rel_prt
-<https://w3id.org/obio/dep_rel_prt> rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                    rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                    rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                    rdfs:comment "Dependency relation: prt." ;
-                                    rdfs:label "prt" .
-
-
-###  https://w3id.org/obio/dep_rel_punct
-<https://w3id.org/obio/dep_rel_punct> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                      rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:comment "Dependency relation: punct." ;
-                                      rdfs:label "punct" .
-
-
-###  https://w3id.org/obio/dep_rel_relcl
-<https://w3id.org/obio/dep_rel_relcl> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                      rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                      rdfs:comment "Dependency relation: relcl." ;
-                                      rdfs:label "relcl" .
-
-
-###  https://w3id.org/obio/dep_rel_root
-<https://w3id.org/obio/dep_rel_root> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/obio/dependency_relation> ;
-                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                     rdfs:comment "Dependency relation: root." ;
-                                     rdfs:label "root" .
-
-
-###  https://w3id.org/obio/dependency_relation
-<https://w3id.org/obio/dependency_relation> rdf:type owl:ObjectProperty ;
-                                            rdfs:subPropertyOf <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter> ;
+###  https://w3id.org/okg/obio-ontology/advmod
+<https://w3id.org/okg/obio-ontology/advmod> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
                                             rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
                                             rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                                            rdfs:comment "Generic property that links a child to his parent (tbc) with a dependency." ;
-                                            rdfs:label "dependency_relation" .
+                                            rdfs:comment "Dependency relation: advmod." ;
+                                            rdfs:label "advmod" .
 
 
-###  https://w3id.org/obio/lemma
-<https://w3id.org/obio/lemma> rdf:type owl:ObjectProperty ;
-                              rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> .
+###  https://w3id.org/okg/obio-ontology/dep_npadvmod
+<https://w3id.org/okg/obio-ontology/dep_npadvmod> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: npadvmod." ;
+                                                  rdfs:label "npadvmod" .
 
 
-###  https://w3id.org/obio/nb_like
-<https://w3id.org/obio/nb_like> rdf:type owl:ObjectProperty ;
-                                rdfs:subPropertyOf <https://w3id.org/obio/post_metrics> ;
-                                rdfs:domain <http://rdfs.org/sioc/ns#Post> .
+###  https://w3id.org/okg/obio-ontology/dep_rel_acomp
+<https://w3id.org/okg/obio-ontology/dep_rel_acomp> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                   rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:comment "Dependency relation: acomp." ;
+                                                   rdfs:label "acomp" .
 
 
-###  https://w3id.org/obio/nb_repost
-<https://w3id.org/obio/nb_repost> rdf:type owl:ObjectProperty ;
-                                  rdfs:subPropertyOf <https://w3id.org/obio/post_metrics> ;
-                                  rdfs:domain <http://rdfs.org/sioc/ns#Post> .
+###  https://w3id.org/okg/obio-ontology/dep_rel_agent
+<https://w3id.org/okg/obio-ontology/dep_rel_agent> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                   rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:comment "Dependency relation: agent." ;
+                                                   rdfs:label "agent" .
 
 
-###  https://w3id.org/obio/post_metrics
-<https://w3id.org/obio/post_metrics> rdf:type owl:ObjectProperty ;
-                                     rdfs:domain <http://rdfs.org/sioc/ns#Post> .
+###  https://w3id.org/okg/obio-ontology/dep_rel_amod
+<https://w3id.org/okg/obio-ontology/dep_rel_amod> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: amod." ;
+                                                  rdfs:label "amod" .
 
 
-###  https://w3id.org/obio/reply_of
-<https://w3id.org/obio/reply_of> rdf:type owl:ObjectProperty ;
-                                 rdfs:domain <https://w3id.org/obio/Reply> ;
-                                 rdfs:range <http://rdfs.org/sioc/ns#Post> ;
-                                 rdfs:comment "Links a reply to the post it replies to." ;
-                                 rdfs:label "reply of" .
+###  https://w3id.org/okg/obio-ontology/dep_rel_appos
+<https://w3id.org/okg/obio-ontology/dep_rel_appos> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                   rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:comment "Dependency relation: appos." ;
+                                                   rdfs:label "appos" .
 
 
-###  https://w3id.org/obio/repost_of
-<https://w3id.org/obio/repost_of> rdf:type owl:ObjectProperty ;
-                                  rdfs:domain <https://w3id.org/obio/RePost> ;
-                                  rdfs:range <http://rdfs.org/sioc/ns#Post> ;
-                                  rdfs:comment "Links a repost to its original post." ;
-                                  rdfs:label "repost of" .
+###  https://w3id.org/okg/obio-ontology/dep_rel_attr
+<https://w3id.org/okg/obio-ontology/dep_rel_attr> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: attr." ;
+                                                  rdfs:label "attr" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_aux
+<https://w3id.org/okg/obio-ontology/dep_rel_aux> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                 rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                 rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                 rdfs:comment "Dependency relation: aux." ;
+                                                 rdfs:label "aux" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_auxpass
+<https://w3id.org/okg/obio-ontology/dep_rel_auxpass> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                     rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                     rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                     rdfs:comment "Dependency relation: auxpass." ;
+                                                     rdfs:label "auxpass" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_cc
+<https://w3id.org/okg/obio-ontology/dep_rel_cc> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                rdfs:comment "Dependency relation: cc." ;
+                                                rdfs:label "cc" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_ccomp
+<https://w3id.org/okg/obio-ontology/dep_rel_ccomp> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                   rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:comment "Dependency relation: ccomp." ;
+                                                   rdfs:label "ccomp" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_compound
+<https://w3id.org/okg/obio-ontology/dep_rel_compound> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                      rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                      rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                      rdfs:comment "Dependency relation: compound." ;
+                                                      rdfs:label "compound" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_conj
+<https://w3id.org/okg/obio-ontology/dep_rel_conj> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: conj." ;
+                                                  rdfs:label "conj" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_csubj
+<https://w3id.org/okg/obio-ontology/dep_rel_csubj> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                   rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:comment "Dependency relation: csubj." ;
+                                                   rdfs:label "csubj" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_dep
+<https://w3id.org/okg/obio-ontology/dep_rel_dep> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                 rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                 rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                 rdfs:comment "Dependency relation: dep." ;
+                                                 rdfs:label "dep" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_det
+<https://w3id.org/okg/obio-ontology/dep_rel_det> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                 rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                 rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                 rdfs:comment "Dependency relation: det." ;
+                                                 rdfs:label "det" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_dobj
+<https://w3id.org/okg/obio-ontology/dep_rel_dobj> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: dobj." ;
+                                                  rdfs:label "dobj" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_expl
+<https://w3id.org/okg/obio-ontology/dep_rel_expl> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: expl." ;
+                                                  rdfs:label "expl" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_intj
+<https://w3id.org/okg/obio-ontology/dep_rel_intj> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: intj." ;
+                                                  rdfs:label "intj" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_mark
+<https://w3id.org/okg/obio-ontology/dep_rel_mark> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: mark." ;
+                                                  rdfs:label "mark" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_nsubj
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubj> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                   rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:comment "Dependency relation: nsubj." ;
+                                                   rdfs:label "nsubj" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_nsubpass
+<https://w3id.org/okg/obio-ontology/dep_rel_nsubpass> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                      rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                      rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                      rdfs:comment "Dependency relation: nsubjpass." ;
+                                                      rdfs:label "nsubjpass" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_nummod
+<https://w3id.org/okg/obio-ontology/dep_rel_nummod> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                    rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                    rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                    rdfs:comment "Dependency relation: nummod." ;
+                                                    rdfs:label "nummod" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_pcomp
+<https://w3id.org/okg/obio-ontology/dep_rel_pcomp> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                   rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:comment "Dependency relation: pcomp." ;
+                                                   rdfs:label "pcomp" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_pobj
+<https://w3id.org/okg/obio-ontology/dep_rel_pobj> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: pobj." ;
+                                                  rdfs:label "pobj" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_poss
+<https://w3id.org/okg/obio-ontology/dep_rel_poss> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: poss." ;
+                                                  rdfs:label "poss" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_prep
+<https://w3id.org/okg/obio-ontology/dep_rel_prep> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: prep." ;
+                                                  rdfs:label "prep" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_prt
+<https://w3id.org/okg/obio-ontology/dep_rel_prt> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                 rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                 rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                 rdfs:comment "Dependency relation: prt." ;
+                                                 rdfs:label "prt" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_punct
+<https://w3id.org/okg/obio-ontology/dep_rel_punct> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                   rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:comment "Dependency relation: punct." ;
+                                                   rdfs:label "punct" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_relcl
+<https://w3id.org/okg/obio-ontology/dep_rel_relcl> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                   rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                   rdfs:comment "Dependency relation: relcl." ;
+                                                   rdfs:label "relcl" .
+
+
+###  https://w3id.org/okg/obio-ontology/dep_rel_root
+<https://w3id.org/okg/obio-ontology/dep_rel_root> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/dependency_relation> ;
+                                                  rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                  rdfs:comment "Dependency relation: root." ;
+                                                  rdfs:label "root" .
+
+
+###  https://w3id.org/okg/obio-ontology/dependency_relation
+<https://w3id.org/okg/obio-ontology/dependency_relation> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#inter> ;
+                                                         rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                         rdfs:range <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
+                                                         rdfs:comment "Generic property that links a child to his parent (tbc) with a dependency." ;
+                                                         rdfs:label "dependency_relation" .
+
+
+###  https://w3id.org/okg/obio-ontology/lemma
+<https://w3id.org/okg/obio-ontology/lemma> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> .
+
+
+###  https://w3id.org/okg/obio-ontology/nb_like
+<https://w3id.org/okg/obio-ontology/nb_like> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/post_metrics> ;
+                                             rdfs:domain <http://rdfs.org/sioc/ns#Post> .
+
+
+###  https://w3id.org/okg/obio-ontology/nb_repost
+<https://w3id.org/okg/obio-ontology/nb_repost> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <https://w3id.org/okg/obio-ontology/post_metrics> ;
+                                               rdfs:domain <http://rdfs.org/sioc/ns#Post> .
+
+
+###  https://w3id.org/okg/obio-ontology/post_metrics
+<https://w3id.org/okg/obio-ontology/post_metrics> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://rdfs.org/sioc/ns#Post> .
+
+
+###  https://w3id.org/okg/obio-ontology/reply_of
+<https://w3id.org/okg/obio-ontology/reply_of> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://w3id.org/okg/obio-ontology/Reply> ;
+                                              rdfs:range <http://rdfs.org/sioc/ns#Post> ;
+                                              rdfs:comment "Links a reply to the post it replies to." ;
+                                              rdfs:label "reply of" .
+
+
+###  https://w3id.org/okg/obio-ontology/repost_of
+<https://w3id.org/okg/obio-ontology/repost_of> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain <https://w3id.org/okg/obio-ontology/RePost> ;
+                                               rdfs:range <http://rdfs.org/sioc/ns#Post> ;
+                                               rdfs:comment "Links a repost to its original post." ;
+                                               rdfs:label "repost of" .
 
 
 #################################################################
@@ -478,66 +478,66 @@
                                                  rdfs:range <http://www.w3.org/2000/10/XMLSchema#integer> .
 
 
-###  https://w3id.org/obio/description
-<https://w3id.org/obio/description> rdf:type owl:DatatypeProperty ;
-                                    rdfs:domain <http://rdfs.org/sioc/ns#User> ;
-                                    rdfs:range rdfs:Literal ;
-                                    rdfs:comment "Text description of the online user account." ;
-                                    rdfs:label "description" .
+###  https://w3id.org/okg/obio-ontology/description
+<https://w3id.org/okg/obio-ontology/description> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <http://rdfs.org/sioc/ns#User> ;
+                                                 rdfs:range rdfs:Literal ;
+                                                 rdfs:comment "Text description of the online user account." ;
+                                                 rdfs:label "description" .
 
 
-###  https://w3id.org/obio/follower
-<https://w3id.org/obio/follower> rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain <http://rdfs.org/sioc/ns#User> ;
-                                 rdfs:range <http://www.w3.org/2000/10/XMLSchema#positiveInteger> ;
-                                 rdfs:comment "Number of followers of the online user account." ;
-                                 rdfs:label "follower" .
+###  https://w3id.org/okg/obio-ontology/follower
+<https://w3id.org/okg/obio-ontology/follower> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <http://rdfs.org/sioc/ns#User> ;
+                                              rdfs:range <http://www.w3.org/2000/10/XMLSchema#positiveInteger> ;
+                                              rdfs:comment "Number of followers of the online user account." ;
+                                              rdfs:label "follower" .
 
 
-###  https://w3id.org/obio/following
-<https://w3id.org/obio/following> rdf:type owl:DatatypeProperty ;
-                                  rdfs:domain <http://rdfs.org/sioc/ns#User> ;
-                                  rdfs:range <http://www.w3.org/2000/10/XMLSchema#positiveInteger> ;
-                                  rdfs:comment "Number of accounts that the online user account is following." ;
-                                  rdfs:label "following" .
+###  https://w3id.org/okg/obio-ontology/following
+<https://w3id.org/okg/obio-ontology/following> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <http://rdfs.org/sioc/ns#User> ;
+                                               rdfs:range <http://www.w3.org/2000/10/XMLSchema#positiveInteger> ;
+                                               rdfs:comment "Number of accounts that the online user account is following." ;
+                                               rdfs:label "following" .
 
 
-###  https://w3id.org/obio/is_verified
-<https://w3id.org/obio/is_verified> rdf:type owl:DatatypeProperty ;
-                                    rdfs:domain <http://rdfs.org/sioc/ns#User> ;
-                                    rdfs:range <http://www.w3.org/2000/10/XMLSchema#boolean> ;
-                                    rdfs:comment "Whether an online user account is verified or not." ;
-                                    rdfs:label "is_verified" .
+###  https://w3id.org/okg/obio-ontology/is_verified
+<https://w3id.org/okg/obio-ontology/is_verified> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <http://rdfs.org/sioc/ns#User> ;
+                                                 rdfs:range <http://www.w3.org/2000/10/XMLSchema#boolean> ;
+                                                 rdfs:comment "Whether an online user account is verified or not." ;
+                                                 rdfs:label "is_verified" .
 
 
-###  https://w3id.org/obio/lemma
-<https://w3id.org/obio/lemma> rdf:type owl:DatatypeProperty ;
-                              rdfs:range rdfs:Literal .
+###  https://w3id.org/okg/obio-ontology/lemma
+<https://w3id.org/okg/obio-ontology/lemma> rdf:type owl:DatatypeProperty ;
+                                           rdfs:range rdfs:Literal .
 
 
-###  https://w3id.org/obio/location
-<https://w3id.org/obio/location> rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain <http://rdfs.org/sioc/ns#User> ;
-                                 rdfs:range rdfs:Literal ;
-                                 rdfs:comment "Location of the online user account." ;
-                                 rdfs:label "location" .
+###  https://w3id.org/okg/obio-ontology/location
+<https://w3id.org/okg/obio-ontology/location> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <http://rdfs.org/sioc/ns#User> ;
+                                              rdfs:range rdfs:Literal ;
+                                              rdfs:comment "Location of the online user account." ;
+                                              rdfs:label "location" .
 
 
-###  https://w3id.org/obio/nb_like
-<https://w3id.org/obio/nb_like> rdf:type owl:DatatypeProperty ;
-                                rdfs:range rdfs:Literal ,
-                                           <http://www.w3.org/2000/10/XMLSchema#float> ,
-                                           <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
+###  https://w3id.org/okg/obio-ontology/nb_like
+<https://w3id.org/okg/obio-ontology/nb_like> rdf:type owl:DatatypeProperty ;
+                                             rdfs:range rdfs:Literal ,
+                                                        <http://www.w3.org/2000/10/XMLSchema#float> ,
+                                                        <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
 
 
-###  https://w3id.org/obio/nb_repost
-<https://w3id.org/obio/nb_repost> rdf:type owl:DatatypeProperty ;
-                                  rdfs:range <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
+###  https://w3id.org/okg/obio-ontology/nb_repost
+<https://w3id.org/okg/obio-ontology/nb_repost> rdf:type owl:DatatypeProperty ;
+                                               rdfs:range <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
 
 
-###  https://w3id.org/obio/post_metrics
-<https://w3id.org/obio/post_metrics> rdf:type owl:DatatypeProperty ;
-                                     rdfs:range <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
+###  https://w3id.org/okg/obio-ontology/post_metrics
+<https://w3id.org/okg/obio-ontology/post_metrics> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:range <http://www.w3.org/2000/10/XMLSchema#positiveInteger> .
 
 
 #################################################################
@@ -547,7 +547,7 @@
 ###  http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase
 <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Phrase> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#String> ;
-                                                                        owl:disjointWith <https://w3id.org/obio/Entity> ;
+                                                                        owl:disjointWith <https://w3id.org/okg/obio-ontology/Entity> ;
                                                                         rdfs:comment "A nif:Phrase can be a nif:String, that is a chunk of several words or a word itself (e.g. a NounPhrase as a Named Entity). The term is underspecified and can be compatible with many defintitions of phrase. Please subClass it to specify the meaning (e.g. for Chunking or Phrase Structure Grammar). Example: ((My dog)(also)(likes)(eating (sausage))) (from nif)" ;
                                                                         rdfs:label "Phrase" .
 
@@ -634,24 +634,24 @@ rdfs:Resource rdf:type owl:Class .
                                           rdfs:label "Online Account" .
 
 
-###  https://w3id.org/obio/Entity
-<https://w3id.org/obio/Entity> rdf:type owl:Class ;
-                               rdfs:comment "<to-add>" ;
-                               rdfs:label "Entity" .
+###  https://w3id.org/okg/obio-ontology/Entity
+<https://w3id.org/okg/obio-ontology/Entity> rdf:type owl:Class ;
+                                            rdfs:comment "<to-add>" ;
+                                            rdfs:label "Entity" .
 
 
-###  https://w3id.org/obio/RePost
-<https://w3id.org/obio/RePost> rdf:type owl:Class ;
-                               rdfs:subClassOf <http://rdfs.org/sioc/ns#Post> ;
-                               rdfs:comment "A RePost if a Post that is republished by another user, without modifications." ;
-                               rdfs:label "RePost" .
+###  https://w3id.org/okg/obio-ontology/RePost
+<https://w3id.org/okg/obio-ontology/RePost> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://rdfs.org/sioc/ns#Post> ;
+                                            rdfs:comment "A RePost if a Post that is republished by another user, without modifications." ;
+                                            rdfs:label "RePost" .
 
 
-###  https://w3id.org/obio/Reply
-<https://w3id.org/obio/Reply> rdf:type owl:Class ;
-                              rdfs:subClassOf <http://rdfs.org/sioc/ns#Post> ;
-                              rdfs:comment "A Reply is a Post that directly answers a previous Post, by adding additional content." ;
-                              rdfs:label "Reply" .
+###  https://w3id.org/okg/obio-ontology/Reply
+<https://w3id.org/okg/obio-ontology/Reply> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://rdfs.org/sioc/ns#Post> ;
+                                           rdfs:comment "A Reply is a Post that directly answers a previous Post, by adding additional content." ;
+                                           rdfs:label "Reply" .
 
 
 #################################################################
@@ -674,26 +674,26 @@ rdfs:Resource rdf:type owl:Class .
                                                  rdfs:label "ends" .
 
 
-<https://w3id.org/obio/lemma> rdfs:comment "The lemma(s) of the nif:String." ;
-                              rdfs:label "lemma" .
+<https://w3id.org/okg/obio-ontology/lemma> rdfs:comment "The lemma(s) of the nif:String." ;
+                                           rdfs:label "lemma" .
 
 
-<https://w3id.org/obio/nb_like> rdfs:comment "Number of likes of a post." ,
-                                             "Polarity score of a post (between 0 and 1)." ,
-                                             "Sentiment label of a post (positive/negative)" ,
-                                             "Subjectivity Score of a post." ;
-                                rdfs:label "nb_like" ,
-                                           "polarity_score" ,
-                                           "sentiment_label" ,
-                                           "subjectivity_score" .
+<https://w3id.org/okg/obio-ontology/nb_like> rdfs:comment "Number of likes of a post." ,
+                                                          "Polarity score of a post (between 0 and 1)." ,
+                                                          "Sentiment label of a post (positive/negative)" ,
+                                                          "Subjectivity Score of a post." ;
+                                             rdfs:label "nb_like" ,
+                                                        "polarity_score" ,
+                                                        "sentiment_label" ,
+                                                        "subjectivity_score" .
 
 
-<https://w3id.org/obio/nb_repost> rdfs:comment "Number of reposts of a post." ;
-                                  rdfs:label "nb_repost" .
+<https://w3id.org/okg/obio-ontology/nb_repost> rdfs:comment "Number of reposts of a post." ;
+                                               rdfs:label "nb_repost" .
 
 
-<https://w3id.org/obio/post_metrics> rdfs:comment "Generic property to link a Post to some metrics, like the number of likes or reposts." ;
-                                     rdfs:label "post_metrics" .
+<https://w3id.org/okg/obio-ontology/post_metrics> rdfs:comment "Generic property to link a Post to some metrics, like the number of likes or reposts." ;
+                                                  rdfs:label "post_metrics" .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

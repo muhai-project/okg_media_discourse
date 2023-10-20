@@ -29,7 +29,7 @@ class RDFLIBConverterFromTriples:
         self.dc_ns = Namespace("http://purl.org/dc/terms/")
         self.earmark = Namespace("http://www.essepuntato.it/2008/12/earmark#")
         self.nif = Namespace("http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#")
-        self.observatory = Namespace("http://example.org/muhai/observatory#")
+        self.observatory = Namespace("https://w3id.org/okg/obio-ontology/")
         self.xsd = XSD
 
         self.converter = {

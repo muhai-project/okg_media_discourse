@@ -4,7 +4,7 @@ This is the code for the paper accepted for publication to K-CAP 2023: "OKG: A K
 
 First clone the repo
 ```bash
-git clone https://github.com/SonyCSLParis/narratives_from_tweets
+git clone https://github.com/muhai-project/okg_media_discourse
 ```
 
 ## 1. Set Up

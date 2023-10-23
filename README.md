@@ -1,6 +1,6 @@
 # Narratives from tweets
 
-This is the code for the paper submitted to K-CAP 2023: "OKG: A Knowledge Graph for Social Media Discourse Analysis on Inequality".
+This is the code for the paper accepted for publication to K-CAP 2023: "OKG: A Knowledge Graph for Social Media Discourse Analysis on Inequality".
 
 First clone the repo
 ```bash
@@ -87,3 +87,11 @@ If you have a folder of `.csv` file:
 ```python
 python src/main.py -f <input-event-folder-csv-file> -o <output-folder>
 ```
+
+## 4. Acknowledgements and Citation
+
+> This work was funded by the European MUHAI project (Horizon 2020 research and innovation program) under grant agreement number 951846,  the Sony Computer Science Laboratories-Paris, the Vrije Universiteit Amsterdam, the University of Bremen, and the Venice International University. C.S. acknowledges financial support from PON R\&I 2014–2020 (FSE REACT-EU). We thank Frank van Harmelen, Annette ten Teije and Ilaria Tiddi for fruitful discussions.
+
+
+citation: to be updated later
+

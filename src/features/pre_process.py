@@ -4,7 +4,6 @@
 
 Steps in preprocessing
 """
-import os
 import argparse
 import multiprocessing as mp
 import re

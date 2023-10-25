@@ -26,7 +26,7 @@ class RDFLIBConverterFromPB:
 
     def __init__(self):
         self.rdf = RDF
-        self.observatory = Namespace("http://example.org/muhai/observatory#")
+        self.obio = Namespace("https://w3id.org/okg/obio-ontology/")
         self.example = Namespace("http://example.com/")
         self.wsj = Namespace("https://w3id.org/framester/wsj/")
         self.pbdata = Namespace("https://w3id.org/framester/pb/data/")
@@ -58,7 +58,7 @@ class RDFLIBConverterFromPB:
 
     def _bind_namespaces(self, graph: Graph) -> Graph:
         """ Binding namespace to graph """
-        graph.bind("observatory", self.observatory)
+        graph.bind("obio", self.obio)
         graph.bind("ex", self.example)
         graph.bind("wsj", self.wsj)
         graph.bind("pbdata", self.pbdata)
@@ -73,14 +73,14 @@ class RDFLIBConverterFromPB:
     def add_metrics(self, row: pd.core.series.Series, post_node: URIRef, graph: Graph) -> Graph:
         """ Adding post metrics: sentiment, polarity, subjectivity """
         sentiment = row.sentiment[0]
-        graph.add((post_node, self.observatory["sentiment_label"], Literal(sentiment["label"])))
-        graph.add((post_node, self.observatory["sentiment_score"],
+        graph.add((post_node, self.obio["sentiment_label"], Literal(sentiment["label"])))
+        graph.add((post_node, self.obio["sentiment_score"],
                    Literal(sentiment["score"], datatype=self.xsd["float"])))
 
         pol_subj = row.polarity_subjectivity
-        graph.add((post_node, self.observatory["polarity_score"],
+        graph.add((post_node, self.obio["polarity_score"],
                    Literal(pol_subj["polarity"], datatype=self.xsd["float"])))
-        graph.add((post_node, self.observatory["subjectivity_score"],
+        graph.add((post_node, self.obio["subjectivity_score"],
                    Literal(pol_subj["subjectivity"], datatype=self.xsd["float"])))
 
         return graph
@@ -129,7 +129,7 @@ class RDFLIBConverterFromPB:
             if rs_framester_node not in self.distinct_pb_role_sets:
                 self.distinct_pb_role_sets.append(rs_framester_node)
         else:
-            rs_framester_node = self.observatory[f"roleset/{frame_name}"]
+            rs_framester_node = self.obio[f"roleset/{frame_name}"]
         graph.add((rs_node, self.wsj["onRoleSet"], rs_framester_node))
 
         # Adding roles
@@ -137,7 +137,7 @@ class RDFLIBConverterFromPB:
             role_node = self.example[f"RS_role_{tweet_id}_{data['i_sent']}_{data['i_frame']}_{i}"]
 
             if role_info["role"] == "V":  # Lexical Unit
-                pred_rs = self.observatory["onToken"]
+                pred_rs = self.obio["onToken"]
             else:  # Frame Element
                 pred_rs = self.wsj["withmappedrole"]
 
@@ -149,7 +149,7 @@ class RDFLIBConverterFromPB:
                     role_node_id = f"token_{tweet_id}#{token_index}"
                     role_node = self.example[quote(role_node_id)]
                     self.superstring_cand.append(role_node_id)
-                    graph.add((role_node, self.observatory["hasTokenIndex"],
+                    graph.add((role_node, self.obio["hasTokenIndex"],
                                Literal(token_index, datatype=self.xsd["int"])))
                 except Exception as exception:  # mapping not found
                     print(exception)
@@ -191,7 +191,7 @@ class RDFLIBConverterFromPB:
                             self.pbschema[role]))
                 else:  # other annotations
                     graph.add((role_node, self.wsj["withpbarg"],
-                               self.observatory[f"pbarg/{role}"]))
+                               self.obio[f"pbarg/{role}"]))
 
             # Sent to nif:Word and nif:Phrase
             graph.add((sent_node, pred_t, role_node))

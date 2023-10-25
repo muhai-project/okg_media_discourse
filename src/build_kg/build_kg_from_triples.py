@@ -29,7 +29,7 @@ class RDFLIBConverterFromTriples:
         self.dc_ns = Namespace("http://purl.org/dc/terms/")
         self.earmark = Namespace("http://www.essepuntato.it/2008/12/earmark#")
         self.nif = Namespace("http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#")
-        self.observatory = Namespace("https://w3id.org/okg/obio-ontology/")
+        self.obio = Namespace("https://w3id.org/okg/obio-ontology/")
         self.xsd = XSD
 
         self.converter = {
@@ -62,20 +62,20 @@ class RDFLIBConverterFromTriples:
                 self._convert_sub_pred_obj(self.schema["mentions"], graph, **data),  # OK
             "metric_nb_like": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.observatory["nb_like"], self.xsd["int"], graph, **data),  # OK
+                    self.obio["nb_like"], self.xsd["int"], graph, **data),  # OK
             "metric_nb_repost": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.observatory["nb_repost"], self.xsd["int"], graph, **data),  # OK
+                    self.obio["nb_repost"], self.xsd["int"], graph, **data),  # OK
             "rdf_type": self._add_rdf_type,  # OK
             "reply_of": lambda graph, **data: \
-                self._convert_sub_pred_obj(self.observatory["reply_of"], graph, **data),  # OK
+                self._convert_sub_pred_obj(self.obio["reply_of"], graph, **data),  # OK
             "repost_of": lambda graph, **data: \
-                self._convert_sub_pred_obj(self.observatory["repost_of"], graph, **data),  # OK
+                self._convert_sub_pred_obj(self.obio["repost_of"], graph, **data),  # OK
             "superString": lambda graph, **data: \
                 self._convert_sub_pred_obj(self.nif["superString"], graph, **data),  # OK
             "tokenIndex": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.observatory["hasTokenIndex"], self.xsd["int"], graph, **data),  # OK
+                    self.obio["hasTokenIndex"], self.xsd["int"], graph, **data),  # OK
             "tokenLemma": lambda graph, **data: \
                 self._convert_sub_pred_literal(self.nif["lemma"], graph, **data),  # OK
             "tokenPos": lambda graph, **data: \
@@ -84,21 +84,21 @@ class RDFLIBConverterFromTriples:
             # TO BE CHECKED
             "is_verified": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.observatory["is_verified"], self.xsd["boolean"], graph, **data),  # boolean
+                    self.obio["is_verified"], self.xsd["boolean"], graph, **data),  # boolean
             "user_label": lambda graph, **data: \
                 self._convert_sub_pred_literal(self.rdfs["label"], graph, **data),  # literal
             "user_description": lambda graph, **data: \
                 self._convert_sub_pred_literal(
-                    self.observatory["description"], graph, **data),   # literal
+                    self.obio["description"], graph, **data),   # literal
             "follower": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.observatory["follower"], self.xsd["int"], graph, **data),   # int
+                    self.obio["follower"], self.xsd["int"], graph, **data),   # int
             "following": lambda graph, **data: \
                 self._convert_sub_pred_literal_with_type(
-                    self.observatory["following"], self.xsd["int"], graph, **data),   # int
+                    self.obio["following"], self.xsd["int"], graph, **data),   # int
             "location": lambda graph, **data: \
                 self._convert_sub_pred_literal(
-                    self.observatory["location"], graph, **data),  # literal
+                    self.obio["location"], graph, **data),  # literal
 
             ############################################################
             # BELOW in previous models, OBSOLETE
@@ -118,11 +118,11 @@ class RDFLIBConverterFromTriples:
         """ entity type to URI type """
         return {
             "conversation": self.sioc["Forum"],  # OK
-            "entity": self.observatory["Entity"],  # OK
+            "entity": self.obio["Entity"],  # OK
             "phrase": self.nif["Phrase"],  # OK
             "post": self.sioc["Post"],  # OK
-            "reply": self.observatory["Reply"],  # OK
-            "repost": self.observatory["RePost"],  # OK
+            "reply": self.obio["Reply"],  # OK
+            "repost": self.obio["RePost"],  # OK
             "sentence": self.nif["Sentence"],  # OK
             "token": self.nif["Word"],  # OK
             "tweet": self.sioc["Post"],  # OK
@@ -182,7 +182,7 @@ class RDFLIBConverterFromTriples:
         """ Convert triples with dependency relation information """
         predicate = data["predicate"].split("_")[-1]
         graph.add((self.example[quote(data["subject"])],
-                   self.observatory[f"dep_rel_{predicate}"],
+                   self.obio[f"dep_rel_{predicate}"],
                    self.example[quote(data["object"])]))
         return graph
 
@@ -194,7 +194,7 @@ class RDFLIBConverterFromTriples:
         graph.bind("dc", self.dc_ns)  # OK
         graph.bind("earmark", self.earmark)  # OK
         graph.bind("nif", self.nif)  # OK
-        graph.bind("observatory", self.observatory)  # OK
+        graph.bind("obio", self.obio)  # OK
         # graph.bind("rdfs", self.rdfs)  # OK
         # graph.bind("rdf", self.rdf)  # OK
         # graph.bind("xsd", self.xsd)  # OK

@@ -93,5 +93,11 @@ python src/main.py -f <input-event-folder-csv-file> -o <output-folder>
 > This work was funded by the European MUHAI project (Horizon 2020 research and innovation program) under grant agreement number 951846,  the Sony Computer Science Laboratories-Paris, the Vrije Universiteit Amsterdam, the University of Bremen, and the Venice International University. C.S. acknowledges financial support from PON R\&I 2014–2020 (FSE REACT-EU). We thank Frank van Harmelen, Annette ten Teije and Ilaria Tiddi for fruitful discussions.
 
 
-citation: to be updated later
+@inproceedings{blin2023okg,
+  title={OKG: A Knowledge Graph for Fine-grained Understanding of Social Media Discourse on Inequality},
+  author={Blin, In{\`e}s and Stork, Lise and Spillner, Laura and Santagiustina, Carlo},
+  booktitle={Proceedings of the 12th Knowledge Capture Conference 2023},
+  pages={166--174},
+  year={2023}
+}
 
